@@ -17,4 +17,6 @@ void multiplicacion(int dimension, double a[dimension][dimension], double b[dime
 void transpuesta(int dimension, double a[dimension][dimension],  double transpuesta[dimension][dimension]);
 
 void zeros(int m, int n, double matriz[m][n]);
+
+
 #endif // MATLABUTILITIES_H_INCLUDED
