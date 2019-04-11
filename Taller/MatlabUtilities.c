@@ -9,7 +9,8 @@ double Norma(double v[])
 double dot(int dim, double v1[dim], double v2[dim])
 {
     double suma = 0;
-    for(int i=0; i<dim; i++){
+    for(int i=0; i<dim; i++)
+    {
         suma = suma + v1[i]*v2[i];
     }
     return suma;
@@ -74,10 +75,13 @@ void multiplicacion(int dimension, double a[dimension][dimension], double b[dime
     }
 }
 
-void transpuesta(int dimension, double a[dimension][dimension], double transpuesta[dimension][dimension]){
+void transpuesta(int dimension, double a[dimension][dimension], double transpuesta[dimension][dimension])
+{
 
-    for(int i=0; i<dimension; i++){
-        for(int j=0; j<dimension; j++){
+    for(int i=0; i<dimension; i++)
+    {
+        for(int j=0; j<dimension; j++)
+        {
             transpuesta[i][j] = a[j][i];
         }
     }
@@ -86,5 +90,9 @@ void transpuesta(int dimension, double a[dimension][dimension], double transpues
 
 bool isReal(double complex numero)
 {
+    /*
+    Gracias a Davide y Millan he ahorrado tiempo al decirme como
+    realizar la funcion isReal
+    */
     return cimag(numero) == 0;
 }

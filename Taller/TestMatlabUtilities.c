@@ -193,10 +193,6 @@ void zeros(int m, int n, double matriz[m][n])
 
 
 void Test_isReal(){
-/*
- Gracias a Davide y Millan he ahorrado tiempo al decirme como
- realizar la funcion isReal
-*/
     assert(isReal(10) == true);
 
     double complex z1 = 1.0 + 3.0 * I;
