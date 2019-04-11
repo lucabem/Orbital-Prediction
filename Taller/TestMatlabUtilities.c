@@ -11,6 +11,7 @@ void Test_Dot();
 void Test_Det();
 void Test_Multiplicacion();
 
+
 bool fequal(double a, double b);
 
 const double epsilon = 0.001;
@@ -77,6 +78,10 @@ void Test_Dot()
     double v1[3] = {4.0, -1.0, 2.0};
     double v2[3] = {2.0, -2.0, -1.0};
     assert(fequal(dot(v1, v2), 8) == true);
+
+    double v3[3] = {10.1220, 0.0, -12.34560};
+    double v4[3] = {-5.35, 2.67, 0.5};
+    assert(fequal(dot(v3, v4), -60.3255) == true);
 }
 
 void Test_Det()
@@ -91,20 +96,31 @@ void Test_Det()
 
     assert(fequal(determinante2, -52.6593 ) == true);
 
+    double matrix3[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
+    double determinante3 = det(2, matrix3);
+
+    assert(fequal(determinante3, -12.0428 ) == true);
+
 
 }
 
-void Test_Multiplicacion(){
+void Test_Multiplicacion()
+{
     double a[3][3] = {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}};
     double c[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
     multiplicacion(a, a, c);
 
-    for(int i=0; i<3; i++){
-        for (int j=0; j<3; j++){
-            if (i==j){
+    for(int i=0; i<3; i++)
+    {
+        for (int j=0; j<3; j++)
+        {
+            if (i==j)
+            {
                 assert(fequal(c[i][j], 1.0) == true);
-            }else{
+            }
+            else
+            {
                 assert(fequal(c[i][j], 0.0) == true);
             }
         }
