@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include "MatlabUtilities.h"
-#include <math.h>
+
 
 void Test_Norma();
 void Test_Sign();
