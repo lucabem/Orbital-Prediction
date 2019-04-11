@@ -68,7 +68,6 @@ void multiplicacion(int dimension, double a[dimension][dimension], double b[dime
             }
         }
     }
-    return c;
 }
 
 void transpuesta(int dimension, double a[dimension][dimension], double transpuesta[dimension][dimension]){

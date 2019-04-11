@@ -186,6 +186,11 @@ void Test_Transpuesta()
 
 }
 
+void zeros(int m, int n, double matriz[m][n])
+{
+
+}
+
 bool fequal(double a, double b)
 {
     return fabs(a-b) < epsilon;
