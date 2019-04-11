@@ -83,3 +83,8 @@ void transpuesta(int dimension, double a[dimension][dimension], double transpues
     }
 
 }
+
+bool isReal(double complex numero)
+{
+    return cimag(numero) == 0;
+}

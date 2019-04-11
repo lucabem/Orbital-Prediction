@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <stdbool.h>
 #include "MatlabUtilities.h"
-
 
 void Test_Norma();
 void Test_Sign();
@@ -12,6 +10,7 @@ void Test_Dot();
 void Test_Det();
 void Test_Multiplicacion();
 void Test_Transpuesta();
+void Test_isReal();
 
 bool fequal(double a, double b);
 
@@ -26,6 +25,7 @@ int main()
     Test_Det();
     Test_Multiplicacion();
     Test_Transpuesta();
+    Test_isReal();
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
@@ -191,6 +191,13 @@ void zeros(int m, int n, double matriz[m][n])
 
 }
 
+void Test_isReal(){
+
+    assert(isReal(10) == true);
+
+    double complex z1 = 1.0 + 3.0 * I;
+    assert(isReal(z1) == false);
+}
 bool fequal(double a, double b)
 {
     return fabs(a-b) < epsilon;

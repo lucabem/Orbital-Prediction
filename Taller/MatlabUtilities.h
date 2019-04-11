@@ -1,6 +1,8 @@
 #ifndef MATLABUTILITIES_H_INCLUDED
 #define MATLABUTILITIES_H_INCLUDED
 #include <math.h>
+#include <complex.h>
+#include <stdbool.h>
 
 double Norma(double v[]);
 
@@ -18,5 +20,5 @@ void transpuesta(int dimension, double a[dimension][dimension],  double transpue
 
 void zeros(int m, int n, double matriz[m][n]);
 
-
+bool isReal(double complex numero);
 #endif // MATLABUTILITIES_H_INCLUDED
