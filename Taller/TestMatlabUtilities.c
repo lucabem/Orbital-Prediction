@@ -100,11 +100,31 @@ void Test_Multiplicacion(){
 
     multiplicacion(a, a, c);
 
+    for(int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            if (i==j){
+                assert(fequal(c[i][j], 1.0) == true);
+            }else{
+                assert(fequal(c[i][j], 0.0) == true);
+            }
+        }
+    }
+
     double b[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
     double d[3][3] = {{10.1220, 0.0, -12.34560}, {0.25, -2.75, 12.2223}, {-5.35, 2.67, 0.5}};
     double f[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
     multiplicacion(b,d, f);
+
+    assert(fequal(f[0][0], -12.0637) == true);
+    assert(fequal(f[0][1], 18.6479) == true);
+    assert(fequal(f[0][2], -44.9290) == true);
+    assert(fequal(f[1][0], -56.1602) == true);
+    assert(fequal(f[1][1], -6.0075) == true);
+    assert(fequal(f[1][2], 98.9325) == true);
+    assert(fequal(f[2][0], -6.0451) == true);
+    assert(fequal(f[2][1], 8.6241) == true);
+    assert(fequal(f[2][2], -12.0886) == true);
 
 }
 
