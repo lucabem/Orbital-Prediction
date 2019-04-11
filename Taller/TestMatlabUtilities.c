@@ -11,6 +11,7 @@ void Test_Det();
 void Test_Multiplicacion();
 void Test_Transpuesta();
 void Test_isReal();
+void Test_Length();
 
 bool fequal(double a, double b);
 
@@ -26,6 +27,7 @@ int main()
     Test_Multiplicacion();
     Test_Transpuesta();
     Test_isReal();
+    Test_Length();
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
@@ -198,10 +200,22 @@ void Test_isReal(){
     double complex z1 = 1.0 + 3.0 * I;
     assert(isReal(z1) == false);
 }
+
+void Test_Length(){
+    int x[10] = {0,0,0,0,0,0,0,0,0,0};
+    assert(NELEMS(x) == 10);
+
+    double y[20];
+    assert(NELEMS(y) == 20);
+}
+
+
 bool fequal(double a, double b)
 {
     return fabs(a-b) < epsilon;
 }
+
+
 
 
 

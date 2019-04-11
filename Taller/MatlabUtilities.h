@@ -4,6 +4,8 @@
 #include <complex.h>
 #include <stdbool.h>
 
+#define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
+
 double Norma(double v[]);
 
 double dot(int dim, double v1[dim], double v2[dim]);
@@ -21,4 +23,5 @@ void transpuesta(int dimension, double a[dimension][dimension],  double transpue
 void zeros(int m, int n, double matriz[m][n]);
 
 bool isReal(double complex numero);
+
 #endif // MATLABUTILITIES_H_INCLUDED
