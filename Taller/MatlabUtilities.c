@@ -6,9 +6,13 @@ double Norma(double v[])
     return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 }
 
-double dot(double v1[], double v2[])
+double dot(int dim, double v1[dim], double v2[dim])
 {
-    return v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2];
+    double suma = 0;
+    for(int i=0; i<dim; i++){
+        suma = suma + v1[i]*v2[i];
+    }
+    return suma;
 }
 
 int Sing(double x)

@@ -79,11 +79,11 @@ void Test_Dot()
 {
     double v1[3] = {4.0, -1.0, 2.0};
     double v2[3] = {2.0, -2.0, -1.0};
-    assert(fequal(dot(v1, v2), 8) == true);
+    assert(fequal(dot(3,v1, v2), 8) == true);
 
     double v3[3] = {10.1220, 0.0, -12.34560};
     double v4[3] = {-5.35, 2.67, 0.5};
-    assert(fequal(dot(v3, v4), -60.3255) == true);
+    assert(fequal(dot(3,v3, v4), -60.3255) == true);
 }
 
 void Test_Det()
