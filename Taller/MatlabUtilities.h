@@ -12,7 +12,7 @@ double* cross(double v1[], double v2[]);
 
 double det(int dimension, double matrix[dimension][dimension]);
 
-void multiplicacion(double a[3][3], double b[3][3], double c[3][3]);
+void multiplicacion(int dimension, double a[dimension][dimension], double b[dimension][dimension], double c[dimension][dimension]);
 
-void transpuesta(double a[3][3],  double transpuesta[3][3]);
+void transpuesta(int dimension, double a[dimension][dimension],  double transpuesta[dimension][dimension]);
 #endif // MATLABUTILITIES_H_INCLUDED
