@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1446671344 source:c:\users\luis\documents\github\taller\taller\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1554976414 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+	"MatlabUtilities.h"
+
+1554975906 c:\users\luis\documents\github\taller\taller\matlabutilities.h
+
+1554907682 source:c:\users\luis\documents\github\taller\taller\prueba.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+
+1554976406 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	<stdbool.h>
+	"MatlabUtilities.h"
+
