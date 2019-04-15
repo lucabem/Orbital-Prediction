@@ -20,3 +20,17 @@
 	<stdbool.h>
 	"MatlabUtilities.h"
 
+1555003508 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
+	"MatlabUtilities.h"
+
+1555003508 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
+	<math.h>
+	<complex.h>
+	<stdbool.h>
+
+1555003458 source:c:\users\lucabem\documents\github\taller\taller\testmatlabutilities.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"MatlabUtilities.h"
+
