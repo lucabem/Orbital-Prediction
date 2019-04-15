@@ -32,6 +32,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Constantes.h" />
 		<Unit filename="MatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
