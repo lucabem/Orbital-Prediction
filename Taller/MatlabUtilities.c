@@ -95,3 +95,11 @@ bool isReal(double complex numero)
     */
     return cimag(numero) == 0;
 }
+
+double* zeros(int m, int n)
+{
+    double *mat;
+    mat = calloc(m*n, sizeof(double));
+    return mat;
+}
+

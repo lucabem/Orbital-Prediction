@@ -12,10 +12,11 @@ void Test_Multiplicacion();
 void Test_Transpuesta();
 void Test_isReal();
 void Test_Length();
+void Test_Zeros();
 
 bool fequal(double a, double b);
 
-const double epsilon = 0.00001;
+const double epsilon = 0.00000000001;
 
 int main()
 {
@@ -28,6 +29,7 @@ int main()
     Test_Transpuesta();
     Test_isReal();
     Test_Length();
+    Test_Zeros();
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
@@ -41,7 +43,7 @@ void Test_Norma()
 
     double v2[3] = {1, 1, 1};
     double r2 = Norma(v2);
-    assert(fequal(1.73205, r2) == true);
+    assert(fequal(1.73205080757, r2) == true);
 
     double v3[3] = {4.0, 3.0, 0.0};
     double r3 = Norma(v3);
@@ -98,7 +100,7 @@ void Test_Det()
     double matrix2[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
     double determinante2 = det(3, matrix2);
 
-    assert(fequal(determinante2, -52.6593 ) == true);
+    assert(fequal(determinante2, -52.6593045 ) == true);
 
     double matrix3[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
     double determinante3 = det(2, matrix3);
@@ -188,20 +190,16 @@ void Test_Transpuesta()
 
 }
 
-void zeros(int m, int n, double matriz[m][n])
+void Test_isReal()
 {
-
-}
-
-
-void Test_isReal(){
     assert(isReal(10) == true);
 
     double complex z1 = 1.0 + 3.0 * I;
     assert(isReal(z1) == false);
 }
 
-void Test_Length(){
+void Test_Length()
+{
     int x[10] = {0,0,0,0,0,0,0,0,0,0};
     assert(NELEMS(x) == 10);
 
@@ -209,7 +207,26 @@ void Test_Length(){
     assert(NELEMS(y) == 20);
 }
 
+void Test_Zeros()
+{
+    double *matriz = zeros(4,4);
 
+    for(int i=0; i<16; i++){
+        assert(fequal(0.0, matriz[i]) == true);
+    }
+
+    matriz = zeros(4,20);
+
+    for(int i=0; i<80; i++){
+        assert(fequal(0.0, matriz[i]) == true);
+    }
+
+    matriz = zeros(13,2000);
+
+    for(int i=0; i<13*2000; i++){
+        assert(fequal(0.0, matriz[i]) == true);
+    }
+}
 bool fequal(double a, double b)
 {
     return fabs(a-b) < epsilon;
