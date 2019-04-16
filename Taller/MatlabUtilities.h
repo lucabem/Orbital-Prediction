@@ -3,7 +3,7 @@
 #include <math.h>
 #include <complex.h>
 #include <stdbool.h>
-
+#include "rpoly.h"
 #define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
 
 double Norma(double v[]);
@@ -22,7 +22,9 @@ void transpuesta(int dimension, double a[dimension][dimension],  double transpue
 
 double* zeros(int m, int n);
 
-bool isReal(double complex numero);
+bool isReal(double parteImaginaria);
+
+double* roots(double *op, int degree, double *zeror, double *zeroi);
 
 
 #endif // MATLABUTILITIES_H_INCLUDED

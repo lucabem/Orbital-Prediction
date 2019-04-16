@@ -16,8 +16,9 @@ void Test_Zeros();
 
 bool fequal(double a, double b);
 
-const double epsilon = 0.00000000001;
+const double epsilon = 0.0000000000001;
 
+/*
 int main()
 {
     Test_Norma();
@@ -34,7 +35,7 @@ int main()
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
 }
-
+*/
 void Test_Norma()
 {
     double v1[3] = {0.0, 0.0, 0.0};
@@ -43,7 +44,7 @@ void Test_Norma()
 
     double v2[3] = {1, 1, 1};
     double r2 = Norma(v2);
-    assert(fequal(1.73205080757, r2) == true);
+    assert(fequal(1.7320508075688772935, r2) == true);
 
     double v3[3] = {4.0, 3.0, 0.0};
     double r3 = Norma(v3);
@@ -192,10 +193,9 @@ void Test_Transpuesta()
 
 void Test_isReal()
 {
-    assert(isReal(10) == true);
+    assert(isReal(10) == false);
 
-    double complex z1 = 1.0 + 3.0 * I;
-    assert(isReal(z1) == false);
+    assert(isReal(0.0) == true);
 }
 
 void Test_Length()
@@ -227,6 +227,7 @@ void Test_Zeros()
         assert(fequal(0.0, matriz[i]) == true);
     }
 }
+
 bool fequal(double a, double b)
 {
     return fabs(a-b) < epsilon;

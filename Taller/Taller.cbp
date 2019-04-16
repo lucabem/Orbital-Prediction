@@ -33,6 +33,9 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Constantes.h" />
+		<Unit filename="Example1.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="MatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -40,6 +43,11 @@
 		<Unit filename="TestMatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="eop19620101.txt" />
+		<Unit filename="rpoly.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rpoly.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

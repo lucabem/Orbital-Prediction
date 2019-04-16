@@ -87,13 +87,9 @@ void transpuesta(int dimension, double a[dimension][dimension], double transpues
 
 }
 
-bool isReal(double complex numero)
+bool isReal(double parteImaginaria)
 {
-    /*
-    Gracias a Davide y Millan he ahorrado tiempo al decirme como
-    realizar la funcion isReal
-    */
-    return cimag(numero) == 0;
+    return (parteImaginaria) == 0;
 }
 
 double* zeros(int m, int n)
@@ -103,3 +99,18 @@ double* zeros(int m, int n)
     return mat;
 }
 
+double* roots(double *op, int degree, double *zeror, double *zeroi){
+
+    int info[7] = {1,2,3,4,5,6,7};
+
+    rpoly(op,degree, zeror, zeroi, info);
+
+    for(int i=0; i<degree; i++){
+        if (isReal(zeroi[i])){
+
+        }
+    }
+
+    return zeror;
+
+}
