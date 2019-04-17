@@ -59,19 +59,20 @@ double det(int dimension, double matrix[dimension][dimension])
     return det;
 }
 
-void multiplicacion(int dimension, double a[dimension][dimension], double b[dimension][dimension], double c[dimension][dimension])
+void multiplicacion(int r1, int c1, int r2, int c2, double a[r1][c1], double b[r2][c2], double c[r1][c2])
 {
     int i,j,k;
-    for(i=0; i<=dimension-1; i++)
+    for(i=0; i<r1; ++i)
     {
-        for(j=0; j<=dimension-1; j++)
+        for(j=0; j<c2; ++j)
         {
-            for(k=0; k<=dimension-1; k++)
+            for(k=0; k<c1; ++k)
             {
-                c[i][j]=(c[i][j]+(a[i][k]*b[k][j]));
+                c[i][j]+=a[i][k]*b[k][j];
             }
         }
     }
+
 }
 
 void transpuesta(int filas, int columnas, double a[filas][columnas], double transpuesta[columnas][filas])

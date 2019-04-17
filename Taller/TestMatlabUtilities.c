@@ -37,7 +37,9 @@ int main()
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
 }
+
 */
+
 void Test_Norma()
 {
     double v1[3] = {0.0, 0.0, 0.0};
@@ -118,7 +120,7 @@ void Test_Multiplicacion()
     double a[3][3] = {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}};
     double c[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
-    multiplicacion(3, a, a, c);
+    multiplicacion(3, 3, 3, 3, a, a, c);
 
     for(int i=0; i<3; i++)
     {
@@ -139,7 +141,7 @@ void Test_Multiplicacion()
     double d[3][3] = {{10.1220, 0.0, -12.34560}, {0.25, -2.75, 12.2223}, {-5.35, 2.67, 0.5}};
     double f[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
-    multiplicacion(3, b,d, f);
+    multiplicacion(3, 3, 3, 3, b,d, f);
 
     assert(fequal(f[0][0], -12.063718) == true);
     assert(fequal(f[0][1], 18.64791) == true);
@@ -155,7 +157,7 @@ void Test_Multiplicacion()
     double y[2][2] = {{10.1220, -12.34560}, {0.25, -2.75}};
     double z[2][2] = {{0.0, 0.0}, {0.0, 0.0}};
 
-    multiplicacion(2, x, y, z);
+    multiplicacion(2, 2, 2, 2, x, y, z);
     assert(fequal(z[0][0], 9.994332) == true);
     assert(fequal(z[0][1], -5.3974536) == true);
     assert(fequal(z[1][0], -53.4852) == true);

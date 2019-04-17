@@ -7,6 +7,7 @@
 double Mjday(int year, int month,int day, int hour, int min, double sec);
 void Position (double lon, double lat, double h, double pos[3]);
 
+
 int main()
 {
     FILE* fid = fopen("eop19620101.txt","rt");
@@ -17,13 +18,13 @@ int main()
     {
         exit(EXIT_FAILURE);
     }
-    /*
+
         while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
         {
             printf("%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d \n", v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13);
             i++;
         }
-    */
+
     fclose(fid);
 
     fid = fopen("sat1.txt", "rt");
@@ -67,6 +68,7 @@ int main()
 
 }
 
+
 double Mjday(int year, int month,int day, int hour, int min, double sec)
 {
 
@@ -92,7 +94,7 @@ double Mjday(int year, int month,int day, int hour, int min, double sec)
     }
     else if (year > 1582)
     {
-        a = a = fix(y/100);
+        a = fix(y/100);
         b = 2 - a + floor(a/4);
 
     }
@@ -102,7 +104,7 @@ double Mjday(int year, int month,int day, int hour, int min, double sec)
     }
     else if (month > 10)
     {
-        a = a = fix(y/100);
+        a = fix(y/100);
         b = 2 - a + floor(a/4);
     }
     else if (day <= 4)

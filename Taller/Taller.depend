@@ -3,10 +3,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1555500013 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+1555506541 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
-1555499426 c:\users\luis\documents\github\taller\taller\matlabutilities.h
+1555506530 c:\users\luis\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
@@ -17,7 +17,7 @@
 	<stdlib.h>
 	<assert.h>
 
-1555501944 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
+1555506622 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -45,7 +45,7 @@
 
 1555411516 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1555501737 source:c:\users\luis\documents\github\taller\taller\example1.c
+1555506610 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
