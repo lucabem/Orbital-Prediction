@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include "rpoly.h"
 #define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
+#include <stdlib.h>
 
 double Norma(double v[]);
 

@@ -14,6 +14,8 @@ void Test_isReal();
 void Test_Length();
 void Test_Zeros();
 void Test_Fix();
+void Test_Roots();
+
 
 bool fequal(double a, double b);
 
@@ -235,6 +237,14 @@ void Test_Fix(){
     assert(fequal(1.0, fix(1.2323232323232)) == true);
     assert(fequal(-1.0, fix(-1.2323232323232)) == true);
 }
+
+//double* roots(double *op, int degree, double *zeror, double *zeroi);
+void Test_Roots()
+{
+    double factores[10] = {23, 2, 1, 2, 4, 5, 7 , 7, 6, 5};
+    //double *sol = roots(factores, 9, );
+}
+
 
 bool fequal(double a, double b)
 {

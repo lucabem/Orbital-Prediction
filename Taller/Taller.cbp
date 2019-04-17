@@ -36,10 +36,20 @@
 		<Unit filename="Example1.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="IERS.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="MatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MatlabUtilities.h" />
+		<Unit filename="Mjday.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Mjday.h" />
+		<Unit filename="Position.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="TestMatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>

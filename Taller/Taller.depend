@@ -23,15 +23,17 @@
 	<assert.h>
 	"MatlabUtilities.h"
 
-1555003508 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
+1555514667 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
-1555003508 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
+1555514482 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
+	"rpoly.h"
+	<stdlib.h>
 
-1555003458 source:c:\users\lucabem\documents\github\taller\taller\testmatlabutilities.c
+1555514902 source:c:\users\lucabem\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -53,4 +55,40 @@
 
 1553166870 c:\users\luis\documents\github\taller\taller\constantes.h
 	<math.h>
+
+1555510756 c:\users\lucabem\documents\github\taller\taller\rpoly.h
+
+1555510756 source:c:\users\lucabem\documents\github\taller\taller\rpoly.c
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<stdlib.h>
+
+1555514255 source:c:\users\lucabem\documents\github\taller\taller\example1.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+
+1555512428 c:\users\lucabem\documents\github\taller\taller\constantes.h
+
+1555510961 source:c:\users\lucabem\documents\github\taller\taller\mjday.c
+	"Mjday.h"
+
+1555510951 c:\users\lucabem\documents\github\taller\taller\mjday.h
+	<math.h>
+	"MatlabUtilities.h"
+
+1555512456 source:c:\users\lucabem\documents\github\taller\taller\position.c
+	"Constantes.h"
+	<math.h>
+
+1555511952 c:\users\lucabem\documents\github\taller\taller\position.h
+	<math.h>
+
+1555513952 source:c:\users\lucabem\documents\github\taller\taller\iers.c
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
 
