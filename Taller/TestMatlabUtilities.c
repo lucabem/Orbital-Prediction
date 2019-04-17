@@ -13,6 +13,7 @@ void Test_Transpuesta();
 void Test_isReal();
 void Test_Length();
 void Test_Zeros();
+void Test_Fix();
 
 bool fequal(double a, double b);
 
@@ -31,6 +32,7 @@ int main()
     Test_isReal();
     Test_Length();
     Test_Zeros();
+    Test_Fix();
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
@@ -167,7 +169,7 @@ void Test_Transpuesta()
     double matrix[3][3] = {{1, -2, 4}, {-5,2,0}, {1,0,3}};
     double trans[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
-    transpuesta(3,matrix, trans);
+    transpuesta(3,3,matrix, trans);
 
     assert(fequal(trans[0][0], 1) == true);
     assert(fequal(trans[0][1], -5) == true);
@@ -179,15 +181,14 @@ void Test_Transpuesta()
     assert(fequal(trans[2][1], 0) == true);
     assert(fequal(trans[2][2], 3) == true);
 
-    double mat[2][2] = {{1.24, 2.7800}, {0.0050, 1.1120}};
-    double t[2][2] = {{0.0, 0.0}, {0.0, 0.0}};
+    double mat[2][1] = {{1.24}, {0.0050}};
+    double t[1][2] = {{0.0, 0.0}};
 
-    transpuesta(2, mat, t);
+    transpuesta(2,1, mat, t);
 
     assert(fequal(t[0][0], 1.24) == true);
     assert(fequal(t[0][1], 0.005) == true);
-    assert(fequal(t[1][0], 2.78) == true);
-    assert(fequal(t[1][1], 1.112) == true);
+
 
 }
 
@@ -226,6 +227,11 @@ void Test_Zeros()
     for(int i=0; i<13*2000; i++){
         assert(fequal(0.0, matriz[i]) == true);
     }
+}
+
+void Test_Fix(){
+    assert(fequal(1.0, fix(1.2323232323232)) == true);
+    assert(fequal(-1.0, fix(-1.2323232323232)) == true);
 }
 
 bool fequal(double a, double b)

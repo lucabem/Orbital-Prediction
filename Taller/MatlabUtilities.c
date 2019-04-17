@@ -74,14 +74,14 @@ void multiplicacion(int dimension, double a[dimension][dimension], double b[dime
     }
 }
 
-void transpuesta(int dimension, double a[dimension][dimension], double transpuesta[dimension][dimension])
+void transpuesta(int filas, int columnas, double a[filas][columnas], double transpuesta[columnas][filas])
 {
 
-    for(int i=0; i<dimension; i++)
+    for(int i=0; i<filas; i++)
     {
-        for(int j=0; j<dimension; j++)
+        for(int j=0; j<columnas; j++)
         {
-            transpuesta[i][j] = a[j][i];
+            transpuesta[j][i] = a[i][j];
         }
     }
 
@@ -99,18 +99,34 @@ double* zeros(int m, int n)
     return mat;
 }
 
-double* roots(double *op, int degree, double *zeror, double *zeroi){
+double* roots(double *op, int degree, double *zeror, double *zeroi)
+{
 
     int info[7] = {1,2,3,4,5,6,7};
 
     rpoly(op,degree, zeror, zeroi, info);
 
-    for(int i=0; i<degree; i++){
-        if (isReal(zeroi[i])){
+    for(int i=0; i<degree; i++)
+    {
+        if (isReal(zeroi[i]))
+        {
 
         }
     }
 
     return zeror;
+
+}
+
+double fix(double x)
+{
+    if (x >= 0)
+    {
+        return floor(x);
+    }
+    else
+    {
+        return ceil(x);
+    }
 
 }
