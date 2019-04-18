@@ -3,21 +3,22 @@
 	<stdio.h>
 	<stdlib.h>
 
-1555506541 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+1555592376 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
-1555506530 c:\users\luis\documents\github\taller\taller\matlabutilities.h
+1555591624 c:\users\luis\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
 	"rpoly.h"
+	<stdlib.h>
 
 1554907682 source:c:\users\luis\documents\github\taller\taller\prueba.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
 
-1555506622 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
+1555592473 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -47,14 +48,14 @@
 
 1555411516 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1555506610 source:c:\users\luis\documents\github\taller\taller\example1.c
+1555591883 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
 	"MatlabUtilities.h"
+	"Mjday.h"
 
-1553166870 c:\users\luis\documents\github\taller\taller\constantes.h
-	<math.h>
+1555591624 c:\users\luis\documents\github\taller\taller\constantes.h
 
 1555510756 c:\users\lucabem\documents\github\taller\taller\rpoly.h
 
@@ -91,4 +92,20 @@
 	"Constantes.h"
 	<math.h>
 	"MatlabUtilities.h"
+
+1555591624 c:\users\luis\documents\github\taller\taller\mjday.h
+	<math.h>
+	"MatlabUtilities.h"
+
+1555591624 source:c:\users\luis\documents\github\taller\taller\iers.c
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1555591624 source:c:\users\luis\documents\github\taller\taller\mjday.c
+	"Mjday.h"
+
+1555591624 source:c:\users\luis\documents\github\taller\taller\position.c
+	"Constantes.h"
+	<math.h>
 

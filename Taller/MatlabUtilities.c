@@ -105,6 +105,7 @@ double* roots(double *op, int degree, double *zeror, double *zeroi)
 
     int info[7] = {1,2,3,4,5,6,7};
     int contado = 0;
+
     rpoly(op,degree, zeror, zeroi, info);
 
     for(int i=0; i<degree; i++)
@@ -116,12 +117,13 @@ double* roots(double *op, int degree, double *zeror, double *zeroi)
     }
 
     double resultado[contado];
-
+    int posicion = 0;
     for(int i=0; i<degree; i++)
     {
         if (isReal(zeroi[i]))
         {
-            resultado[i] = zeror[i];
+            resultado[posicion] = zeror[i];
+            posicion++;
         }
     }
 

@@ -21,7 +21,6 @@ bool fequal(double a, double b);
 
 const double epsilon = 0.0000000000001;
 
-/*
 int main()
 {
     Test_Norma();
@@ -35,12 +34,12 @@ int main()
     Test_Length();
     Test_Zeros();
     Test_Fix();
+    Test_Roots();
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
 }
 
-*/
 
 void Test_Norma()
 {
@@ -238,11 +237,13 @@ void Test_Fix(){
     assert(fequal(-1.0, fix(-1.2323232323232)) == true);
 }
 
-//double* roots(double *op, int degree, double *zeror, double *zeroi);
 void Test_Roots()
 {
     double factores[10] = {23, 2, 1, 2, 4, 5, 7 , 7, 6, 5};
-    //double *sol = roots(factores, 9, );
+    double zeror[9], zeroi[9];
+
+    double *sol = roots(factores, 9, zeror, zeroi);
+    assert(fabs(sol[0]+0.78147125115577658245)<0.0000001);
 }
 
 
