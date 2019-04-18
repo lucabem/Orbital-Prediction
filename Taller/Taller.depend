@@ -152,3 +152,29 @@
 
 1555606180 c:\users\luis\documents\github\taller\taller\r_x.h
 
+1555607063 source:c:\users\luis\documents\github\taller\taller\precmatrix.c
+	"PrecMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"R_z.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+
+1555606515 c:\users\luis\documents\github\taller\taller\precmatrix.h
+
+1555609397 source:c:\users\luis\documents\github\taller\taller\gmst.c
+	"gmst.h"
+	"Frac.h"
+	<math.h>
+	"Constantes.h"
+
+1555609195 c:\users\luis\documents\github\taller\taller\gmst.h
+
+1555609836 source:c:\users\luis\documents\github\taller\taller\polematrix.c
+	"PoleMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"MatlabUtilities.h"
+
+1555609615 c:\users\luis\documents\github\taller\taller\polematrix.h
+

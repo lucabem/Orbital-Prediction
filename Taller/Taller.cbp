@@ -47,10 +47,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MatlabUtilities.h" />
+		<Unit filename="MeanObliquity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MeanObliquity.h" />
 		<Unit filename="Mjday.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Mjday.h" />
+		<Unit filename="PoleMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PoleMatrix.h" />
 		<Unit filename="Position.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -82,6 +90,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="eop19620101.txt" />
+		<Unit filename="gmst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gmst.h" />
 		<Unit filename="rpoly.c">
 			<Option compilerVar="CC" />
 		</Unit>
