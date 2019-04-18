@@ -14,7 +14,7 @@ void Test_isReal();
 void Test_Length();
 void Test_Zeros();
 void Test_Fix();
-void Test_Roots();
+void Test_RaicesPolinomiales();
 
 
 bool fequal(double a, double b);
@@ -24,17 +24,29 @@ const double epsilon = 0.0000000000001;
 int main()
 {
     Test_Norma();
+        printf(">>> TEST NORMA SUPERADO \n");
     Test_Sign();
+        printf(">>> TEST SING SUPERADO \n");
     Test_Cross();
+        printf(">>> TESTS CROSS SUPERADOS \n");
     Test_Dot();
+        printf(">>> TESTS DOT SUPERADOS \n");
     Test_Det();
+        printf(">>> TESTS DETERMINANTE SUPERADOS \n");
     Test_Multiplicacion();
+        printf(">>> TESTS MULTIPLICACION SUPERADOS \n");
     Test_Transpuesta();
+        printf(">>> TESTS TRANSPUESTA SUPERADOS \n");
     Test_isReal();
+        printf(">>> TESTS ISREAL SUPERADOS \n");
     Test_Length();
+        printf(">>> TESTS LENGTH SUPERADOS \n");
     Test_Zeros();
+        printf(">>> TESTS ZEROS SUPERADOS \n");
     Test_Fix();
-    Test_Roots();
+        printf(">>> TESTS FIX SUPERADOS \n");
+    Test_RaicesPolinomiales();
+        printf(">>> TESTS RAICES SUPERADOS \n");
 
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
@@ -213,36 +225,43 @@ void Test_Length()
 
 void Test_Zeros()
 {
-    double *matriz = zeros(4,4);
+    double matriz[4][4];
+    zeros(4,4, matriz);
 
-    for(int i=0; i<16; i++){
-        assert(fequal(0.0, matriz[i]) == true);
+    for(int i=0; i<4; i++)
+    {
+        for(int j=0; j<4; j++)
+        {
+            assert(fequal(0.0, matriz[i][j]) == true);
+        }
+
     }
 
-    matriz = zeros(4,20);
+    double matriz2[4][20];
+    zeros(4,20, matriz2);
 
-    for(int i=0; i<80; i++){
-        assert(fequal(0.0, matriz[i]) == true);
-    }
+    for(int i=0; i<4; i++)
+    {
+        for(int j=0; j<20; j++)
+        {
+            assert(fequal(0.0, matriz2[i][j]) == true);
+        }
 
-    matriz = zeros(13,2000);
-
-    for(int i=0; i<13*2000; i++){
-        assert(fequal(0.0, matriz[i]) == true);
     }
 }
 
-void Test_Fix(){
+void Test_Fix()
+{
     assert(fequal(1.0, fix(1.2323232323232)) == true);
     assert(fequal(-1.0, fix(-1.2323232323232)) == true);
 }
 
-void Test_Roots()
+void Test_RaicesPolinomiales()
 {
-    double factores[10] = {23, 2, 1, 2, 4, 5, 7 , 7, 6, 5};
+    double factores[10] = {23, 2, 1, 2, 4, 5, 7, 7, 6, 5};
     double zeror[9], zeroi[9];
 
-    double *sol = roots(factores, 9, zeror, zeroi);
+    double *sol = raicesPolinomiales(factores, 9, zeror, zeroi);
     assert(fabs(sol[0]+0.78147125115577658245)<0.0000001);
 }
 

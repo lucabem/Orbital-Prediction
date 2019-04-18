@@ -2,7 +2,6 @@
 #include "Constantes.h"
 #include <math.h>
 
-void Position (double lon, double lat, double h, double pos[3]);
 
 void Position (double lon, double lat, double h, double pos[3])
 {

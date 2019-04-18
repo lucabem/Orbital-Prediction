@@ -21,11 +21,11 @@ void multiplicacion(int r1, int c1, int r2, int c2, double a[r1][c1], double b[r
 
 void transpuesta(int filas, int columnas, double a[filas][columnas], double transpuesta[columnas][filas]);
 
-double* zeros(int m, int n);
+void zeros(int m, int n, double matriz[m][n]);
 
 bool isReal(double parteImaginaria);
 
-double* roots(double *op, int degree, double *zeror, double *zeroi);
+double* raicesPolinomiales(double *op, int degree, double *zeror, double *zeroi);
 
 double fix(double x);
 

@@ -93,14 +93,14 @@ bool isReal(double parteImaginaria)
     return (parteImaginaria) == 0;
 }
 
-double* zeros(int m, int n)
+void zeros(int m, int n, double matriz[m][n])
 {
-    double *mat;
-    mat = calloc(m*n, sizeof(double));
-    return mat;
+    for (int i=0; i<m; i++)
+        for (int j=0; j<n; j++)
+            matriz[i][j] = 0.0;
 }
 
-double* roots(double *op, int degree, double *zeror, double *zeroi)
+double* raicesPolinomiales(double *op, int degree, double *zeror, double *zeroi)
 {
 
     int info[7] = {1,2,3,4,5,6,7};

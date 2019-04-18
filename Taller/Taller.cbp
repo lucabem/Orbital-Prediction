@@ -36,6 +36,10 @@
 		<Unit filename="Example1.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Frac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Frac.h" />
 		<Unit filename="IERS.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,7 +54,31 @@
 		<Unit filename="Position.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Position.h" />
+		<Unit filename="PrecMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PrecMatrix.h" />
+		<Unit filename="R_x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="R_x.h" />
+		<Unit filename="R_y.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="R_y.h" />
+		<Unit filename="R_z.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="R_z.h" />
 		<Unit filename="TestMatlabUtilities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Unit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Unit.h" />
+		<Unit filename="angl.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="eop19620101.txt" />
@@ -58,6 +86,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="rpoly.h" />
+		<Unit filename="rv2coe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rv2coe.h" />
+		<Unit filename="timeDiff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timeDiff.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
