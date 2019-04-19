@@ -4,9 +4,8 @@
 #include <stdlib.h>
 #include "MatlabUtilities.h"
 #include "Mjday.h"
-
-
-/*
+#include "PrecMatrix.h"
+#include "Position.h"
 
 int main()
 {
@@ -18,12 +17,12 @@ int main()
     {
         exit(EXIT_FAILURE);
     }
-
-    while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
-    {
-            printf("%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d \n", v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13);
-    }
-
+    /*
+        while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
+        {
+                printf("%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d \n", v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13);
+        }
+    */
     fclose(fid);
 
     fid = fopen("sat1.txt", "rt");
@@ -57,20 +56,20 @@ int main()
     double Rs[3];
     Position(lon, lat, alt, Rs); // vector [a b c] -> matrix 1x3
 
-    for(int i=0; i<3; i++){
-        printf("%0.7f ", Rs[i]);
-    }
     double Mjd1 = obs[0][0];
     double Mjd2 = obs[1][0];
     double Mjd3 = obs[2][0];
 
     double Mjd_UTC = Mjd1;
 
+    double matrizTran[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+    PrecMatrix(MJD_J2000, 54977.66766966425, matrizTran);
+
+
     return 0;
 
 }
 
-*/
 
 
 

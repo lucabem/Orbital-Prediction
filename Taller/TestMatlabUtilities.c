@@ -20,7 +20,7 @@ void Test_RaicesPolinomiales();
 bool fequal(double a, double b);
 
 const double epsilon = 0.0000000000001;
-
+/*
 int main()
 {
     Test_Norma();
@@ -52,7 +52,7 @@ int main()
     return 0;
 }
 
-
+*/
 void Test_Norma()
 {
     double v1[3] = {0.0, 0.0, 0.0};

@@ -3,7 +3,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1555605720 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+1555678572 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
 1555605345 c:\users\luis\documents\github\taller\taller\matlabutilities.h
@@ -18,7 +18,7 @@
 	<stdlib.h>
 	<assert.h>
 
-1555605771 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
+1555670833 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -48,14 +48,16 @@
 
 1555411516 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1555591883 source:c:\users\luis\documents\github\taller\taller\example1.c
+1555676622 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
 	"MatlabUtilities.h"
 	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
 
-1555591624 c:\users\luis\documents\github\taller\taller\constantes.h
+1555677875 c:\users\luis\documents\github\taller\taller\constantes.h
 
 1555510756 c:\users\lucabem\documents\github\taller\taller\rpoly.h
 
@@ -152,13 +154,14 @@
 
 1555606180 c:\users\luis\documents\github\taller\taller\r_x.h
 
-1555607063 source:c:\users\luis\documents\github\taller\taller\precmatrix.c
+1555678560 source:c:\users\luis\documents\github\taller\taller\precmatrix.c
 	"PrecMatrix.h"
 	"R_x.h"
 	"R_y.h"
 	"R_z.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
+	<stdio.h>
 
 1555606515 c:\users\luis\documents\github\taller\taller\precmatrix.h
 
@@ -177,4 +180,12 @@
 	"MatlabUtilities.h"
 
 1555609615 c:\users\luis\documents\github\taller\taller\polematrix.h
+
+1555611288 source:c:\users\luis\documents\github\taller\taller\meanobliquity.c
+	"MeanObliquity.h"
+	"Constantes.h"
+
+1555611231 c:\users\luis\documents\github\taller\taller\meanobliquity.h
+
+1555603135 c:\users\luis\documents\github\taller\taller\position.h
 
