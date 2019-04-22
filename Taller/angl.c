@@ -1,5 +1,6 @@
 #include "MatlabUtilities.h"
-double angl(double vec1[], double vec2[]);
+
+
 
 double angl(double vec1[], double vec2[])
 {
@@ -8,15 +9,13 @@ double angl(double vec1[], double vec2[])
 
     double normaVec1 = Norma(vec1);
     double normaVec2 = Norma(vec2);
-
     double theta = undefined;
 
     if ( (normaVec1*normaVec2) > (small*small))
     {
-        double temp = dot(NELEMS(vec1), vec1, vec2)/(normaVec1*normaVec2);
+        double temp = dot(3, vec1, vec2)/(normaVec1*normaVec2);
         if (fabs(temp) > 1)
             temp = Sing(temp);
-
         theta = acos(temp);
     }
 

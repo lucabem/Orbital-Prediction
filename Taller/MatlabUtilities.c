@@ -31,15 +31,12 @@ int Sing(double x)
     }
 }
 
-double* cross(double v1[], double v2[])
+void cross(double v1[], double v2[], double cr[3])
 {
+    cr[0] = v1[1]*v2[2]-v1[2]*v2[1];
+    cr[1] = v1[2]*v2[0]-v1[0]*v2[2];
+    cr[2] = v1[0]*v2[1]-v1[1]*v2[0];
 
-    double static resultado[3] = {0.0, 0.0, 0.0};
-    resultado[0] = v1[1]*v2[2]-v1[2]*v2[1];
-    resultado[1] = v1[2]*v2[0]-v1[0]*v2[2];
-    resultado[2] = v1[0]*v2[1]-v1[1]*v2[0];
-
-    return resultado;
 }
 
 double det(int dimension, double matrix[dimension][dimension])

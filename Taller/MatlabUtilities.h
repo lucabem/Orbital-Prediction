@@ -13,7 +13,7 @@ double dot(int dim, double v1[dim], double v2[dim]);
 
 int Sing(double x);
 
-double* cross(double v1[], double v2[]);
+void cross(double v1[], double v2[], double cr[3]);
 
 double det(int dimension, double matrix[dimension][dimension]);
 

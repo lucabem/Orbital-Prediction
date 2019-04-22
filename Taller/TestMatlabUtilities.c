@@ -20,7 +20,7 @@ void Test_RaicesPolinomiales();
 bool fequal(double a, double b);
 
 const double epsilon = 0.0000000000001;
-/*
+
 int main()
 {
     Test_Norma();
@@ -52,7 +52,6 @@ int main()
     return 0;
 }
 
-*/
 void Test_Norma()
 {
     double v1[3] = {0.0, 0.0, 0.0};
@@ -80,8 +79,8 @@ void Test_Cross()
 
     double v1[3] = {4.0, -2.0, 1.0};
     double v2[3] = {1.0, -1.0, 3.0};
-
-    double* resultado = cross(v1, v2);
+    double resultado[3];
+    cross(v1, v2, resultado);
 
     assert(fequal(resultado[0], -5.00) == true);
     assert(fequal(resultado[1], -11.00) == true);
@@ -90,7 +89,7 @@ void Test_Cross()
     double v3[3] = {0.25, -2.75, 12.2223};
     double v4[3] = {1.045, -1.12, 3.5};
 
-    resultado = cross(v3, v4);
+    cross(v3, v4, resultado);
 
     assert(fequal(resultado[0], 4.063976) == true);
     assert(fequal(resultado[1], 11.8973035) == true);

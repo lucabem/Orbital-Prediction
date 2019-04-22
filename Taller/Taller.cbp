@@ -33,6 +33,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Constantes.h" />
+		<Unit filename="EqnEquinox.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="EqnEquinox.h" />
 		<Unit filename="Example1.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -40,6 +44,15 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Frac.h" />
+		<Unit filename="Gast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Gast.h" />
+		<Unit filename="Gibbs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Gibbs.h" />
+		<Unit filename="HGibbs.h" />
 		<Unit filename="IERS.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,6 +68,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Mjday.h" />
+		<Unit filename="NewtonNu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="NewtonNu.h" />
+		<Unit filename="NutAngles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="NutAngles.h" />
+		<Unit filename="NutMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="NutMatrix.h" />
 		<Unit filename="PoleMatrix.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -89,6 +114,7 @@
 		<Unit filename="angl.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="angl.h" />
 		<Unit filename="eop19620101.txt" />
 		<Unit filename="gmst.c">
 			<Option compilerVar="CC" />
