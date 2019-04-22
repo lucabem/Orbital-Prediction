@@ -1,8 +1,0 @@
-language: c
-os: windows
-compiler:
-    - gcc
-    - clang
-    
-script: 
-  - ./test-library.out
