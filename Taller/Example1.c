@@ -18,6 +18,7 @@
 #include "timeDiff.h"
 #include "PoleMatrix.h"
 #include "Gast.h"
+#include "GHAMatrix.h"
 
 int main()
 {
@@ -36,8 +37,18 @@ int main()
     int fila = 0;
     while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
     {
-        eop[fila][0] = v1; eop[fila][1] = v2; eop[fila][2] = v3; eop[fila][3] = v4; eop[fila][4] = v5; eop[fila][5] = v6;
-        eop[fila][6] = v7; eop[fila][7] = v8; eop[fila][8] = v9; eop[fila][9] = v10; eop[fila][10] = v11; eop[fila][11] = v12;
+        eop[fila][0] = v1;
+        eop[fila][1] = v2;
+        eop[fila][2] = v3;
+        eop[fila][3] = v4;
+        eop[fila][4] = v5;
+        eop[fila][5] = v6;
+        eop[fila][6] = v7;
+        eop[fila][7] = v8;
+        eop[fila][8] = v9;
+        eop[fila][9] = v10;
+        eop[fila][10] = v11;
+        eop[fila][11] = v12;
         eop[fila][12] = v13;
 
         fila++;
@@ -92,7 +103,9 @@ int main()
     ddeps   = salida[5];
 
     double diferenciaTiempos[5];
+
     timeDiff(UT1_UTC, TAI_UTC, diferenciaTiempos);
+
     double UT1_TAI = diferenciaTiempos[0];
     double UTC_GPS = diferenciaTiempos[1];
     double UT1_GPS = diferenciaTiempos[2];
@@ -102,13 +115,131 @@ int main()
     double Mjd_TT = Mjd_UTC + TT_UTC/86400;
     double Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400;
 
-    double P[3][3], N[3][3], PoleM[3][3];
+    double P[3][3], N[3][3], PoleM[3][3], GHA[3][3];
 
     PrecMatrix(MJD_J2000, Mjd_TT, P);
 
     NutMatrix(Mjd_TT, N);
 
     PoleMatrix(x_pole, y_pole, PoleM);
+
+    ghaMatrix(Mjd_UT1, GHA, eop);
+
+    double resultadoPG[3][3], resultadoPGN[3][3],   E[3][3], Et[3][3];
+
+    multiplicacion(3, 3, 3, 3, PoleM, GHA, resultadoPG);
+    multiplicacion(3, 3, 3, 3, resultadoPG, N, resultadoPGN);
+    multiplicacion(3, 3, 3, 3, resultadoPGN, P, E);
+
+    transpuesta(3, 3, E, Et);
+
+    double RsMatriz[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite1Matriz[3][1];
+    multiplicacion(3, 3, 3, 1, Et, RsMatriz, rsite1Matriz);
+
+    double rsite1[3] = {rsite1Matriz[0][0], rsite1Matriz[1][0], rsite1Matriz[2][0]};
+
+    printf("\n -----CALCULO RSITE1----- \n");
+    for (int i=0; i<3; i++)
+        printf("%0.5f \n", rsite1[i]);
+    printf("\n -------------------- \n");
+
+
+    Mjd_UTC = Mjd2;
+
+    IERS(eop, Mjd_UTC, 'l', salida);
+    UT1_UTC = salida[0];
+    TAI_UTC = salida[1];
+    x_pole  = salida[2];
+    y_pole  = salida[3];
+    ddpsi   = salida[4];
+    ddeps   = salida[5];
+
+
+    timeDiff(UT1_UTC, TAI_UTC, diferenciaTiempos);
+
+    UT1_TAI = diferenciaTiempos[0];
+    UTC_GPS = diferenciaTiempos[1];
+    UT1_GPS = diferenciaTiempos[2];
+    TT_UTC  = diferenciaTiempos[3];
+    GPS_UTC = diferenciaTiempos[4];
+
+    Mjd_TT = Mjd_UTC + TT_UTC/86400;
+    Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400;
+
+
+    PrecMatrix(MJD_J2000, Mjd_TT, P);
+
+    NutMatrix(Mjd_TT, N);
+
+    PoleMatrix(x_pole, y_pole, PoleM);
+
+    ghaMatrix(Mjd_UT1, GHA, eop);
+
+    multiplicacion(3, 3, 3, 3, PoleM, GHA, resultadoPG);
+    multiplicacion(3, 3, 3, 3, resultadoPG, N, resultadoPGN);
+    multiplicacion(3, 3, 3, 3, resultadoPGN, P, E);
+
+    transpuesta(3, 3, E, Et);
+
+    double RsMatriz2[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite2Matriz[3][1];
+    multiplicacion(3, 3, 3, 1, Et, RsMatriz2, rsite2Matriz);
+
+    double rsite2[3] = {rsite2Matriz[0][0], rsite2Matriz[1][0], rsite2Matriz[2][0]};
+
+    printf("\n -----CALCULO RSITE2----- \n");
+    for (int i=0; i<3; i++)
+        printf("%0.5f \n", rsite2[i]);
+    printf("\n -------------------- \n");
+
+    Mjd_UTC = Mjd3;
+
+    IERS(eop, Mjd_UTC, 'l', salida);
+    UT1_UTC = salida[0];
+    TAI_UTC = salida[1];
+    x_pole  = salida[2];
+    y_pole  = salida[3];
+    ddpsi   = salida[4];
+    ddeps   = salida[5];
+
+
+    timeDiff(UT1_UTC, TAI_UTC, diferenciaTiempos);
+
+    UT1_TAI = diferenciaTiempos[0];
+    UTC_GPS = diferenciaTiempos[1];
+    UT1_GPS = diferenciaTiempos[2];
+    TT_UTC  = diferenciaTiempos[3];
+    GPS_UTC = diferenciaTiempos[4];
+
+    Mjd_TT = Mjd_UTC + TT_UTC/86400;
+    Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400;
+
+
+    PrecMatrix(MJD_J2000, Mjd_TT, P);
+
+    NutMatrix(Mjd_TT, N);
+
+    PoleMatrix(x_pole, y_pole, PoleM);
+
+    ghaMatrix(Mjd_UT1, GHA, eop);
+
+    multiplicacion(3, 3, 3, 3, PoleM, GHA, resultadoPG);
+    multiplicacion(3, 3, 3, 3, resultadoPG, N, resultadoPGN);
+    multiplicacion(3, 3, 3, 3, resultadoPGN, P, E);
+
+    transpuesta(3, 3, E, Et);
+
+    double RsMatriz3[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite3Matriz[3][1];
+    multiplicacion(3, 3, 3, 1, Et, RsMatriz3, rsite3Matriz);
+
+    double rsite3[3] = {rsite3Matriz[0][0], rsite3Matriz[1][0], rsite3Matriz[2][0]};
+
+    printf("\n -----CALCULO RSITE3----- \n");
+    for (int i=0; i<3; i++)
+        printf("%0.5f \n", rsite3[i]);
+    printf("\n -------------------- \n");
 
     free(eop);
     return 0;

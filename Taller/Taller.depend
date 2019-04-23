@@ -3,7 +3,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1555962281 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+1556038619 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
 1555962251 c:\users\luis\documents\github\taller\taller\matlabutilities.h
@@ -48,7 +48,7 @@
 
 1555411516 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1556032327 source:c:\users\luis\documents\github\taller\taller\example1.c
+1556040891 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -68,6 +68,7 @@
 	"timeDiff.h"
 	"PoleMatrix.h"
 	"Gast.h"
+	"GHAMatrix.h"
 
 1555948528 c:\users\luis\documents\github\taller\taller\constantes.h
 
@@ -287,7 +288,7 @@
 
 1556027493 c:\users\luis\documents\github\taller\taller\iers.h
 
-1556032730 source:c:\users\luis\documents\github\taller\taller\ghamatrix.c
+1556032782 source:c:\users\luis\documents\github\taller\taller\ghamatrix.c
 	"GHAMatrix.h"
 	"R_z.h"
 	"Gast.h"

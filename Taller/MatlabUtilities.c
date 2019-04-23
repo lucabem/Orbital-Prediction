@@ -59,6 +59,11 @@ double det(int dimension, double matrix[dimension][dimension])
 void multiplicacion(int r1, int c1, int r2, int c2, double a[r1][c1], double b[r2][c2], double c[r1][c2])
 {
     int i,j,k;
+    for(int x=0; x<r1; x++)
+        for(int y=0; y<c2; y++)
+            c[x][y] = 0.0;
+
+
     for(i=0; i<r1; ++i)
     {
         for(j=0; j<c2; ++j)
