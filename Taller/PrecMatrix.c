@@ -21,6 +21,17 @@ void PrecMatrix(double Mjd_1, double Mjd_2, double matrizTransformada[3][3])
     // Precession matrix
     double matrizX[3][3], matrizY[3][3], matrizZ[3][3];
 
+    for (int i=0; i<3; i++)
+    {
+        for (int j=0; j<3; j++)
+        {
+            matrizX[i][j] = 0.0;
+            matrizY[i][j] = 0.0;
+            matrizZ[i][j] = 0.0;
+            matrizTransformada[i][j] = 0.0;
+        }
+    }
+
     R_z(-z, matrizX) ;
     R_y(theta, matrizY) ;
     R_z(-zeta, matrizZ);

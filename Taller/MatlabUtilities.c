@@ -74,7 +74,6 @@ void multiplicacion(int r1, int c1, int r2, int c2, double a[r1][c1], double b[r
 
 void transpuesta(int filas, int columnas, double a[filas][columnas], double transpuesta[columnas][filas])
 {
-
     for(int i=0; i<filas; i++)
     {
         for(int j=0; j<columnas; j++)
@@ -82,7 +81,6 @@ void transpuesta(int filas, int columnas, double a[filas][columnas], double tran
             transpuesta[j][i] = a[i][j];
         }
     }
-
 }
 
 bool isReal(double parteImaginaria)
@@ -123,9 +121,7 @@ double* raicesPolinomiales(double *op, int degree, double *zeror, double *zeroi)
             posicion++;
         }
     }
-
     return resultado;
-
 }
 
 double fix(double x)
@@ -140,3 +136,9 @@ double fix(double x)
     }
 
 }
+
+bool fequal(double a, double b)
+{
+    return fabs(a-b) < 0.0000000000001;
+}
+

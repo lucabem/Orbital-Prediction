@@ -11,10 +11,10 @@
 #define ARCS       (3600.0*180.0/3.14159265358979324)     // Arcseconds per radian
 
 // General
-#define MJD_J2000  51544.5             // Modif. Julian Date of J2000.0
-#define T_B1950    -0.500002108        // Epoch B1950
-#define c_light    299792457.999999984 // Speed of light  [m/s] DE200
-#define AU         149597870659.999996 // Astronomical unit [m] DE200
+#define MJD_J2000  (51544.5)             // Modif. Julian Date of J2000.0
+#define T_B1950    (-0.500002108)        // Epoch B1950
+#define c_light    (299792457.999999984) // Speed of light  [m/s] DE200
+#define AU         (149597870659.999996) // Astronomical unit [m] DE200
 
 // Physical parameters of the Earth, Sun and Moon
 

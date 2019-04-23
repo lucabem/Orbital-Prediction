@@ -29,4 +29,5 @@ double* raicesPolinomiales(double *op, int degree, double *zeror, double *zeroi)
 
 double fix(double x);
 
+bool fequal(double a, double b);
 #endif // MATLABUTILITIES_H_INCLUDED

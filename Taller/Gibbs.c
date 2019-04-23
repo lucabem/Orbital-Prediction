@@ -5,7 +5,7 @@
 #include <math.h>
 #include "angl.h"
 
-void gibbs (double r1[3],
+double gibbs (double r1[3],
               double r2[3],
               double r3[3],
               double vectVelocidadSal[3],
@@ -30,14 +30,9 @@ void gibbs (double r1[3],
     cross(r3, r1, q);
     cross(r1, r2, w);
 
-
-    double vp[3] = {p[0], p[1], p[2]};
-    double vq[3] = {q[0], q[1], q[2]};
-    double vw[3] = {w[0], w[1], w[2]};
-
     double pn[3], r1n[3];
 
-    unit(vp, pn);
+    unit(p, pn);
     unit(r1, r1n);
     double copa = asin(dot(3, pn, r1n));
 
@@ -94,4 +89,6 @@ void gibbs (double r1[3],
 
     angulos[0] = theta;
     angulos[1] = theta1;
+
+    return copa;
 }

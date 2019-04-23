@@ -33,6 +33,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Constantes.h" />
+		<Unit filename="DoubleR.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DoubleR.h" />
 		<Unit filename="EqnEquinox.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -44,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Frac.h" />
+		<Unit filename="GHAMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="GHAMatrix.h" />
 		<Unit filename="Gast.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,10 +60,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Gibbs.h" />
+		<Unit filename="HGibbs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="HGibbs.h" />
 		<Unit filename="IERS.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="IERS.h" />
 		<Unit filename="MatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>

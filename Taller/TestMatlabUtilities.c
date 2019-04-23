@@ -20,7 +20,7 @@ void Test_RaicesPolinomiales();
 bool fequal(double a, double b);
 
 const double epsilon = 0.0000000000001;
-
+/*
 int main()
 {
     Test_Norma();
@@ -51,6 +51,8 @@ int main()
     printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
     return 0;
 }
+
+*/
 
 void Test_Norma()
 {
@@ -265,10 +267,6 @@ void Test_RaicesPolinomiales()
 }
 
 
-bool fequal(double a, double b)
-{
-    return fabs(a-b) < epsilon;
-}
 
 
 
