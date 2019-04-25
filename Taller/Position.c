@@ -8,6 +8,8 @@ void Position (double lon, double lat, double h, double pos[3])
     double R_equ = R_Earth;
     double f     = f_Earth;
 
+
+
     double e2     = f*(2-f);
     // Square of eccentricity
     double CosLat = cos(lat);
@@ -20,5 +22,6 @@ void Position (double lon, double lat, double h, double pos[3])
     pos[0] =  (N+h)*CosLat*cos(lon);
     pos[1] =  (N+h)*CosLat*sin(lon);
     pos[2] =  ((1-e2)*N+h)*SinLat;
+
 
 }

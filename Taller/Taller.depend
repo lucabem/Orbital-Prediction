@@ -48,7 +48,7 @@
 
 1555411516 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1556040891 source:c:\users\luis\documents\github\taller\taller\example1.c
+1556195286 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -69,8 +69,9 @@
 	"PoleMatrix.h"
 	"Gast.h"
 	"GHAMatrix.h"
+	<assert.h>
 
-1555948528 c:\users\luis\documents\github\taller\taller\constantes.h
+1556195351 c:\users\luis\documents\github\taller\taller\constantes.h
 
 1555510756 c:\users\lucabem\documents\github\taller\taller\rpoly.h
 
@@ -121,7 +122,7 @@
 1555591624 source:c:\users\luis\documents\github\taller\taller\mjday.c
 	"Mjday.h"
 
-1555603117 source:c:\users\luis\documents\github\taller\taller\position.c
+1556194965 source:c:\users\luis\documents\github\taller\taller\position.c
 	"Constantes.h"
 	<math.h>
 

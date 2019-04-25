@@ -4,11 +4,11 @@
 
 
 // Mathematical constants
-#define PI 3.14159265358979324
-#define PI2        (2.0*3.14159265358979324)              // 2pi
-#define RAD        (3.14159265358979324 / 180.0)          // Radians per degree
-#define DEG        (180.0 / 3.14159265358979324 )         // Degrees per radian
-#define ARCS       (3600.0*180.0/3.14159265358979324)     // Arcseconds per radian
+#define PI 3.1415926535897932384626433832795028841971693993751
+#define PI2        (2.0*3.1415926535897932384626433832795028841971693993751)              // 2pi
+#define RAD        (3.1415926535897932384626433832795028841971693993751 / 180.0)          // Radians per degree
+#define DEG        (180.0 / 3.1415926535897932384626433832795028841971693993751 )         // Degrees per radian
+#define ARCS       (3600.0*180.0/3.1415926535897932384626433832795028841971693993751)     // Arcseconds per radian
 
 // General
 #define MJD_J2000  (51544.5)             // Modif. Julian Date of J2000.0

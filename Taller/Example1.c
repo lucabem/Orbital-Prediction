@@ -19,6 +19,8 @@
 #include "PoleMatrix.h"
 #include "Gast.h"
 #include "GHAMatrix.h"
+#include <assert.h>
+
 
 int main()
 {
@@ -83,6 +85,7 @@ int main()
     double lon = RAD*(-121.35072); // [rad]
     double alt = 0.09981638e3;     // [m]
 
+
     double Rs[3];
     Position(lon, lat, alt, Rs); // vector [a b c] -> matrix 1x3
 
@@ -139,9 +142,9 @@ int main()
 
     double rsite1[3] = {rsite1Matriz[0][0], rsite1Matriz[1][0], rsite1Matriz[2][0]};
 
-    printf("\n -----CALCULO RSITE1----- \n");
+    printf("\n ----- CALCULO RSITE1 ----- \n");
     for (int i=0; i<3; i++)
-        printf("%0.5f \n", rsite1[i]);
+        printf("%0.12f \n", rsite1[i]);
     printf("\n -------------------- \n");
 
 
