@@ -1,13 +1,13 @@
 #include "MatlabUtilities.h"
 
-long double Norma(long double v[])
+ double Norma( double v[])
 {
     return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 }
 
-long double dot(int dim, long double v1[dim], long double v2[dim])
+ double dot(int dim,  double v1[dim],  double v2[dim])
 {
-    long double suma = 0;
+     double suma = 0;
     for(int i=0; i<dim; i++)
     {
         suma = suma + v1[i]*v2[i];
@@ -15,7 +15,7 @@ long double dot(int dim, long double v1[dim], long double v2[dim])
     return suma;
 }
 
-int Sing(long double x)
+int Sing( double x)
 {
     if ( x<0 )
     {
@@ -31,7 +31,7 @@ int Sing(long double x)
     }
 }
 
-void cross(long double v1[], long double v2[], long double cr[3])
+void cross( double v1[],  double v2[],  double cr[3])
 {
     cr[0] = v1[1]*v2[2]-v1[2]*v2[1];
     cr[1] = v1[2]*v2[0]-v1[0]*v2[2];
@@ -39,9 +39,9 @@ void cross(long double v1[], long double v2[], long double cr[3])
 
 }
 
-long double det(int dimension, long double matrix[dimension][dimension])
+ double det(int dimension,  double matrix[dimension][dimension])
 {
-    long double det = 0;
+     double det = 0;
     if(dimension == 3)
     {
         for(int i=0; i<3; i++)
@@ -56,7 +56,7 @@ long double det(int dimension, long double matrix[dimension][dimension])
     return det;
 }
 
-void multiplicacion(int r1, int c1, int r2, int c2, long double a[r1][c1], long double b[r2][c2], long double c[r1][c2])
+void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b[r2][c2],  double c[r1][c2])
 {
     int i,j,k;
     for(int x=0; x<r1; x++)
@@ -77,7 +77,7 @@ void multiplicacion(int r1, int c1, int r2, int c2, long double a[r1][c1], long 
 
 }
 
-void transpuesta(int filas, int columnas, long double a[filas][columnas], long double transpuesta[columnas][filas])
+void transpuesta(int filas, int columnas,  double a[filas][columnas],  double transpuesta[columnas][filas])
 {
     for(int i=0; i<filas; i++)
     {
@@ -88,19 +88,19 @@ void transpuesta(int filas, int columnas, long double a[filas][columnas], long d
     }
 }
 
-bool isReal(long double parteImaginaria)
+bool isReal( double parteImaginaria)
 {
     return (parteImaginaria) == 0;
 }
 
-void zeros(int m, int n, long double matriz[m][n])
+void zeros(int m, int n,  double matriz[m][n])
 {
     for (int i=0; i<m; i++)
         for (int j=0; j<n; j++)
             matriz[i][j] = 0.0;
 }
 
-long double* raicesPolinomiales(long double *op, int degree, long double *zeror, long double *zeroi)
+ double* raicesPolinomiales( double *op, int degree,  double *zeror,  double *zeroi)
 {
 
     int info[7] = {1,2,3,4,5,6,7};
@@ -116,7 +116,7 @@ long double* raicesPolinomiales(long double *op, int degree, long double *zeror,
         }
     }
 
-    long double resultado[contado];
+     double resultado[contado];
     int posicion = 0;
     for(int i=0; i<degree; i++)
     {
@@ -129,7 +129,7 @@ long double* raicesPolinomiales(long double *op, int degree, long double *zeror,
     return resultado;
 }
 
-long double fix(long double x)
+ double fix( double x)
 {
     if (x >= 0)
     {
@@ -142,7 +142,7 @@ long double fix(long double x)
 
 }
 
-bool fequal(long double a, long double b)
+bool fequal( double a,  double b)
 {
     return fabs(a-b) < 0.0000000000001;
 }

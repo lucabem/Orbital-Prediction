@@ -1,6 +1,6 @@
 #ifndef TIMEDIFF_H_INCLUDED
 #define TIMEDIFF_H_INCLUDED
 
-void timeDiff(long double UT1_UTC, long double TAI_UTC, long double diferenciaTiempos[5] );
+void timeDiff( double UT1_UTC,  double TAI_UTC,  double diferenciaTiempos[5] );
 
 #endif // TIMEDIFF_H_INCLUDED

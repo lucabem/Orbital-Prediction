@@ -2,22 +2,22 @@
 #include "Constantes.h"
 #include "MatlabUtilities.h"
 
-void anglesg(long double Alpha1, long double Alpha2, long double Alpha3, long double Delta1, long double Delta2, long double Delta3,
-             long double JD1[3], long double JD2[3], long double JD3[3],
-             long double RS1[3], long double RS2[3], long double RS3[3])
+void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  double Delta2,  double Delta3,
+              double JD1[3],  double JD2[3],  double JD3[3],
+              double RS1[3],  double RS2[3],  double RS3[3])
 {
-    long double Mu = 398600.4418e9;
-    long double Rad = 180/PI;
+     double Mu = 398600.4418e9;
+     double Rad = 180/PI;
 
-    long double R1[3][1], R2[3][1], R3[3][1];
+     double R1[3][1], R2[3][1], R3[3][1];
     zeros(3, 1, R1);
     zeros(3, 1, R2);
     zeros(3, 1, R3);
 
-    long double Tau1 = (JD1-JD2)*86400;
-    long double Tau3 = (JD3-JD2)*86400;
+     double Tau1 = (JD1-JD2)*86400;
+     double Tau3 = (JD3-JD2)*86400;
 
-    long double L1[3], L2[3], L3[3];
+     double L1[3], L2[3], L3[3];
 
     L1[0] = cos(Delta1)*cos(Alpha1);
     L1[1] = cos(Delta1)*sin(Alpha1);
@@ -31,7 +31,7 @@ void anglesg(long double Alpha1, long double Alpha2, long double Alpha3, long do
     L3[1] = cos(Delta3)*sin(Alpha3);
     L3[2] = sin(Delta3);
 
-    long double LMatIi[3][3], RSMat[3][3];
+     double LMatIi[3][3], RSMat[3][3];
     for (int i=0; i<3; i++)
     {
         LMatIi[i][0] = L1[i];
@@ -42,9 +42,9 @@ void anglesg(long double Alpha1, long double Alpha2, long double Alpha3, long do
         RSMat[i][2] = RS3[i];
     }
 
-    long double D = det(3, LMatIi);
+     double D = det(3, LMatIi);
 
-    long double LMatI[3][3];
+     double LMatI[3][3];
 
     LMatI[0][0] = ( L2[1]*L3[2]-L2[2]*L3[1])/D;
     LMatI[1][0] = (-L1[1]*L3[2]+L1[2]*L3[1])/D;
@@ -56,22 +56,22 @@ void anglesg(long double Alpha1, long double Alpha2, long double Alpha3, long do
     LMatI[1][2] = (-L1[0]*L3[1]+L1[1]*L3[0])/D;
     LMatI[2][2] = ( L1[0]*L2[1]-L1[1]*L2[0])/D;
 
-    long double LIR[3][3];
+     double LIR[3][3];
 
     multiplicacion(3, 3, 3, 3, LMatI, RSMat, LIR);
 
-    long double a1  = Tau3/(Tau3 - Tau1);
-    long double a1u = (Tau3*((Tau3-Tau1)*(Tau3-Tau1) - Tau3*Tau3 ))/(6.0*(Tau3 - Tau1));
-    long double a3  = -Tau1 / (Tau3 - Tau1);
-    long double a3u = -(Tau1*((Tau3-Tau1)*(Tau3-Tau1) - Tau1*Tau1 ))/(6.0*(Tau3 - Tau1));
+     double a1  = Tau3/(Tau3 - Tau1);
+     double a1u = (Tau3*((Tau3-Tau1)*(Tau3-Tau1) - Tau3*Tau3 ))/(6.0*(Tau3 - Tau1));
+     double a3  = -Tau1 / (Tau3 - Tau1);
+     double a3u = -(Tau1*((Tau3-Tau1)*(Tau3-Tau1) - Tau1*Tau1 ))/(6.0*(Tau3 - Tau1));
 
-    long double D1 = LIR[1][0]*a1 - LIR[1][1] + LIR[1][2]*a3;
-    long double D2 = LIR[1][0]*a1u + LIR[1][2]*a3u;
+     double D1 = LIR[1][0]*a1 - LIR[1][1] + LIR[1][2]*a3;
+     double D2 = LIR[1][0]*a1u + LIR[1][2]*a3u;
 
-    long double L2DotRS = dot(3, L2, RS2);
-    long double magRS2 = Norma(RS2);
+     double L2DotRS = dot(3, L2, RS2);
+     double magRS2 = Norma(RS2);
 
-    long double Poly[16];
+     double Poly[16];
     Poly [ 0]=  1.0;  // r2^8th variable!!!!!!!!!!!!!!
     Poly [ 1]=  0.0;
     Poly [ 2]=  - (D1*D1 + 2.0*D1*L2DotRS + magRS2*magRS2);
@@ -89,10 +89,10 @@ void anglesg(long double Alpha1, long double Alpha2, long double Alpha3, long do
     Poly [14]=  0.0;
     Poly [15]=  0.0;
 
-    long double zeror[15], zeroi[15];
-    long double *resultado = raicesPolinomiales(Poly, 15, zeror, zeroi);
+     double zeror[15], zeroi[15];
+     double *resultado = raicesPolinomiales(Poly, 15, zeror, zeroi);
 
-    long double BigR2 = 0.0;
+     double BigR2 = 0.0;
 
     for (int i=0; i<15; i++)
     {

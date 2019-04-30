@@ -7,27 +7,27 @@
 #define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
 #include <stdlib.h>
 
-long double Norma(long double v[]);
+ double Norma( double v[]);
 
-long double dot(int dim, long double v1[dim], long double v2[dim]);
+ double dot(int dim,  double v1[dim],  double v2[dim]);
 
-int Sing(long double x);
+int Sing( double x);
 
-void cross(long double v1[], long double v2[], long double cr[3]);
+void cross( double v1[],  double v2[],  double cr[3]);
 
-long double det(int dimension, long double matrix[dimension][dimension]);
+ double det(int dimension,  double matrix[dimension][dimension]);
 
-void multiplicacion(int r1, int c1, int r2, int c2, long double a[r1][c1], long double b[r2][c2], long double c[r1][c2]);
+void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b[r2][c2],  double c[r1][c2]);
 
-void transpuesta(int filas, int columnas, long double a[filas][columnas], long double transpuesta[columnas][filas]);
+void transpuesta(int filas, int columnas,  double a[filas][columnas],  double transpuesta[columnas][filas]);
 
-void zeros(int m, int n, long double matriz[m][n]);
+void zeros(int m, int n,  double matriz[m][n]);
 
-bool isReal(long double parteImaginaria);
+bool isReal( double parteImaginaria);
 
-long double* raicesPolinomiales(long double *op, int degree, long double *zeror, long double *zeroi);
+ double* raicesPolinomiales( double *op, int degree,  double *zeror,  double *zeroi);
 
-long double fix(long double x);
+ double fix( double x);
 
-bool fequal(long double a, long double b);
+bool fequal( double a,  double b);
 #endif // MATLABUTILITIES_H_INCLUDED
