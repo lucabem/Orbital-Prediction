@@ -17,6 +17,7 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1, double 
     double Tau1 = (JD1-JD2)*86400;
     double Tau3 = (JD3-JD2)*86400;
 
+    double L1[3], L2[3], L3[3];
 
     L1[0] = cos(Delta1)*cos(Alpha1);
     L1[1] = cos(Delta1)*sin(Alpha1);
