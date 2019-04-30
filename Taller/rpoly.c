@@ -31,31 +31,31 @@
 #include <math.h>
 #include <stdlib.h>
 
-void quad(double a,double b1,double c,double *sr,double *si,
-        double *lr,double *li);
+void quad(double a, double b1, double c, double *sr, double *si,
+         double *lr, double *li);
 void fxshfr(int l2, int *nz);
-void quadit(double *uu,double *vv,int *nz);
-void realit(double sss, int *nz, int *iflag);
+void quadit( double *uu, double *vv,int *nz);
+void realit( double sss, int *nz, int *iflag);
 void calcsc(int *type);
 void nextk(int *type);
-void newest(int type,double *uu,double *vv);
-void quadsd(int n,double *u,double *v,double *p,double *q,
-        double *a,double *b);
-double *p,*qp,*k,*qk,*svk;
-double sr,si,u,v,a,b,c,d,a1,a2;
-double a3,a6,a7,e,f,g,h,szr,szi,lzr,lzi;
-double eta,are,mre;
+void newest(int type, double *uu, double *vv);
+void quadsd(int n, double *u, double *v, double *p, double *q,
+         double *a, double *b);
+ double *p,*qp,*k,*qk,*svk;
+ double sr,si,u,v,a,b,c,d,a1,a2;
+ double a3,a6,a7,e,f,g,h,szr,szi,lzr,lzi;
+ double eta,are,mre;
 int n,nn,nmi,zerok;
 static int itercnt;
 
-int rpoly(double *op, int degree, double *zeror, double *zeroi, int info[] )
+int rpoly( double *op, int degree,  double *zeror,  double *zeroi, int info[] )
 {
-    double t,aa,bb,cc,*temp,factor,rot;
-    double *pt;
-    double lo,max,min,xx,yy,cosr,sinr,xxx,x,sc,bnd;
-    double xm,ff,df,dx,infin,smalno,base;
+     double t,aa,bb,cc,*temp,factor,rot;
+     double *pt;
+     double lo,max,min,xx,yy,cosr,sinr,xxx,x,sc,bnd;
+     double xm,ff,df,dx,infin,smalno,base;
     int cnt,nz,i,j,jj,l,nm1,zerok;
-    long sec;
+     long sec;
 
     sec = clock();
 
@@ -89,13 +89,13 @@ int rpoly(double *op, int degree, double *zeror, double *zeroi, int info[] )
 /*
  *  Allocate memory here
  */
-    temp = malloc((degree+1)*sizeof(double));
-    pt = malloc((degree+1)*sizeof(double));
-    p = malloc((degree+1)*sizeof(double));
-    qp = malloc((degree+1)*sizeof(double));
-    k = malloc((degree+1)*sizeof(double));
-    qk = malloc((degree+1)*sizeof(double));
-    svk = malloc((degree+1)*sizeof(double));
+    temp = malloc((degree+1)*sizeof( double));
+    pt = malloc((degree+1)*sizeof( double));
+    p = malloc((degree+1)*sizeof( double));
+    qp = malloc((degree+1)*sizeof( double));
+    k = malloc((degree+1)*sizeof( double));
+    qk = malloc((degree+1)*sizeof( double));
+    svk = malloc((degree+1)*sizeof( double));
 /*  Make a copy of the coefficients. */
     for (i=0;i<=n;i++)
         p[i] = op[i];
@@ -154,7 +154,7 @@ _110:
     }
     pt[n] = - pt[n];
 /*  Compute upper estimate of bound. */
-    x = exp((log(-pt[n])-log(pt[0])) / (double)n);
+    x = exp((log(-pt[n])-log(pt[0])) / ( double)n);
 /*  If Newton step at the origin is better, use it. */
     if (pt[n-1] != 0.0) {
         xm = -pt[n]/pt[n-1];
@@ -191,7 +191,7 @@ _110:
  */
     nm1 = n - 1;
     for (i=1;i<n;i++)
-        k[i] = (double)(n-i)*p[i]/(double)n;
+        k[i] = ( double)(n-i)*p[i]/( double)n;
     k[0] = p[0];
     aa = p[n];
     bb = p[n-1];
@@ -224,7 +224,7 @@ _110:
         temp[i] = k[i];
 /*  Loop to select the quadratic corresponding to each new shift. */
     for (cnt = 0;cnt < 20;cnt++) {
-/*  Quadratic corresponds to a double shift to a
+/*  Quadratic corresponds to a  double shift to a
  *  non-real point and its complex conjugate. The point
  *  has modulus bnd and amplitude rotated by 94 degrees
  *  from the previous shift.
@@ -290,9 +290,9 @@ _99:
  */
 void fxshfr(int l2,int *nz)
 {
-    double svu,svv,ui,vi,s;
-    double betas,betav,oss,ovv,ss,vv,ts,tv;
-    double ots,otv,tvv,tss;
+     double svu,svv,ui,vi,s;
+     double betas,betav,oss,ovv,ss,vv,ts,tv;
+     double ots,otv,tvv,tss;
     int type, i,j,iflag,vpass,spass,vtry,stry;
 
     *nz = 0;
@@ -366,7 +366,7 @@ _40:
 	stry = 1;
 	betas *=0.25;
 	if (iflag == 0) goto _50;
-/*  If linear iteration signals an almost double real
+/*  If linear iteration signals an almost  double real
  *  zero attempt quadratic iteration.
  */
 	ui = -(s+s);
@@ -401,10 +401,10 @@ _70:
  *  uu, vv - coefficients of starting quadratic.
  *  nz - number of zeros found.
  */
-void quadit(double *uu,double *vv,int *nz)
+void quadit( double *uu, double *vv,int *nz)
 {
-    double ui,vi;
-    double mp,omp,ee,relstp,t,zm;
+     double ui,vi;
+     double mp,omp,ee,relstp,t,zm;
     int type,i,j,tried;
 
     *nz = 0;
@@ -483,10 +483,10 @@ _50:
  *  nz  - number of zeros found
  *  iflag - flag to indicate a pair of zeros near real axis.
  */
-void realit(double sss, int *nz, int *iflag)
+void realit( double sss, int *nz, int *iflag)
 {
-    double pv,kv,t,s;
-    double ms,mp,omp,ee;
+     double pv,kv,t,s;
+     double ms,mp,omp,ee;
     int i,j;
 
     *nz = 0;
@@ -609,7 +609,7 @@ _10:
  */
 void nextk(int *type)
 {
-    double temp;
+     double temp;
 	int i;
 
     if (*type == 3) {
@@ -645,9 +645,9 @@ void nextk(int *type)
 /*  Compute new estimates of the quadratic coefficients
  *  using the scalars computed in calcsc.
  */
-void newest(int type,double *uu,double *vv)
+void newest(int type, double *uu, double *vv)
 {
-    double a4,a5,b1,b2,c1,c2,c3,c4,temp;
+     double a4,a5,b1,b2,c1,c2,c3,c4,temp;
 
 /* Use formulas appropriate to setting of type. */
     if (type == 3) {
@@ -685,10 +685,10 @@ void newest(int type,double *uu,double *vv)
 /*  Divides p by the quadratic 1,u,v placing the quotient
  *  in q and the remainder in a,b.
  */
-void quadsd(int nn,double *u,double *v,double *p,double *q,
-    double *a,double *b)
+void quadsd(int nn, double *u, double *v, double *p, double *q,
+     double *a, double *b)
 {
-    double c;
+     double c;
     int i;
 
     *b = p[0];
@@ -708,10 +708,10 @@ void quadsd(int nn,double *u,double *v,double *p,double *q,
  *  are complex. The smaller real zero is found directly from
  *  the product of the zeros c/a.
  */
-void quad(double a,double b1,double c,double *sr,double *si,
-        double *lr,double *li)
+void quad( double a, double b1, double c, double *sr, double *si,
+         double *lr, double *li)
 {
-    double b,d,e;
+     double b,d,e;
 
     if (a == 0.0) {         /* less than two roots */
         if (b1 != 0.0) *sr = -c/b1;

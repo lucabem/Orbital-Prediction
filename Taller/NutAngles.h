@@ -1,6 +1,6 @@
 #ifndef NUTANGLES_H_INCLUDED
 #define NUTANGLES_H_INCLUDED
 
-void NutAngles(double Mjd_TT, double angulosNutacion[2]);
+void NutAngles(long double Mjd_TT, long double angulosNutacion[2]);
 
 #endif // NUTANGLES_H_INCLUDED

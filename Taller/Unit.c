@@ -2,10 +2,10 @@
 #include "MatlabUtilities.h"
 #include "Unit.h"
 
-void unit (double vect[3], double vectNormalizado[3])
+void unit (long double vect[3], long double vectNormalizado[3])
 {
-    double normaVect = Norma(vect);
-    double small = 0.000001;
+    long double normaVect = Norma(vect);
+    long double small = 0.000001;
 
     if ( normaVect > small)
         for (int i=0; i<3; i++)

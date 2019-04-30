@@ -4,16 +4,16 @@
 #include "MatlabUtilities.h"
 #include "IERS.h"
 
-void IERS(double(*eop)[13], double Mjd_UTC, char interp, double salida[6])
+void IERS(long double(*eop)[13], long double Mjd_UTC, char interp, long double salida[6])
 {
-    double Arcs = 3600*18/PI;
+    long double Arcs = 3600*18/PI;
 
     if (interp == 'l')
     {
-        double mj = floor(Mjd_UTC);
+        long double mj = floor(Mjd_UTC);
         int nop = 20026;
 
-        double preeop[13], nexteop[13];
+        long double preeop[13], nexteop[13];
 
         for (int i=0; i<nop; i++)
         {
@@ -28,15 +28,15 @@ void IERS(double(*eop)[13], double Mjd_UTC, char interp, double salida[6])
             }
         }
 
-        double mfme = 1440*(Mjd_UTC-floor(Mjd_UTC));
-        double fixf = mfme/1440;
+        long double mfme = 1440*(Mjd_UTC-floor(Mjd_UTC));
+        long double fixf = mfme/1440;
 
-        double UT1_UTC = preeop[6] + (nexteop[6]-preeop[6])*fixf;
-        double TAI_UTC = preeop[12];
-        double x_pole  = preeop[4]+(nexteop[4]-preeop[4])*fixf;
-        double y_pole  = preeop[5]+(nexteop[5]-preeop[5])*fixf;
-        double ddpsi   = preeop[8]+(nexteop[8]-preeop[8])*fixf;
-        double ddeps   = preeop[9]+(nexteop[9]-preeop[9])*fixf;
+        long double UT1_UTC = preeop[6] + (nexteop[6]-preeop[6])*fixf;
+        long double TAI_UTC = preeop[12];
+        long double x_pole  = preeop[4]+(nexteop[4]-preeop[4])*fixf;
+        long double y_pole  = preeop[5]+(nexteop[5]-preeop[5])*fixf;
+        long double ddpsi   = preeop[8]+(nexteop[8]-preeop[8])*fixf;
+        long double ddeps   = preeop[9]+(nexteop[9]-preeop[9])*fixf;
 
         x_pole  = x_pole/Arcs;
         y_pole  = y_pole/Arcs;
@@ -53,10 +53,10 @@ void IERS(double(*eop)[13], double Mjd_UTC, char interp, double salida[6])
     }
     else if (interp == 'n')
     {
-        double mj = (floor(Mjd_UTC));
-        double nop = 20026;
+        long double mj = (floor(Mjd_UTC));
+        long double nop = 20026;
 
-        double aux[13];
+        long double aux[13];
 
         for (int i=0; i<nop; i++)
         {
@@ -71,12 +71,12 @@ void IERS(double(*eop)[13], double Mjd_UTC, char interp, double salida[6])
             }
         }
 
-        double UT1_UTC = aux[6];
-        double TAI_UTC = aux[12];
-        double x_pole  = aux[4]/Arcs;
-        double y_pole  = aux[5]/Arcs;
-        double ddpsi   = aux[8]/Arcs;
-        double ddeps   = aux[9]/Arcs;
+        long double UT1_UTC = aux[6];
+        long double TAI_UTC = aux[12];
+        long double x_pole  = aux[4]/Arcs;
+        long double y_pole  = aux[5]/Arcs;
+        long double ddpsi   = aux[8]/Arcs;
+        long double ddeps   = aux[9]/Arcs;
 
         salida[0] = UT1_UTC;
         salida[1] = TAI_UTC;

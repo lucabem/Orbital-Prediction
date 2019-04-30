@@ -7,41 +7,41 @@
 #include <string.h>
 #include "NewtonNu.h"
 
-void rv2coe (double vectorPosicion[3], double vectorVelocidad[3], double vectorResultado[12])
+void rv2coe (long double vectorPosicion[3], long double vectorVelocidad[3], long double vectorResultado[12])
 {
-    double p, a, ecc, incl, omega, argp, nu, m, arglat, truelon, lonper;
-    double mu = 398600.4418e9;
-    double small = 1e-10;
-    double undefined = 999999.1;
+    long double p, a, ecc, incl, omega, argp, nu, m, arglat, truelon, lonper;
+    long double mu = 398600.4418e9;
+    long double small = 1e-10;
+    long double undefined = 999999.1;
 
-    double normaVectPosicion = Norma(vectorPosicion);
-    double normaVectVelocidad = Norma(vectorVelocidad);
+    long double normaVectPosicion = Norma(vectorPosicion);
+    long double normaVectVelocidad = Norma(vectorVelocidad);
 
-    double vHbar[3];
+    long double vHbar[3];
     cross(vectorPosicion, vectorVelocidad, vHbar);
 
-    double normaHbar = Norma(vHbar);
+    long double normaHbar = Norma(vHbar);
 
-    double saliadNewton[2];
+    long double saliadNewton[2];
 
     if ( normaHbar > small)
     {
-        double nbar[3];
+        long double nbar[3];
         nbar[0] = -vHbar[1];
         nbar[1] =  vHbar[0];
         nbar[2] =   0.0;
 
-        double normaNbar = Norma(nbar);
-        double c1 = normaVectVelocidad*normaVectVelocidad - mu / normaVectPosicion;
+        long double normaNbar = Norma(nbar);
+        long double c1 = normaVectVelocidad*normaVectVelocidad - mu / normaVectPosicion;
 
-        double rdotv = dot(3, vectorPosicion, vectorVelocidad);
-        double ebar[3];
+        long double rdotv = dot(3, vectorPosicion, vectorVelocidad);
+        long double ebar[3];
         for (int i=0; i<3; i++)
             ebar[i] = (c1*vectorPosicion[i] - rdotv*vectorVelocidad[i])/mu;
 
         ecc = Norma( ebar );
 
-        double sme = ( normaVectVelocidad*normaVectVelocidad*0.5  ) - ( mu /normaVectPosicion );
+        long double sme = ( normaVectVelocidad*normaVectVelocidad*0.5  ) - ( mu /normaVectPosicion );
 
         if ( fabs( sme ) > small )
         {
@@ -54,7 +54,7 @@ void rv2coe (double vectorPosicion[3], double vectorVelocidad[3], double vectorR
 
         p = normaHbar*normaHbar/mu;
 
-        double hk  = vHbar[2]/normaHbar;
+        long double hk  = vHbar[2]/normaHbar;
         incl= acos( hk );
 
         char typeorbit[2]= "ei";
@@ -85,7 +85,7 @@ void rv2coe (double vectorPosicion[3], double vectorVelocidad[3], double vectorR
         }
 
         //--------  find longitude of ascending node ------------
-        double temp = 0.0;
+        long double temp = 0.0;
         if ( normaNbar > small )
         {
             temp = nbar[0] / normaNbar;

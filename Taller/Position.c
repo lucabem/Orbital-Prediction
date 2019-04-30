@@ -3,21 +3,21 @@
 #include <math.h>
 
 
-void Position (double lon, double lat, double h, double pos[3])
+void Position (long double lon, long double lat, long double h, long double pos[3])
 {
-    double R_equ = R_Earth;
-    double f     = f_Earth;
+    long double R_equ = R_Earth;
+    long double f     = f_Earth;
 
 
 
-    double e2     = f*(2-f);
+    long double e2     = f*(2-f);
     // Square of eccentricity
-    double CosLat = cos(lat);
+    long double CosLat = cos(lat);
     // (Co)sine of geodetic latitude
-    double SinLat = sin(lat);
+    long double SinLat = sin(lat);
 
     // Position vector
-    double N = R_equ/sqrt(1-e2*SinLat*SinLat);
+    long double N = R_equ/sqrt(1-e2*SinLat*SinLat);
 
     pos[0] =  (N+h)*CosLat*cos(lon);
     pos[1] =  (N+h)*CosLat*sin(lon);

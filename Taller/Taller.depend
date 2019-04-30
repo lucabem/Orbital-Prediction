@@ -3,10 +3,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1556577281 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\matlabutilities.h
+1556625243 c:\users\luis\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
@@ -46,9 +46,9 @@
 	<math.h>
 	<stdlib.h>
 
-1556539285 c:\users\luis\documents\github\taller\taller\rpoly.h
+1556625242 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\example1.c
+1556625276 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -109,37 +109,37 @@
 	<math.h>
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\mjday.h
+1556625244 c:\users\luis\documents\github\taller\taller\mjday.h
 	<math.h>
 	"MatlabUtilities.h"
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\iers.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\iers.c
 	"Constantes.h"
 	<math.h>
 	"MatlabUtilities.h"
 	"IERS.h"
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\mjday.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\mjday.c
 	"Mjday.h"
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\position.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\position.c
 	"Constantes.h"
 	<math.h>
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\angl.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\angl.c
 	"MatlabUtilities.h"
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\frac.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\frac.c
 	<math.h>
 	"Frac.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\frac.h
+1556625242 c:\users\luis\documents\github\taller\taller\frac.h
 
 1556539285 source:c:\users\luis\documents\github\taller\taller\unit.c
 	"MatlabUtilities.h"
 	"Unit.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\unit.h
+1556625243 c:\users\luis\documents\github\taller\taller\unit.h
 
 1556539285 source:c:\users\luis\documents\github\taller\taller\timediff.c
 
@@ -152,29 +152,29 @@
 	<string.h>
 	"NewtonNu.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\rv2coe.h
+1556625243 c:\users\luis\documents\github\taller\taller\rv2coe.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\r_z.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\r_z.c
 	"R_z.h"
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\r_z.h
+1556625241 c:\users\luis\documents\github\taller\taller\r_z.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\r_y.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\r_y.c
 	"R_y.h"
 	<math.h>
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\r_y.h
+1556625242 c:\users\luis\documents\github\taller\taller\r_y.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\r_x.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\r_x.c
 	"R_x.h"
 	<math.h>
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\r_x.h
+1556625242 c:\users\luis\documents\github\taller\taller\r_x.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\precmatrix.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\precmatrix.c
 	"PrecMatrix.h"
 	"R_x.h"
 	"R_y.h"
@@ -183,42 +183,42 @@
 	"MatlabUtilities.h"
 	<stdio.h>
 
-1556539285 c:\users\luis\documents\github\taller\taller\precmatrix.h
+1556625243 c:\users\luis\documents\github\taller\taller\precmatrix.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\gmst.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\gmst.c
 	"gmst.h"
 	"Frac.h"
 	<math.h>
 	"Constantes.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\gmst.h
+1556625243 c:\users\luis\documents\github\taller\taller\gmst.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\polematrix.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\polematrix.c
 	"PoleMatrix.h"
 	"R_x.h"
 	"R_y.h"
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\polematrix.h
+1556625243 c:\users\luis\documents\github\taller\taller\polematrix.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\meanobliquity.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\meanobliquity.c
 	"MeanObliquity.h"
 	"Constantes.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\meanobliquity.h
+1556625242 c:\users\luis\documents\github\taller\taller\meanobliquity.h
 
-1556539285 c:\users\luis\documents\github\taller\taller\position.h
+1556625241 c:\users\luis\documents\github\taller\taller\position.h
 
-1556539285 c:\users\luis\documents\github\taller\taller\angl.h
+1556625242 c:\users\luis\documents\github\taller\taller\angl.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\nutangles.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\nutangles.c
 	"NutAngles.h"
 	"Constantes.h"
 	<math.h>
 
-1556539285 c:\users\luis\documents\github\taller\taller\nutangles.h
+1556625243 c:\users\luis\documents\github\taller\taller\nutangles.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\nutmatrix.c
+1556625244 source:c:\users\luis\documents\github\taller\taller\nutmatrix.c
 	"NutMatrix.h"
 	"MeanObliquity.h"
 	"NutAngles.h"
@@ -226,17 +226,17 @@
 	"R_z.h"
 	"MatlabUtilities.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\nutmatrix.h
+1556625243 c:\users\luis\documents\github\taller\taller\nutmatrix.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\eqnequinox.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\eqnequinox.c
 	"EqnEquinox.h"
 	"NutAngles.h"
 	"MeanObliquity.h"
 	"math.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\eqnequinox.h
+1556625243 c:\users\luis\documents\github\taller\taller\eqnequinox.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\gast.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\gast.c
 	"Gast.h"
 	"timeDiff.h"
 	"gmst.h"
@@ -245,11 +245,11 @@
 	"IERS.h"
 	"Constantes.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\gast.h
+1556625242 c:\users\luis\documents\github\taller\taller\gast.h
 
-1556539285 c:\users\luis\documents\github\taller\taller\timediff.h
+1556625243 c:\users\luis\documents\github\taller\taller\timediff.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\gibbs.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\gibbs.c
 	"Gibbs.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
@@ -257,17 +257,17 @@
 	<math.h>
 	"angl.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\gibbs.h
+1556625242 c:\users\luis\documents\github\taller\taller\gibbs.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\newtonnu.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\newtonnu.c
 	"NewtonNu.h"
 	<math.h>
 	"MatlabUtilities.h"
 	"Constantes.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\newtonnu.h
+1556625243 c:\users\luis\documents\github\taller\taller\newtonnu.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\hgibbs.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\hgibbs.c
 	"HGibbs.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
@@ -275,9 +275,9 @@
 	"Unit.h"
 	"angl.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\hgibbs.h
+1556625242 c:\users\luis\documents\github\taller\taller\hgibbs.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\doubler.c
+1556625271 source:c:\users\luis\documents\github\taller\taller\doubler.c
 	"DoubleR.h"
 	<math.h>
 	"MatlabUtilities.h"
@@ -285,28 +285,28 @@
 	<stdio.h>
 	<stdlib.h>
 
-1556539285 c:\users\luis\documents\github\taller\taller\doubler.h
+1556625267 c:\users\luis\documents\github\taller\taller\doubler.h
 
-1556539285 c:\users\luis\documents\github\taller\taller\iers.h
+1556625240 c:\users\luis\documents\github\taller\taller\iers.h
 
-1556539285 source:c:\users\luis\documents\github\taller\taller\ghamatrix.c
+1556625242 source:c:\users\luis\documents\github\taller\taller\ghamatrix.c
 	"GHAMatrix.h"
 	"R_z.h"
 	"Gast.h"
 
-1556539285 c:\users\luis\documents\github\taller\taller\ghamatrix.h
+1556625242 c:\users\luis\documents\github\taller\taller\ghamatrix.h
 
-1556575341 source:c:\users\luis\documents\github\taller\taller\lambert_gooding.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\lambert_gooding.c
 	"lambert_gooding.h"
 	<math.h>
 
-1556575039 c:\users\luis\documents\github\taller\taller\lambert_gooding.h
+1556625241 c:\users\luis\documents\github\taller\taller\lambert_gooding.h
 	<stdbool.h>
 
-1556577595 source:c:\users\luis\documents\github\taller\taller\anglesg.c
+1556625243 source:c:\users\luis\documents\github\taller\taller\anglesg.c
 	"Anglesg.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
 
-1556576022 c:\users\luis\documents\github\taller\taller\anglesg.h
+1556625243 c:\users\luis\documents\github\taller\taller\anglesg.h
 

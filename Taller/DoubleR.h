@@ -1,13 +1,13 @@
 #ifndef DOUBLER_H_INCLUDED
 #define DOUBLER_H_INCLUDED
 
-void doubler (double cc1, double cc2,
-              double magrsite1, double magrsite2,
-              double magr1in, double magr2in,
-              double los1[3], double los2[3], double los3[3],
-              double rsite1[3], double rsite2[3], double rsite3[3],
-              double t1, double t3, char direct,
-              double r2[3], double r3[3], double sal_f1_f2_q1_magr1_magr2_a_deltae32[7]
+void doubler (long double cc1, long double cc2,
+              long double magrsite1, long double magrsite2,
+              long double magr1in, long double magr2in,
+              long double los1[3], long double los2[3], long double los3[3],
+              long double rsite1[3], long double rsite2[3], long double rsite3[3],
+              long double t1, long double t3, char direct,
+              long double r2[3], long double r3[3], long double sal_f1_f2_q1_magr1_magr2_a_deltae32[7]
              );
 
-#endif // DOUBLER_H_INCLUDED
+#endif // long doubleR_H_INCLUDED

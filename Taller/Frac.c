@@ -2,7 +2,7 @@
 #include <math.h>
 #include "Frac.h"
 
-double Frac( double x)
+long double Frac( long double x)
 {
     return x-floor(x);
 }

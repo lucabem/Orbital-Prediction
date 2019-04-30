@@ -17,9 +17,9 @@ void Test_Fix();
 void Test_RaicesPolinomiales();
 
 
-bool fequal(double a, double b);
+bool fequal(long double a, long double b);
 
-const double epsilon = 0.0000000000001;
+const long double epsilon = 0.0000000000001;
 /*
 int main()
 {
@@ -56,16 +56,16 @@ int main()
 
 void Test_Norma()
 {
-    double v1[3] = {0.0, 0.0, 0.0};
-    double r1 = Norma(v1);
+    long double v1[3] = {0.0, 0.0, 0.0};
+    long double r1 = Norma(v1);
     assert(fequal(0.0, r1) == true);
 
-    double v2[3] = {1, 1, 1};
-    double r2 = Norma(v2);
+    long double v2[3] = {1, 1, 1};
+    long double r2 = Norma(v2);
     assert(fequal(1.7320508075688772935, r2) == true);
 
-    double v3[3] = {4.0, 3.0, 0.0};
-    double r3 = Norma(v3);
+    long double v3[3] = {4.0, 3.0, 0.0};
+    long double r3 = Norma(v3);
     assert(fequal(5.0, r3) == true);
 }
 
@@ -79,17 +79,17 @@ void Test_Sign()
 void Test_Cross()
 {
 
-    double v1[3] = {4.0, -2.0, 1.0};
-    double v2[3] = {1.0, -1.0, 3.0};
-    double resultado[3];
+    long double v1[3] = {4.0, -2.0, 1.0};
+    long double v2[3] = {1.0, -1.0, 3.0};
+    long double resultado[3];
     cross(v1, v2, resultado);
 
     assert(fequal(resultado[0], -5.00) == true);
     assert(fequal(resultado[1], -11.00) == true);
     assert(fequal(resultado[2], -2.00) == true);
 
-    double v3[3] = {0.25, -2.75, 12.2223};
-    double v4[3] = {1.045, -1.12, 3.5};
+    long double v3[3] = {0.25, -2.75, 12.2223};
+    long double v4[3] = {1.045, -1.12, 3.5};
 
     cross(v3, v4, resultado);
 
@@ -100,29 +100,29 @@ void Test_Cross()
 
 void Test_Dot()
 {
-    double v1[3] = {4.0, -1.0, 2.0};
-    double v2[3] = {2.0, -2.0, -1.0};
+    long double v1[3] = {4.0, -1.0, 2.0};
+    long double v2[3] = {2.0, -2.0, -1.0};
     assert(fequal(dot(3,v1, v2), 8) == true);
 
-    double v3[3] = {10.1220, 0.0, -12.34560};
-    double v4[3] = {-5.35, 2.67, 0.5};
+    long double v3[3] = {10.1220, 0.0, -12.34560};
+    long double v4[3] = {-5.35, 2.67, 0.5};
     assert(fequal(dot(3,v3, v4), -60.3255) == true);
 }
 
 void Test_Det()
 {
-    double matrix[3][3] = {{1, -2, 4}, {-5,2,0}, {1,0,3}};
-    double determinante = det(3, matrix);
+    long double matrix[3][3] = {{1, -2, 4}, {-5,2,0}, {1,0,3}};
+    long double determinante = det(3, matrix);
 
     assert(fequal(determinante, -32 ) == true);
 
-    double matrix2[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
-    double determinante2 = det(3, matrix2);
+    long double matrix2[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
+    long double determinante2 = det(3, matrix2);
 
     assert(fequal(determinante2, -52.6593045 ) == true);
 
-    double matrix3[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
-    double determinante3 = det(2, matrix3);
+    long double matrix3[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
+    long double determinante3 = det(2, matrix3);
 
     assert(fequal(determinante3, -12.04278 ) == true);
 
@@ -131,8 +131,8 @@ void Test_Det()
 
 void Test_Multiplicacion()
 {
-    double a[3][3] = {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}};
-    double c[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+    long double a[3][3] = {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}};
+    long double c[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
     multiplicacion(3, 3, 3, 3, a, a, c);
 
@@ -151,9 +151,9 @@ void Test_Multiplicacion()
         }
     }
 
-    double b[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
-    double d[3][3] = {{10.1220, 0.0, -12.34560}, {0.25, -2.75, 12.2223}, {-5.35, 2.67, 0.5}};
-    double f[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+    long double b[3][3] = {{1.056, -2.778, 4.123}, {-5.35, 2.67, 0.5}, {1.11, 0, 3.23}};
+    long double d[3][3] = {{10.1220, 0.0, -12.34560}, {0.25, -2.75, 12.2223}, {-5.35, 2.67, 0.5}};
+    long double f[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
     multiplicacion(3, 3, 3, 3, b,d, f);
 
@@ -167,9 +167,9 @@ void Test_Multiplicacion()
     assert(fequal(f[2][1], 8.6241) == true);
     assert(fequal(f[2][2], -12.088616) == true);
 
-    double x[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
-    double y[2][2] = {{10.1220, -12.34560}, {0.25, -2.75}};
-    double z[2][2] = {{0.0, 0.0}, {0.0, 0.0}};
+    long double x[2][2] = {{1.056, -2.778}, {-5.35, 2.67}};
+    long double y[2][2] = {{10.1220, -12.34560}, {0.25, -2.75}};
+    long double z[2][2] = {{0.0, 0.0}, {0.0, 0.0}};
 
     multiplicacion(2, 2, 2, 2, x, y, z);
     assert(fequal(z[0][0], 9.994332) == true);
@@ -182,8 +182,8 @@ void Test_Multiplicacion()
 void Test_Transpuesta()
 {
 
-    double matrix[3][3] = {{1, -2, 4}, {-5,2,0}, {1,0,3}};
-    double trans[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+    long double matrix[3][3] = {{1, -2, 4}, {-5,2,0}, {1,0,3}};
+    long double trans[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
     transpuesta(3,3,matrix, trans);
 
@@ -197,8 +197,8 @@ void Test_Transpuesta()
     assert(fequal(trans[2][1], 0) == true);
     assert(fequal(trans[2][2], 3) == true);
 
-    double mat[2][1] = {{1.24}, {0.0050}};
-    double t[1][2] = {{0.0, 0.0}};
+    long double mat[2][1] = {{1.24}, {0.0050}};
+    long double t[1][2] = {{0.0, 0.0}};
 
     transpuesta(2,1, mat, t);
 
@@ -220,13 +220,13 @@ void Test_Length()
     int x[10] = {0,0,0,0,0,0,0,0,0,0};
     assert(NELEMS(x) == 10);
 
-    double y[20];
+    long double y[20];
     assert(NELEMS(y) == 20);
 }
 
 void Test_Zeros()
 {
-    double matriz[4][4];
+    long double matriz[4][4];
     zeros(4,4, matriz);
 
     for(int i=0; i<4; i++)
@@ -238,7 +238,7 @@ void Test_Zeros()
 
     }
 
-    double matriz2[4][20];
+    long double matriz2[4][20];
     zeros(4,20, matriz2);
 
     for(int i=0; i<4; i++)
@@ -259,10 +259,10 @@ void Test_Fix()
 
 void Test_RaicesPolinomiales()
 {
-    double factores[10] = {23, 2, 1, 2, 4, 5, 7, 7, 6, 5};
-    double zeror[9], zeroi[9];
+    long double factores[10] = {23, 2, 1, 2, 4, 5, 7, 7, 6, 5};
+    long double zeror[9], zeroi[9];
 
-    double *sol = raicesPolinomiales(factores, 9, zeror, zeroi);
+    long double *sol = raicesPolinomiales(factores, 9, zeror, zeroi);
     assert(fabs(sol[0]+0.78147125115577658245)<0.0000001);
 }
 

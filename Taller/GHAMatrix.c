@@ -2,7 +2,7 @@
 #include "R_z.h"
 #include "Gast.h"
 
-void ghaMatrix (double Mjd_UT1, double matrizTransformada[3][3], double (*eop)[13])
+void ghaMatrix (long double Mjd_UT1, long double matrizTransformada[3][3], long double (*eop)[13])
 {
     for (int i=0; i<3; i++)
     {
@@ -12,6 +12,6 @@ void ghaMatrix (double Mjd_UT1, double matrizTransformada[3][3], double (*eop)[1
         }
     }
 
-    double g = gast(Mjd_UT1, eop);
+    long double g = gast(Mjd_UT1, eop);
     R_z(g, matrizTransformada);
 }
