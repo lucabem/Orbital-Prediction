@@ -32,6 +32,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Anglesg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Anglesg.h" />
 		<Unit filename="Constantes.h" />
 		<Unit filename="DoubleR.c">
 			<Option compilerVar="CC" />
@@ -132,6 +136,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="gmst.h" />
+		<Unit filename="lambert_gooding.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lambert_gooding.h" />
 		<Unit filename="rpoly.c">
 			<Option compilerVar="CC" />
 		</Unit>
