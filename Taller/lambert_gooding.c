@@ -4,7 +4,8 @@
 #include <math.h>
 #include "Constantes.h"
 #include "Unit.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool long_way, int multi_revs,  double v1[3],  double v2[3])
 {
 

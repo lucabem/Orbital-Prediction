@@ -12,9 +12,10 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
               double r2[3], double v2[3])
 
 {
-    double magr1in = 2.01*R_Earth;
-    double magr2in = 2.11*R_Earth;
+    double magr1in = 2.01 * R_Earth;
+    double magr2in = 2.11 * R_Earth;
     char direct  = 'y';
+
 
     double tol    = 1e-8*R_Earth;
     double pctchg = 5e-6;
@@ -36,15 +37,26 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
     double cc1 = 2*dot(3,los1,rsite1);
     double cc2 = 2*dot(3,los2,rsite2);
 
+    for(int i=0; i<3; i++)
+    {
+        printf("%f \n", los1[i]);
+    }
+
+    for(int i=0; i<3; i++)
+    {
+        printf("%f \n", rsite1[i]);
+    }
+
+    printf("\n ---> %f \n", cc1);
+
     int ll = 0;
 
     double r3[3], sal_f1_f2_q1_magr1_magr2_a_deltae32[7];
 
+
     while  ((fabs(magr1in-magr1old) > tol && fabs(magr2in-magr2old) > tol && ll<=3))
     {
         ll++;
-
-
 
         doubler(cc1, cc2, magrsite1, magrsite2, magr1in, magr2in, los1, los2, los3, rsite1, rsite2, rsite3, t1, t3, direct, r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
 
@@ -59,8 +71,9 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
         deltae32 = sal_f1_f2_q1_magr1_magr2_a_deltae32[6];
 
 
-        //double v1[3], v2[3];
-        //lambert_gooding(r2, r3, (Mjd3-Mjd2)*86400, GM_Earth, false, 1, v1, v2);
+        //ouble v3[3];
+        //lambert_gooding(r2, r3, (Mjd3-Mjd2)*86400, GM_Earth, false, 1, v2, v3);
+
         double f  = 1 - a/magr2*(1-cos(deltae32));
         double g  = t3 - sqrt(pow(a,3)/GM_Earth)*(deltae32-sin(deltae32));
         double v2[3];
@@ -97,6 +110,7 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
         double deltar2 = pctchg*magr2in;
 
 
+
         doubler(cc1,cc2,
                 magrsite1,magrsite2,magr1in,magr2in,los1,los2,los3,rsite1,rsite2,
                 rsite3,t1,t3,direct, r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
@@ -116,12 +130,16 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
         magr2in = magr2o;
         deltar2 = pctchg*magr2in;
 
+
         double delta  = pf1pr1*pf2pr2 - pf2pr1*pf1pr2;
         double delta1 = pf2pr2*f1 - pf1pr2*f2;
         double delta2 = pf1pr1*f2 - pf2pr1*f1;
 
+
         deltar1 = -delta1/delta;
         deltar2 = -delta2/delta;
+
+
 
         magr1old = magr1in;
         magr2old = magr2in;
@@ -132,8 +150,13 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
 
     }
 
+
+
     doubler(cc1,cc2,magrsite1,
             magrsite2,magr1in,magr2in,los1,los2,los3,rsite1,rsite2,rsite3,t1,t3,direct, r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
+
+
+
 
     double f1,f2,q1,magr1,magr2,a,deltae32;
 
@@ -154,5 +177,7 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
     v2[0] = (r3[0]- f*r2[0])/g;
     v2[1] = (r3[1] - f*r2[1])/g;
     v2[2] = (r3[2] - f*r2[2])/g;
+
+
 
 }

@@ -48,7 +48,7 @@
 
 1556626114 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1556726396 source:c:\users\luis\documents\github\taller\taller\example1.c
+1556739646 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -298,12 +298,14 @@
 
 1556626114 c:\users\luis\documents\github\taller\taller\ghamatrix.h
 
-1556726469 source:c:\users\luis\documents\github\taller\taller\lambert_gooding.c
+1556737849 source:c:\users\luis\documents\github\taller\taller\lambert_gooding.c
 	"lambert_gooding.h"
 	"MatlabUtilities.h"
 	<math.h>
 	"Constantes.h"
 	"Unit.h"
+	<stdio.h>
+	<stdlib.h>
 
 1556719780 c:\users\luis\documents\github\taller\taller\lambert_gooding.h
 	<stdbool.h>
@@ -315,7 +317,7 @@
 
 1556626114 c:\users\luis\documents\github\taller\taller\anglesg.h
 
-1556724228 source:c:\users\luis\documents\github\taller\taller\angledr.c
+1556740353 source:c:\users\luis\documents\github\taller\taller\angledr.c
 	"AngleDr.h"
 	"Constantes.h"
 	<math.h>
@@ -324,4 +326,8 @@
 	"lambert_gooding.h"
 
 1556724144 c:\users\luis\documents\github\taller\taller\angledr.h
+
+1556736461 source:c:\users\luis\documents\github\taller\taller\example2.c
+
+1556736472 source:c:\users\luis\documents\github\taller\taller\princiaplgeneral.c
 
