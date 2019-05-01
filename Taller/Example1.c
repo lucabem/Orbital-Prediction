@@ -26,6 +26,12 @@
 
 void Example1();
 
+int main()
+{
+    Example1();
+}
+
+
 void Example1()
 {
 
