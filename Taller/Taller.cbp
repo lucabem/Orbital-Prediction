@@ -32,6 +32,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="AngleDr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="AngleDr.h" />
 		<Unit filename="Anglesg.c">
 			<Option compilerVar="CC" />
 		</Unit>
