@@ -1,4 +1,3 @@
-
 #include "Constantes.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,10 +23,10 @@
 #include "AngleDr.h"
 
 
-void Example1();
+void Example2();
 
 
-void Example1()
+void Example2()
 {
 
     double (*eop)[13] = malloc(sizeof( double[20026][13]));
@@ -62,7 +61,7 @@ void Example1()
     }
     fclose(fid);
 
-    fid = fopen("sat1.txt", "rt");
+    fid = fopen("sat2.txt", "rt");
     int i = 0;
     int Y, M, D, h, m;
     float s, rtasc, decl;
@@ -86,9 +85,9 @@ void Example1()
 
     fclose(fid);
 
-    double lat = RAD*39.13607;     // [rad]
-    double lon = RAD*(-121.35072); // [rad]
-    double alt = 0.09981638e3;     // [m]
+    double lat = RAD*30.5724;     // [rad]
+    double lon = RAD*(-86.2143); // [rad]
+    double alt = 0.0;     // [m]
 
 
     double Rs[3];

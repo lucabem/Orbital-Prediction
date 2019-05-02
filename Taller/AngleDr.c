@@ -37,17 +37,6 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
     double cc1 = 2*dot(3,los1,rsite1);
     double cc2 = 2*dot(3,los2,rsite2);
 
-    for(int i=0; i<3; i++)
-    {
-        printf("%f \n", los1[i]);
-    }
-
-    for(int i=0; i<3; i++)
-    {
-        printf("%f \n", rsite1[i]);
-    }
-
-    printf("\n ---> %f \n", cc1);
 
     int ll = 0;
 

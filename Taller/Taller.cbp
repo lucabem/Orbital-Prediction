@@ -52,6 +52,18 @@
 		<Unit filename="Example1.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Example2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Example3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Example6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Example7.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Frac.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -112,6 +124,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="PrecMatrix.h" />
+		<Unit filename="Principal.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="R_x.c">
 			<Option compilerVar="CC" />
 		</Unit>

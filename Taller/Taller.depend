@@ -48,7 +48,7 @@
 
 1556626114 c:\users\luis\documents\github\taller\taller\rpoly.h
 
-1556739646 source:c:\users\luis\documents\github\taller\taller\example1.c
+1556787775 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -327,7 +327,107 @@
 
 1556724144 c:\users\luis\documents\github\taller\taller\angledr.h
 
-1556736461 source:c:\users\luis\documents\github\taller\taller\example2.c
+1556788053 source:c:\users\luis\documents\github\taller\taller\example2.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
 
 1556736472 source:c:\users\luis\documents\github\taller\taller\princiaplgeneral.c
+
+1556788053 source:c:\users\luis\documents\github\taller\taller\example3.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556788053 source:c:\users\luis\documents\github\taller\taller\example6.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556788145 source:c:\users\luis\documents\github\taller\taller\example7.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556788359 source:c:\users\luis\documents\github\taller\taller\principal.c
 
