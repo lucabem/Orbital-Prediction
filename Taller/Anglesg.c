@@ -1,14 +1,22 @@
 #include "Anglesg.h"
 #include "Constantes.h"
 #include "MatlabUtilities.h"
+#include "Gibbs.h"
+#include "HGibbs.h"
+#include "lambert_gooding.h"
+#include "rv2coe.h"
+#include "angl.h"
+#include <stdio.h>
+#include <string.h>
 
-/*
 void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  double Delta2,  double Delta3,
-              double JD1[3],  double JD2[3],  double JD3[3],
+              double JD1,  double JD2,  double JD3,
               double RS1[3],  double RS2[3],  double RS3[3])
 {
     double Mu = 398600.4418e9;
     double Rad = 180/PI;
+
+    double RhoMat[3][1], CMat[3][1];
 
     double R1[3][1], R2[3][1], R3[3][1];
     zeros(3, 1, R1);
@@ -17,6 +25,8 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
     double Tau1 = (JD1-JD2)*86400;
     double Tau3 = (JD3-JD2)*86400;
+
+    double f1, g1, f3, g3;
 
     double L1[3], L2[3], L3[3];
 
@@ -42,6 +52,7 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
         RSMat[i][1] = RS2[i];
         RSMat[i][2] = RS3[i];
     }
+
 
     double D = det(3, LMatIi);
 
@@ -72,6 +83,7 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
     double L2DotRS = dot(3, L2, RS2);
     double magRS2 = Norma(RS2);
 
+
     double Poly[16];
     Poly [ 0]=  1.0;  // r2^8th variable!!!!!!!!!!!!!!
     Poly [ 1]=  0.0;
@@ -90,8 +102,22 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
     Poly [14]=  0.0;
     Poly [15]=  0.0;
 
+
     double zeror[15], zeroi[15];
-    double *resultado = raicesPolinomiales(Poly, 15, zeror, zeroi);
+
+    for (int i = 0; i<16; i++)
+        printf("%d -> %f \n", 15-i, Poly[i]);
+
+    printf("------------------------ \n");
+    double resultado[20];
+
+    for (int i=0; i<20; i++)
+    {
+        resultado[i] = 70;
+    }
+
+
+    raicesPolinomiales(15, Poly, zeror, zeroi, resultado);
 
     double BigR2 = 0.0;
 
@@ -100,12 +126,13 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
         if ((resultado[i]) > BigR2)
         {
             BigR2 = resultado[i];
+            printf("Holaaa");
         }
     }
 
+
     double u = Mu/(BigR2*BigR2*BigR2);
 
-    double CMat[3][1], RhoMat[3][1];
     double c1 = a1+a1u*u;
     double c3 = a3+a3u*u;
     CMat[0][0] = -c1;
@@ -118,6 +145,19 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
     double Rho2 = 999999e3;
     double ll = 0;
+
+
+    //variables while
+
+    double angulos[2], vecSalida[3], V1[3], V2[3];
+    double salidaRv2coe[11];
+    double copa, theta, theta1;
+    double p, a, ecc, incl, omega, argp, Nu, m, l, ArgPer;
+    double magR2;
+
+    double vectorR1[3] = {R1[0][0], R1[1][0], R1[2][0]};
+    double vectorR2[3] = {R2[0][0], R2[1][0], R2[2][0]};
+    double vectorR3[3] = {R3[0][0], R3[1][0], R3[2][0]};
 
     while ( (fabs(Rhoold2-Rho2)>1e-12) && (ll<=2) )
     {
@@ -132,31 +172,48 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
             R3[i][0] =  RhoMat[2][0]*L3[i]/c3 + RS3[i];
         }
 
-        double angulos[2], vecSalida[3];
         char *error = "ok";
-        double copa = gibbs(R1,R2,R3,vecSalida, angulos, error);
+        copa = gibbs(vectorR1 , vectorR2, vectorR3,vecSalida, angulos, error);
+        theta = angulos[0];
+        theta1 = angulos[1];
 
-        if ( !strcmp(error,"ok") && (copa < 1/Rad) )
+        if ( strcmp(error,"ok") != 0 && (copa < 1/RAD) )
         {
             //--- HGibbs to get middle vector ----
-            [~,theta,theta1,copa,error] = hgibbs(R1,R2,R3,JD1,JD2,JD3);
+            copa = hgibbs(vectorR1, vectorR2, vectorR3, JD1, JD2, JD3, vecSalida, angulos, error);
+            theta = angulos[0];
+            theta1 = angulos[1];
         }
 
-        [~,V2] = lambert_gooding(R1',R2',(JD2-JD1)*86400,Mu,0,1);
+        lambert_gooding(vectorR1, vectorR2, (JD2-JD1)*86400, Mu, false, 1, V1, V2);
 
-        [p,a,ecc,incl,omega,argp,Nu,m,u,l,ArgPer] = rv2coe(R2,V2);
 
-        magR2 = Norma(R2);
+
+        rv2coe( vectorR2 ,V2, salidaRv2coe);
+
+        p = salidaRv2coe[0];
+        a = salidaRv2coe[1];
+        ecc = salidaRv2coe[2];
+        incl = salidaRv2coe[3];
+        omega = salidaRv2coe[4];
+        argp = salidaRv2coe[5];
+        Nu = salidaRv2coe[6];
+        m = salidaRv2coe[7];
+        u = salidaRv2coe[8];
+        l = salidaRv2coe[9];
+        ArgPer = salidaRv2coe[10];
+
+        magR2 = Norma(vectorR2);
 
         if ( ll <= 2 )
         {
             //--- Now get an improved estimate of the f and g series --
             //       .or. can the analytic functions be found now??
-            U = Mu/(magR2^3);
-            RDot = dot(R2,V2)/magR2;
-            UDot = (-3.0*Mu*RDot)/(magR2^4);
+            double U = Mu/(pow(magR2,3));
+            double RDot = dot(3, vectorR2, V2)/magR2;
+            double UDot = (-3.0*Mu*RDot)/(pow(magR2,4));
 
-            TauSqr= Tau1*Tau1;
+            double TauSqr= Tau1*Tau1;
             f1 =  1.0 - 0.5*U*TauSqr -(1.0/6.0)*UDot*TauSqr*Tau1
                   + (1.0/24.0) * U*U*TauSqr*TauSqr
                   + (1.0/30.0)*U*UDot*TauSqr*TauSqr*Tau1;
@@ -173,10 +230,11 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
         else
         {
             //-------- Now use exact method to find f and g -----------
-            Theta = angl(R1,R2);
-            Theta1 = angl(R2,R3);
-            magR1 = norm(R1);
-            magR3 = norm(R3);
+            double Theta = angl(vectorR1, vectorR2);
+            double Theta1 = angl(vectorR2, vectorR3);
+
+            double magR1 = Norma(vectorR1);
+            double magR3 = Norma(vectorR3);
 
             f1 = 1.0 - ( (magR1*(1.0 - cos(Theta))/p ) );
             g1 = ( magR1*magR2*sin(-theta) ) / sqrt(p);  // - ANGLE because backwards!!
@@ -187,17 +245,38 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
         c1 =  g3/(f1*g3 - f3*g1);
         c3 = -g1/(f1*g3 - f3*g1);
 
-//----- Solve for all three ranges via matrix equation ----
-        CMat(1,1) = -c1;
-        CMat(2,1) = 1.0;
-        CMat(3,1) = -c3;
-        RhoMat = LIR*CMat;
 
-//     Rhoold1 =  RhoMat(1,1)/c1;
-        Rhoold2 = -RhoMat(2,1);
-//     Rhoold3 =  RhoMat(3,1)/c3;
-//----------------- Check for convergence -----------------
+
+//----- Solve for all three ranges via matrix equation ----
+        CMat[0][0] = -c1;
+        CMat[1][0] = 1.0;
+        CMat[2][0] = -c3;
+
+        multiplicacion(3, 1, 3, 1, LIR, CMat, RhoMat);
+
+        Rhoold2 = - RhoMat[1][0];
+
+
+    }
+
+
+    for (int i = 0; i<3; i++)
+    {
+        vectorR1[i] =   RhoMat[0][0] * L1[i]/c1 + RS1[i];
+        vectorR2[i] = - RhoMat[1][0] * L2[i]/c1 + RS2[i];
+        vectorR3[i] =   RhoMat[2][0] * L3[i]/c1 + RS3[i];
+    }
+
+
+    for (int i = 0; i<3; i++)
+    {
+        printf("%0.15f \n", vectorR2[i]);
+    }
+
+        for (int i = 0; i<3; i++)
+    {
+        printf("%0.15f \n", V2[i]);
     }
 }
 
-*/
+

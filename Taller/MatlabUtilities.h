@@ -25,7 +25,7 @@ void zeros(int m, int n,  double matriz[m][n]);
 
 bool isReal( double parteImaginaria);
 
- double* raicesPolinomiales( double *op, int degree,  double *zeror,  double *zeroi);
+void raicesPolinomiales( int degree,  double op[], double zeror[degree],  double zeroi[degree], double resultado[20]);
 
  double fix( double x);
 

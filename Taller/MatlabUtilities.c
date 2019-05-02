@@ -100,7 +100,7 @@ void zeros(int m, int n,  double matriz[m][n])
             matriz[i][j] = 0.0;
 }
 
- double* raicesPolinomiales( double *op, int degree,  double *zeror,  double *zeroi)
+void raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],  double zeroi[degree+1], double resultado[20])
 {
 
     int info[7] = {1,2,3,4,5,6,7};
@@ -116,7 +116,6 @@ void zeros(int m, int n,  double matriz[m][n])
         }
     }
 
-     double resultado[contado];
     int posicion = 0;
     for(int i=0; i<degree; i++)
     {
@@ -126,7 +125,9 @@ void zeros(int m, int n,  double matriz[m][n])
             posicion++;
         }
     }
-    return resultado;
+
+    for (int i = 0; i<degree; i++)
+        printf("%d %f \n", i, resultado[i]);
 }
 
  double fix( double x)

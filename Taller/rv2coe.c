@@ -7,7 +7,7 @@
 #include <string.h>
 #include "NewtonNu.h"
 
-void rv2coe ( double vectorPosicion[3],  double vectorVelocidad[3],  double vectorResultado[12])
+void rv2coe ( double vectorPosicion[3],  double vectorVelocidad[3],  double vectorResultado[11])
 {
      double p, a, ecc, incl, omega, argp, nu, m, arglat, truelon, lonper;
      double mu = 398600.4418e9;

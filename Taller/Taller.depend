@@ -24,17 +24,17 @@
 	<assert.h>
 	"MatlabUtilities.h"
 
-1555514667 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
+1556814479 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
-1555514482 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
+1556814437 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
 	"rpoly.h"
 	<stdlib.h>
 
-1555514902 source:c:\users\lucabem\documents\github\taller\taller\testmatlabutilities.c
+1556813559 source:c:\users\lucabem\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -75,41 +75,59 @@
 
 1556626018 c:\users\luis\documents\github\taller\taller\constantes.h
 
-1555510756 c:\users\lucabem\documents\github\taller\taller\rpoly.h
+1556809651 c:\users\lucabem\documents\github\taller\taller\rpoly.h
 
-1555510756 source:c:\users\lucabem\documents\github\taller\taller\rpoly.c
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\rpoly.c
 	<stdio.h>
 	<time.h>
 	<math.h>
 	<stdlib.h>
 
-1555514255 source:c:\users\lucabem\documents\github\taller\taller\example1.c
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
 	"MatlabUtilities.h"
 	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
 
-1555512428 c:\users\lucabem\documents\github\taller\taller\constantes.h
+1556809651 c:\users\lucabem\documents\github\taller\taller\constantes.h
 
-1555510961 source:c:\users\lucabem\documents\github\taller\taller\mjday.c
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\mjday.c
 	"Mjday.h"
 
-1555510951 c:\users\lucabem\documents\github\taller\taller\mjday.h
+1556809651 c:\users\lucabem\documents\github\taller\taller\mjday.h
 	<math.h>
 	"MatlabUtilities.h"
 
-1555512456 source:c:\users\lucabem\documents\github\taller\taller\position.c
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\position.c
 	"Constantes.h"
 	<math.h>
 
-1555511952 c:\users\lucabem\documents\github\taller\taller\position.h
-	<math.h>
+1556809651 c:\users\lucabem\documents\github\taller\taller\position.h
 
-1555513952 source:c:\users\lucabem\documents\github\taller\taller\iers.c
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\iers.c
 	"Constantes.h"
 	<math.h>
 	"MatlabUtilities.h"
+	"IERS.h"
 
 1556626113 c:\users\luis\documents\github\taller\taller\mjday.h
 	<math.h>
@@ -430,4 +448,311 @@
 	"AngleDr.h"
 
 1556788359 source:c:\users\luis\documents\github\taller\taller\principal.c
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\angl.c
+	"MatlabUtilities.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\angledr.c
+	"AngleDr.h"
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"DoubleR.h"
+	"lambert_gooding.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\angledr.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\doubler.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\lambert_gooding.h
+	<stdbool.h>
+
+1556814505 source:c:\users\lucabem\documents\github\taller\taller\anglesg.c
+	"Anglesg.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	"Gibbs.h"
+	"HGibbs.h"
+	"lambert_gooding.h"
+	"rv2coe.h"
+	"angl.h"
+	<stdio.h>
+	<string.h>
+
+1556812314 c:\users\lucabem\documents\github\taller\taller\anglesg.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\doubler.c
+	"DoubleR.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\eqnequinox.c
+	"EqnEquinox.h"
+	"NutAngles.h"
+	"MeanObliquity.h"
+	"math.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\eqnequinox.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\nutangles.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\meanobliquity.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\precmatrix.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\rv2coe.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\nutmatrix.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\gibbs.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\newtonnu.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\hgibbs.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\iers.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\timediff.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\polematrix.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\gast.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\ghamatrix.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\example2.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\example3.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\example6.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\example7.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\frac.c
+	<math.h>
+	"Frac.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\frac.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\gast.c
+	"Gast.h"
+	"timeDiff.h"
+	"gmst.h"
+	"EqnEquinox.h"
+	<math.h>
+	"IERS.h"
+	"Constantes.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\gmst.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\ghamatrix.c
+	"GHAMatrix.h"
+	"R_z.h"
+	"Gast.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\r_z.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\gibbs.c
+	"Gibbs.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	"Unit.h"
+	<math.h>
+	"angl.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\unit.h
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\angl.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\gmst.c
+	"gmst.h"
+	"Frac.h"
+	<math.h>
+	"Constantes.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\hgibbs.c
+	"HGibbs.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	<math.h>
+	"Unit.h"
+	"angl.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\lambert_gooding.c
+	"lambert_gooding.h"
+	"MatlabUtilities.h"
+	<math.h>
+	"Constantes.h"
+	"Unit.h"
+	<stdio.h>
+	<stdlib.h>
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\meanobliquity.c
+	"MeanObliquity.h"
+	"Constantes.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\newtonnu.c
+	"NewtonNu.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"Constantes.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\nutangles.c
+	"NutAngles.h"
+	"Constantes.h"
+	<math.h>
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\nutmatrix.c
+	"NutMatrix.h"
+	"MeanObliquity.h"
+	"NutAngles.h"
+	"R_x.h"
+	"R_z.h"
+	"MatlabUtilities.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\r_x.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\polematrix.c
+	"PoleMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"MatlabUtilities.h"
+
+1556809651 c:\users\lucabem\documents\github\taller\taller\r_y.h
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\precmatrix.c
+	"PrecMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"R_z.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	<stdio.h>
+
+1556812684 source:c:\users\lucabem\documents\github\taller\taller\principal.c
+	"Anglesg.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\r_x.c
+	"R_x.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\r_y.c
+	"R_y.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\r_z.c
+	"R_z.h"
+	"MatlabUtilities.h"
+
+1556810750 source:c:\users\lucabem\documents\github\taller\taller\rv2coe.c
+	"rv2coe.h"
+	"MatlabUtilities.h"
+	"Constantes.h"
+	<math.h>
+	"angl.h"
+	<string.h>
+	"NewtonNu.h"
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\timediff.c
+
+1556809651 source:c:\users\lucabem\documents\github\taller\taller\unit.c
+	"MatlabUtilities.h"
+	"Unit.h"
 
