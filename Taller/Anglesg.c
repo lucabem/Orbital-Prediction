@@ -11,7 +11,7 @@
 
 void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  double Delta2,  double Delta3,
               double JD1,  double JD2,  double JD3,
-              double RS1[3],  double RS2[3],  double RS3[3])
+              double RS1[3],  double RS2[3],  double RS3[3], double vectorR2[3], double V2[3])
 {
     double Mu = 398600.4418e9;
     double Rad = 180/PI;
@@ -105,19 +105,16 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
     double zeror[15], zeroi[15];
 
-    for (int i = 0; i<16; i++)
-        printf("%d -> %f \n", 15-i, Poly[i]);
+    double resultado[15];
 
-    printf("------------------------ \n");
-    double resultado[20];
-
-    for (int i=0; i<20; i++)
+    for (int i=0; i<15; i++)
     {
         resultado[i] = 70;
     }
 
 
-    raicesPolinomiales(15, Poly, zeror, zeroi, resultado);
+    int pos = raicesPolinomiales(15, Poly, zeror, zeroi, resultado);
+
 
     double BigR2 = 0.0;
 
@@ -126,9 +123,9 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
         if ((resultado[i]) > BigR2)
         {
             BigR2 = resultado[i];
-            printf("Holaaa");
         }
     }
+
 
 
     double u = Mu/(BigR2*BigR2*BigR2);
@@ -149,34 +146,40 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
     //variables while
 
-    double angulos[2], vecSalida[3], V1[3], V2[3];
+    double angulos[2], vecSalida[3], V1[3];
     double salidaRv2coe[11];
     double copa, theta, theta1;
     double p, a, ecc, incl, omega, argp, Nu, m, l, ArgPer;
     double magR2;
 
     double vectorR1[3] = {R1[0][0], R1[1][0], R1[2][0]};
-    double vectorR2[3] = {R2[0][0], R2[1][0], R2[2][0]};
+
     double vectorR3[3] = {R3[0][0], R3[1][0], R3[2][0]};
+
 
     while ( (fabs(Rhoold2-Rho2)>1e-12) && (ll<=2) )
     {
 
         ll = ll+1;
-        Rho2 = Rhoold2;  // reset now that inside while loop
+        Rho2 = Rhoold2;
+
+        // reset now that inside while loop
         //---------- Now form the three position vectors ----------
         for (int i = 0; i<3; i++)
         {
-            R1[i][0] =  RhoMat[0][0]*L1[i]/c1 + RS1[i];
-            R2[i][0] = -RhoMat[1][0]*L2[i]    + RS2[i];
-            R3[i][0] =  RhoMat[2][0]*L3[i]/c3 + RS3[i];
+            vectorR1[i] =  RhoMat[0][0]*L1[i]/c1 + RS1[i];
+            vectorR2[i] = -RhoMat[1][0]*L2[i]    + RS2[i];
+            vectorR3[i] =  RhoMat[2][0]*L3[i]/c3 + RS3[i];
         }
 
+
+
         char *error = "ok";
-        copa = gibbs(vectorR1 , vectorR2, vectorR3,vecSalida, angulos, error);
+        copa = gibbs(vectorR1, vectorR2, vectorR3, vecSalida, angulos, error);
         theta = angulos[0];
         theta1 = angulos[1];
 
+        printf("\n\n");
         if ( strcmp(error,"ok") != 0 && (copa < 1/RAD) )
         {
             //--- HGibbs to get middle vector ----
@@ -187,9 +190,7 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
         lambert_gooding(vectorR1, vectorR2, (JD2-JD1)*86400, Mu, false, 1, V1, V2);
 
-
-
-        rv2coe( vectorR2 ,V2, salidaRv2coe);
+        rv2coe( vectorR2,V2, salidaRv2coe);
 
         p = salidaRv2coe[0];
         a = salidaRv2coe[1];
@@ -247,15 +248,15 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
 
 
+
 //----- Solve for all three ranges via matrix equation ----
         CMat[0][0] = -c1;
         CMat[1][0] = 1.0;
         CMat[2][0] = -c3;
 
-        multiplicacion(3, 1, 3, 1, LIR, CMat, RhoMat);
+        multiplicacion(3, 3, 3, 1, LIR, CMat, RhoMat);
 
-        Rhoold2 = - RhoMat[1][0];
-
+        Rhoold2 =  RhoMat[1][0] * (-1);
 
     }
 
@@ -263,20 +264,12 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
     for (int i = 0; i<3; i++)
     {
         vectorR1[i] =   RhoMat[0][0] * L1[i]/c1 + RS1[i];
-        vectorR2[i] = - RhoMat[1][0] * L2[i]/c1 + RS2[i];
-        vectorR3[i] =   RhoMat[2][0] * L3[i]/c1 + RS3[i];
+        vectorR2[i] = - RhoMat[1][0] * L2[i] + RS2[i];
+        vectorR3[i] =   RhoMat[2][0] * L3[i]/c3 + RS3[i];
     }
 
 
-    for (int i = 0; i<3; i++)
-    {
-        printf("%0.15f \n", vectorR2[i]);
-    }
 
-        for (int i = 0; i<3; i++)
-    {
-        printf("%0.15f \n", V2[i]);
-    }
 }
 
 

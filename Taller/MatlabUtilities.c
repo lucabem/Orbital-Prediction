@@ -100,23 +100,16 @@ void zeros(int m, int n,  double matriz[m][n])
             matriz[i][j] = 0.0;
 }
 
-void raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],  double zeroi[degree+1], double resultado[20])
+int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],  double zeroi[degree+1], double resultado[20])
 {
 
-    int info[7] = {1,2,3,4,5,6,7};
+    int info[15] = {1,2,3,4,5,6,7, 8, 9, 10, 11, 12, 13, 14, 15};
     int contado = 0;
 
     rpoly(op,degree, zeror, zeroi, info);
 
-    for(int i=0; i<degree; i++)
-    {
-        if (isReal(zeroi[i]))
-        {
-            contado++;
-        }
-    }
-
     int posicion = 0;
+
     for(int i=0; i<degree; i++)
     {
         if (isReal(zeroi[i]))
@@ -126,8 +119,7 @@ void raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1]
         }
     }
 
-    for (int i = 0; i<degree; i++)
-        printf("%d %f \n", i, resultado[i]);
+    return 0;
 }
 
  double fix( double x)

@@ -197,27 +197,13 @@ void rv2coe ( double vectorPosicion[3],  double vectorVelocidad[3],  double vect
     vectorResultado[1] = a;
     vectorResultado[2] = ecc;
     vectorResultado[3] = incl;
-    vectorResultado[4] = incl;
-    vectorResultado[5] = omega;
-    vectorResultado[6] = argp;
-    vectorResultado[7] = nu;
-    vectorResultado[8] = m;
-    vectorResultado[9] = arglat;
-    vectorResultado[10] = truelon;
-    vectorResultado[11] = lonper;
+    vectorResultado[4] = omega;
+    vectorResultado[5] = argp;
+    vectorResultado[6] = nu;
+    vectorResultado[7] = m;
+    vectorResultado[8] = arglat;
+    vectorResultado[9] = truelon;
+    vectorResultado[10] = lonper;
 
-    /*
-    printf("p = %f \n", p);
-    printf("a = %f \n", a);
-    printf("ecc = %f \n", ecc);
-    printf("incl = %f \n", incl);
-    printf("omega = %f \n", omega);
-    printf("argp = %f \n", argp);
-    printf("nu = %f \n", nu);
-    printf("m = %f \n", m);
-    printf("arglat = %f \n", arglat);
-    printf("truelon = %f \n", truelon);
-    printf("lonper = %f \n", lonper);
-*/
 }
 
