@@ -5,6 +5,30 @@
 #include "DoubleR.h"
 #include "lambert_gooding.h"
 
+/**
+    Accion que resuelve el problema de la determinacion de orbita usando tres
+    vistas opticas.
+
+    Inputs:
+        rtasc1      - right ascension at t1    [rad]
+        rtasc2      - right ascension at t2    [rad]
+        rtasc3      - right ascension at t3    [rad]
+        decl1       - declination at t1         [rad]
+        decl2       - declination at t2         [rad]
+        decl3       - declination at t3         [rad]
+        Mjd1        - Modified julian date of t1
+        Mjd2        - Modified julian date of t2
+        Mjd3        - Modified julian date of t3
+        rsite1      - ijk site1 position vector   [m]
+        rsite2      - ijk site2 position vector   [m]
+        rsite3      - ijk site3 position vector   [m]
+
+    Outputs:
+        r2        - ijk position vector at t2   [m]
+        v2        - ijk velocity vector at t2   [m/s]
+
+
+*/
 void anglesdr(double rtasc1, double rtasc2, double rtasc3,
               double decl1, double decl2, double decl3,
               double Mjd1, double Mjd2, double Mjd3,

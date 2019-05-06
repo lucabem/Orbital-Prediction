@@ -3,6 +3,17 @@
 #include "MeanObliquity.h"
 #include "math.h"
 
+/**
+
+    Funcion que calcula de la ecuación de los equinoccios.
+
+    Entrada:
+        fechaJulianaModificada
+
+    Salida:
+        Ecuacion de equinoccios
+
+*/
  double eqnEquinox ( double fechaJulianaModificada )
 {
      double vectAngulos[2] = {0.0, 0.0};

@@ -1,3 +1,5 @@
+// *** ADDED BY HEADER FIXUP ***
+
 #include "Constantes.h"
 #include <stdio.h>
 #include <stdlib.h>

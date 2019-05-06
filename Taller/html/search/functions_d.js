@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['r_5fx',['R_x',['../_r__x_8c.html#a5447583baab8143f14029de90fe3727a',1,'R_x(double angle, double matrizRotada[3][3]):&#160;R_x.c'],['../_r__x_8h.html#a5447583baab8143f14029de90fe3727a',1,'R_x(double angle, double matrizRotada[3][3]):&#160;R_x.c']]],
+  ['r_5fy',['R_y',['../_r__y_8c.html#a777ff9a8cdbbd8edfbf786631b14b25b',1,'R_y(double angle, double matrizRotada[3][3]):&#160;R_y.c'],['../_r__y_8h.html#a777ff9a8cdbbd8edfbf786631b14b25b',1,'R_y(double angle, double matrizRotada[3][3]):&#160;R_y.c']]],
+  ['r_5fz',['R_z',['../_r__z_8c.html#a6c6358a4b18cc2e2ccbca11b7d325841',1,'R_z(double angle, double matrizRotada[3][3]):&#160;R_z.c'],['../_r__z_8h.html#a6c6358a4b18cc2e2ccbca11b7d325841',1,'R_z(double angle, double matrizRotada[3][3]):&#160;R_z.c']]],
+  ['raicespolinomiales',['raicesPolinomiales',['../_matlab_utilities_8c.html#a77e4f85509e14854f352ffbf5d621de8',1,'raicesPolinomiales(int degree, double op[degree+1], double zeror[degree+1], double zeroi[degree+1], double resultado[20]):&#160;MatlabUtilities.c'],['../_matlab_utilities_8h.html#a6ad10d99d8f2247cdb8c888da4b5b964',1,'raicesPolinomiales(int degree, double op[], double zeror[degree], double zeroi[degree], double resultado[20]):&#160;MatlabUtilities.h']]],
+  ['realit',['realit',['../rpoly_8c.html#a10575bc3c0f3c5a37f2e6564a6c60c4f',1,'rpoly.c']]],
+  ['rpoly',['rpoly',['../rpoly_8c.html#a060318c7eb5de6efec282a3f346c9f05',1,'rpoly(double *op, int degree, double *zeror, double *zeroi, int info[]):&#160;rpoly.c'],['../rpoly_8h.html#a060318c7eb5de6efec282a3f346c9f05',1,'rpoly(double *op, int degree, double *zeror, double *zeroi, int info[]):&#160;rpoly.c']]],
+  ['rv2coe',['rv2coe',['../rv2coe_8c.html#a139aeab56ca3e1d13f6f7a290ddd96c7',1,'rv2coe(double vectorPosicion[3], double vectorVelocidad[3], double vectorResultado[11]):&#160;rv2coe.c'],['../rv2coe_8h.html#a139aeab56ca3e1d13f6f7a290ddd96c7',1,'rv2coe(double vectorPosicion[3], double vectorVelocidad[3], double vectorResultado[11]):&#160;rv2coe.c']]]
+];

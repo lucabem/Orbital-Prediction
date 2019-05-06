@@ -1,6 +1,11 @@
 #include "MatlabUtilities.h"
 
+/**
+    Funcion que dado dos vectores de dimension 3, devuelve el angulo
+    formado por los dos vectores
 
+    Salida: theta [-pi, pi]
+*/
 
  double angl( double vec1[],  double vec2[])
 {

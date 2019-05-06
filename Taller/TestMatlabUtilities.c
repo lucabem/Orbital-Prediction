@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -17,42 +18,7 @@ void Test_Fix();
 void Test_RaicesPolinomiales();
 
 
-bool fequal( double a,  double b);
-
 const  double epsilon = 0.0000000000001;
-/*
-int main()
-{
-    Test_Norma();
-        printf(">>> TEST NORMA SUPERADO \n");
-    Test_Sign();
-        printf(">>> TEST SING SUPERADO \n");
-    Test_Cross();
-        printf(">>> TESTS CROSS SUPERADOS \n");
-    Test_Dot();
-        printf(">>> TESTS DOT SUPERADOS \n");
-    Test_Det();
-        printf(">>> TESTS DETERMINANTE SUPERADOS \n");
-    Test_Multiplicacion();
-        printf(">>> TESTS MULTIPLICACION SUPERADOS \n");
-    Test_Transpuesta();
-        printf(">>> TESTS TRANSPUESTA SUPERADOS \n");
-    Test_isReal();
-        printf(">>> TESTS ISREAL SUPERADOS \n");
-    Test_Length();
-        printf(">>> TESTS LENGTH SUPERADOS \n");
-    Test_Zeros();
-        printf(">>> TESTS ZEROS SUPERADOS \n");
-    Test_Fix();
-        printf(">>> TESTS FIX SUPERADOS \n");
-    Test_RaicesPolinomiales();
-        printf(">>> TESTS RAICES SUPERADOS \n");
-
-    printf(">>> TESTS MATLABUTILITIES SUPERADOS \n");
-    return 0;
-}
-
-*/
 
 void Test_Norma()
 {

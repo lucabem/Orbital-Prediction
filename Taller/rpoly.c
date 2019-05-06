@@ -1,3 +1,4 @@
+
 /*      rpoly.cpp -- Jenkins-Traub real polynomial root finder.
  *
  *      (C) 2002, C. Bond.  All rights reserved.

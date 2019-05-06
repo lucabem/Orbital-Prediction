@@ -1,10 +1,18 @@
 #include "MatlabUtilities.h"
 
+
+/**
+    Funcion que calcular la norma de un vector de dimension 3.
+*/
  double Norma( double v[])
 {
     return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 }
 
+
+/**
+    Funcion que calcula el producto escalar entre dos vectores de la misma dimension.
+*/
  double dot(int dim,  double v1[dim],  double v2[dim])
 {
      double suma = 0;
@@ -15,6 +23,12 @@
     return suma;
 }
 
+/**
+    Funcion que devuelve el signo de x:
+         1 si x > 0
+        -1 si x < 0
+         0 si x = 0
+*/
 int Sing( double x)
 {
     if ( x<0 )
@@ -31,6 +45,10 @@ int Sing( double x)
     }
 }
 
+
+/**
+    Accion que calcula el vector cr3, resultado del producto vectorial entre dos vectores de la misma dimension.
+*/
 void cross( double v1[],  double v2[],  double cr[3])
 {
     cr[0] = v1[1]*v2[2]-v1[2]*v2[1];
@@ -38,6 +56,13 @@ void cross( double v1[],  double v2[],  double cr[3])
     cr[2] = v1[0]*v2[1]-v1[1]*v2[0];
 
 }
+
+/**
+
+    Devuelve el determinante de una matriz cuadrada. Solo se permiten matrices de dimension 3x3 y 2x2.
+    En caso de otra dimension, devuelve 0.
+
+*/
 
  double det(int dimension,  double matrix[dimension][dimension])
 {
@@ -56,6 +81,11 @@ void cross( double v1[],  double v2[],  double cr[3])
     return det;
 }
 
+
+/**
+    Acción que multiplica la matriz A de dimension r1 x c1 y la matriz B de dimension r2 x c2.
+    Guarda el resultado en la matriz C de dimension r1 x c2.
+*/
 void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b[r2][c2],  double c[r1][c2])
 {
     int i,j,k;
@@ -77,6 +107,10 @@ void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b
 
 }
 
+/**
+    Accion que dado el numero de filas, columnas y la matriz ha transponer, genera la matriz transpuesta
+    y la guarda en el parametro transpuesta.
+*/
 void transpuesta(int filas, int columnas,  double a[filas][columnas],  double transpuesta[columnas][filas])
 {
     for(int i=0; i<filas; i++)
@@ -88,10 +122,18 @@ void transpuesta(int filas, int columnas,  double a[filas][columnas],  double tr
     }
 }
 
+/**
+    Funcion que comprueba si un número es real o imaginario.
+    @return True si parteImaginaria es distinto de 0. False si parteImaginaria es igual a 0.
+*/
 bool isReal( double parteImaginaria)
 {
     return (parteImaginaria) == 0;
 }
+/**
+    Accion que dada una matrz de dimensión M x N,
+    inicializa todos sus componentes a cero.
+*/
 
 void zeros(int m, int n,  double matriz[m][n])
 {
@@ -100,11 +142,23 @@ void zeros(int m, int n,  double matriz[m][n])
             matriz[i][j] = 0.0;
 }
 
+
+/**
+
+    Funcion que calcular las raices (complejas y reales) de un polinomio de grado n y las guarda en el vector resultado.
+
+    @param[degree]: grado del polinomio
+    @param[op]: vector con los coeficientes del polinomio
+    @param[zeror]: vector con las partes reales de las soluciones
+    @param[zeroi]: vector con las partes imaginarias de las soluciones
+    @param[resultado]: vector con las raices reales del polinomio
+
+
+*/
 int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],  double zeroi[degree+1], double resultado[20])
 {
 
     int info[15] = {1,2,3,4,5,6,7, 8, 9, 10, 11, 12, 13, 14, 15};
-    int contado = 0;
 
     rpoly(op,degree, zeror, zeroi, info);
 
@@ -122,6 +176,12 @@ int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],
     return 0;
 }
 
+
+/**
+    Funcion que dado un double x:
+        Si x > 0, devuelve la parte entera de x.
+        Si x < 0, devuelve la parte entera de x + 1
+*/
  double fix( double x)
 {
     if (x >= 0)
@@ -135,6 +195,11 @@ int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],
 
 }
 
+
+/**
+    Funcion para comparar dos reales con una precision de 10^(-12).
+    @return True si  abs(a-b) es menor que 10^(-12), y False en caso contrario.
+*/
 bool fequal( double a,  double b)
 {
     return fabs(a-b) < 0.0000000000001;

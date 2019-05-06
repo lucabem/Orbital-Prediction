@@ -4,6 +4,11 @@
 #include "Constantes.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+    Accion que realiza el trabajo de iteracion para el algoritmo
+    de double-r
+*/
 void doubler ( double cc1,  double cc2,
                double magrsite1,  double magrsite2,
                double magr1in,  double magr2in,

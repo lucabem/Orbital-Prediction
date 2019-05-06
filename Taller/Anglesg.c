@@ -1,3 +1,4 @@
+
 #include "Anglesg.h"
 #include "Constantes.h"
 #include "MatlabUtilities.h"
@@ -9,6 +10,29 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+    Accion que resuelve el problema de la determinacion de orbita usando tres
+    vistas opticas.
+
+    Inputs:
+        Alpha1      - right ascension at t1    [rad]
+        Alpha2      - right ascension at t2    [rad]
+        Alpha3      - right ascension at t3    [rad]
+        Delta1      - declination at t1         [rad]
+        Delta2      - declination at t2         [rad]
+        Delta3      - declination at t3         [rad]
+        JD1         - Modified julian date of t1
+        JD2         - Modified julian date of t2
+        JD3         - Modified julian date of t3
+        RS1         - ijk site1 position vector   [m]
+        RS2         - ijk site2 position vector   [m]
+        RS3         - ijk site3 position vector   [m]
+
+    Outputs:
+        vectorR2    - ijk position vector at t2   [m]
+        V2          - ijk velocity vector at t2   [m/s]
+
+*/
 void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  double Delta2,  double Delta3,
               double JD1,  double JD2,  double JD3,
               double RS1[3],  double RS2[3],  double RS3[3], double vectorR2[3], double V2[3])
