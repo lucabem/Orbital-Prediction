@@ -241,12 +241,24 @@ void Example3()
              Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, vv2);
 
 
-    printf("\n RESULTADO FINAL Double-R-Iteration method\n");
-    for (int i=0; i<3; i++)
-        printf("\t%0.5f \n", r2[i]/1000);
+    printf("\n RESULTADO FINAL EXAMPLE 3 Double-R-Iteration method\n");
 
-    for (int i=0; i<3; i++)
-        printf("\t%0.5f \n", vv2[i]/1000);
+    double errorR2[3] = { 40706.1757963811, 9894.89554171767 , -235.153903192033};
+    double errorVV2[3] = { -0.717462813807556, 2.96769999408282 , 0.00324067616543317};
+    printf("\t%0.5f ------- %0.5f \n ", r2[0]/1000, errorR2[0]);
+    printf("\t%0.5f  ------- %0.5f \n ", r2[1]/1000, errorR2[1]);
+    printf("\t%0.5f ------- %0.5f \n ", r2[2]/1000, errorR2[2]);
+    printf("\t%0.5f    ------- %0.5f \n ", vv2[0]/1000, errorVV2[0]);
+    printf("\t%0.5f    ------- %0.5f \n ", vv2[1]/1000, errorVV2[1]);
+    printf("\t%0.5f   ------- %0.5f \n ", vv2[2]/1000, errorVV2[2]);
+
+    printf("ERROR APROXIMADO \n");
+    printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0]));
+    printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1]));
+    printf("\t%0.5f \n ", fabs(r2[2]/1000 - errorR2[2]));
+    printf("\t%0.5f \n ", fabs(vv2[0]/1000 - errorVV2[0]));
+    printf("\t%0.5f \n ", fabs(vv2[1]/1000 - errorVV2[1]));
+    printf("\t%0.5f \n ", fabs(vv2[2]/1000 - errorVV2[2]));
 
     free(eop);
 }
