@@ -5,6 +5,24 @@
 #include <math.h>
 #include "angl.h"
 
+/**
+
+    Funcion que realiza el metodo para la determinacion de orbita Gibbs. Este metodo
+    determina la velocidad en el punto medio de 3 vectores dados.
+
+    Entrada:
+        double r1[3]:                ijk vector posicion
+        double r2[3]:                ijk vector posicion
+        double r3[3]:                ijk vector posicion
+
+
+    Salida:
+        double copa:
+        char* error:                 flag de comprobacion
+        double vectVelocidadSal[3]:  ijk vector velocidad para r2
+        double angulos[2]         :  [theta (angulo entre vectores) , theta1]
+
+*/
  double gibbs ( double r1[3],
                double r2[3],
                double r3[3],

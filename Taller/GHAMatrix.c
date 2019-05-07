@@ -2,6 +2,17 @@
 #include "R_z.h"
 #include "Gast.h"
 
+/**
+    Accion que transforma desde el verdadero equador y equinoccio al
+    sistema de equador terraqueo y Greenwich meridiano.
+
+
+    Entrada:
+        double Mjd_UT1:                   Fecha Juliana modificada
+        double matrizTransormada[3][3]:   Guarda el resultado de la transformacion
+        double (*eop)[13]:                Variable con datos almacenados
+*/
+
 void ghaMatrix ( double Mjd_UT1,  double matrizTransformada[3][3],  double (*eop)[13])
 {
     for (int i=0; i<3; i++)

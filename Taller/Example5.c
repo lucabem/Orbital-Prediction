@@ -24,8 +24,9 @@
 #include "lambert_gooding.h"
 #include "AngleDr.h"
 
+void Example5();
 
-int main()
+void Example5()
 {
 
     double (*eop)[13] = malloc(sizeof( double[20026][13]));

@@ -6,9 +6,20 @@
 #include "IERS.h"
 #include "Constantes.h"
 
+/**
+    Funcion que a partir de la fecha juliana modificada calcula
+    el tiempo sideral Greenwich aparente.
+
+    Entrada:
+        Mjd_UT1 Fecha Julia Modificada
+
+    Salida:
+        GAST en radianes
+
+*/
  double gast ( double Mjd_UT1,  double(*eop)[13])
 {
-     double salidaIERS[6], diferenciaTiempos[5];
+    double salidaIERS[6], diferenciaTiempos[5];
 
     IERS(eop, Mjd_UT1, 'l', salidaIERS);
 

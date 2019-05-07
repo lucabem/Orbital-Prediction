@@ -32,6 +32,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Angl.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="AngleDr.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,6 +61,9 @@
 		<Unit filename="Example3.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Example5.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Example6.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -80,6 +86,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Gibbs.h" />
+		<Unit filename="Gmst.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="HGibbs.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -88,6 +97,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="IERS.h" />
+		<Unit filename="Lambert_gooding.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="MatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -124,9 +136,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="PrecMatrix.h" />
-		<Unit filename="Principal.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="R_x.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -139,6 +148,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="R_z.h" />
+		<Unit filename="Rv2coe.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="TestMatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -146,26 +158,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Unit.h" />
-		<Unit filename="angl.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="angl.h" />
 		<Unit filename="eop19620101.txt" />
-		<Unit filename="gmst.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="gmst.h" />
-		<Unit filename="lambert_gooding.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="lambert_gooding.h" />
 		<Unit filename="rpoly.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="rpoly.h" />
-		<Unit filename="rv2coe.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="rv2coe.h" />
 		<Unit filename="timeDiff.c">
 			<Option compilerVar="CC" />

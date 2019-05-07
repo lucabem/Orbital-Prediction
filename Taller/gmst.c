@@ -4,6 +4,16 @@
 #include <math.h>
 #include "Constantes.h"
 
+/**
+    Funcion que calcula el tiempo Greenwich sideral medio.
+
+    Entrada:
+        double Mjd_UT1:  Fecha juliana modificada
+
+    Salida:
+        double gmstime:  GMST en [rad]
+
+*/
  double gmst( double Mjd_UT1)
 {
     int secs = 86400;
