@@ -28,7 +28,7 @@
                double r3[3],
                double vectVelocidadSal[3],
                double angulos[2],
-              char *error
+              char error[]
              )
 {
      double small = 0.00000001;

@@ -7,7 +7,7 @@
 
  double hgibbs( double r1[3],  double r2[3],  double r3[3],
                double MJD1, double MJD2, double MJD3,
-               double vectVel[3],  double angulos[2], char* error)
+               double vectVel[3],  double angulos[2], char error[])
 {
     error = "ok";
     angulos[0] = 0.0, angulos[1] = 0.0;

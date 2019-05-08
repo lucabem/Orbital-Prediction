@@ -145,7 +145,7 @@
 		<Unit filename="TestMatlabUtilities.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Test_Lambert.c">
+		<Unit filename="Test_General.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Unit.c">

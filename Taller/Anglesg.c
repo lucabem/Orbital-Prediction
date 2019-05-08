@@ -198,12 +198,12 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
 
 
-        char *error = "ok";
+        char error[] = "ok";
         copa = gibbs(vectorR1, vectorR2, vectorR3, vecSalida, angulos, error);
         theta = angulos[0];
         theta1 = angulos[1];
 
-        if ( strcmp(error,"ok") == 0 && (copa < 1/RAD) )
+        if ( strcmp(error,"ok") != 0 && (copa < 1/RAD) )
         {
             //--- HGibbs to get middle vector ----
             copa = hgibbs(vectorR1, vectorR2, vectorR3, JD1, JD2, JD3, vecSalida, angulos, error);
