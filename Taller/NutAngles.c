@@ -129,7 +129,6 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
      double Om =  modulo((  450160.280 - (   5.0*rev +  482890.539)*t +  7.455*t2 + 0.008*t3) + rev, rev);
 
 
-
      double dpsi = 0;
      double deps = 0;
 
@@ -147,6 +146,9 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
 
     angulosNutacion[0] = dpsi;
     angulosNutacion[1] = deps;
+
+        printf(" dpsi = %0.15f deps = %0.15f  \n", dpsi, deps);
+
 }
 
 

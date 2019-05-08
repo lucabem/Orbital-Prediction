@@ -49,9 +49,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="EqnEquinox.h" />
-		<Unit filename="Example0.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Example1.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -146,6 +143,9 @@
 		</Unit>
 		<Unit filename="R_z.h" />
 		<Unit filename="TestMatlabUtilities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Test_Lambert.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Unit.c">
