@@ -93,7 +93,11 @@ void Example1()
 
 
     double Rs[3];
+
+
+
     Position(lon, lat, alt, Rs); // vector [a b c] -> matrix 1x3
+
 
     double Mjd1 = obs[0][0];
     double Mjd2 = obs[1][0];

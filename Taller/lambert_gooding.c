@@ -24,8 +24,8 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
     double r1hat[3] = {r1[0]/r1mag, r1[1]/r1mag, r1[2]/r1mag};
     double r2hat[3] = {r2[0]/r2mag, r2[1]/r2mag, r2[2]/r2mag};
     double r1xr2[3];
-            double all_vt1[3][2];
-        double all_vt2[3][2];
+    double all_vt1[3][2];
+    double all_vt2[3][2];
 
     cross(r1,r2, r1xr2);
 
@@ -129,7 +129,8 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
 
     int n = 0;
 
-    for(int i=0; i<NELEMS(solution_exists); i++){
+    for(int i=0; i<NELEMS(solution_exists); i++)
+    {
         if ( solution_exists[i] == 1)
             n++;
     }
@@ -198,7 +199,7 @@ int vlamb( double gm, double r1,  double r2,  double th,  double tdelt, double v
     double q      = sqrt(r1r2)*cos(thr2)/s;
 
     double rho, sig;
-    if ( c != 0.0 )
+    if ( !(fequal(c,0.0)) )
     {
         rho = dr/c;
         sig = r1r2th/csq;
@@ -264,7 +265,8 @@ int vlamb( double gm, double r1,  double r2,  double th,  double tdelt, double v
 
 void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double salida_t_dt_d2t_d3t[4])
 {
-
+    //printf("Entrada \n");
+    //printf("\t m=%.15f q=%.15f qsqfm1=%.15f x=%.15f n=%.15f \n", m, q, qsqfm1, x, n);
     double dt, d2t, d3t;
     double sw = 0.4;
     double t = 0;
@@ -351,23 +353,24 @@ void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double sal
                     } // (continue looping for inverse tanh)
                 }
             }
-        }
 
-        t = 2.0*(t/y + b)/u;
 
-        if (l1 && !fequal(z,0.0))
-        {
-            qz = q/z;
-            qz2 = qz*qz;
-            qz = qz*qz2;
-            dt = (3.0*x*t - 4.0*(a + qx*qsqfm1)/z)/u;
-            if (l2)
+            t = 2.0*(t/y + b)/u;
+
+            if (l1 && !fequal(z,0.0))
             {
-                d2t = (3.0*t + 5.0*x*dt + 4.0*qz*qsqfm1)/u;
-            }
-            if (l3)
-            {
-                d3t = (8.0*dt + 7.0*x*d2t - 12.0*qz*qz2*x*qsqfm1)/u;
+                qz = q/z;
+                qz2 = qz*qz;
+                qz = qz*qz2;
+                dt = (3.0*x*t - 4.0*(a + qx*qsqfm1)/z)/u;
+                if (l2)
+                {
+                    d2t = (3.0*t + 5.0*x*dt + 4.0*qz*qsqfm1)/u;
+                }
+                if (l3)
+                {
+                    d3t = (8.0*dt + 7.0*x*d2t - 12.0*qz*qz2*x*qsqfm1)/u;
+                }
             }
         }
         else
@@ -441,6 +444,7 @@ void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double sal
             if (l1)
             {
                 dt = dt + tqterm*u1i;
+                printf("\t\t\t 3 - dt=%0.15f \n", dt);
             }
             if (l2)
             {
@@ -475,12 +479,17 @@ void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double sal
     salida_t_dt_d2t_d3t[1] = dt;
     salida_t_dt_d2t_d3t[2] = d2t;
     salida_t_dt_d2t_d3t[3] = d3t;
+
+
+//    printf("Salida \n");
+//    printf("\t t=%.15f dt=%.15f d2t=%.15f d3t=%.15f\n", t, dt, d2t, d3t);
 }
+
 
 
 double d8rt( double x)
 {
-    return sqrt(sqrt(sqrt(x)));
+    return pow(x, 0.125);
 }
 
 void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_x_xpl[3])
@@ -568,64 +577,89 @@ void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_
         if ( i > 12)
         {
             n = -1;
+            salida_n_x_xpl[0] = n*1.0;
+            salida_n_x_xpl[1] = x;
+            salida_n_x_xpl[2] = xpl;
+            return;
+        }
+
+        tdiffm = tin - tmin;
+
+        if ( tdiffm < 0.0)
+        {
+            n = 0;
+            salida_n_x_xpl[0] = n*1.0;
+            salida_n_x_xpl[1] = x;
+            salida_n_x_xpl[2] = xpl;
+            return;
+
+        }
+        else if (tdiffm == 0.0)
+        {
+            x = xm;
+            n = -1;
+            salida_n_x_xpl[0] = n*1.0;
+            salida_n_x_xpl[1] = x;
+            salida_n_x_xpl[2] = xpl;
+            return;
         }
         else
         {
-            tdiffm = tin - tmin;
+            n = 3;
 
-            if ( tdiffm < 0.0)
+            if (d2t==0.0)
             {
-                n = 0;
+                d2t = 6.0*m*PI;
             }
-            else if (tdiffm == 0.0)
+
+
+            x = sqrt(tdiffm/(d2t/2.0 + tdiffm/pow((1.0 - xm),2)));
+            w = xm + x;
+            w = w*4.0/(4.0 + tdiffm) + pow((1.0 - w),2);
+            x = x*(1.0 - (1.0 + m + c41*(thr2 - 0.5))/(1.0 + c3*m)*x*(c1*w + c2*x*sqrt(w))) + xm;
+            d2t2 = d2t/2.0;
+
+            if (x>=1.0)
             {
-                x = xm;
-                n = -1;
+                n = 1;
+            }
+
+
+            tlamb(m,q,qsqfm1,0.0,0, salida_tmin_dt_d2t_d3t);
+            t0 = salida_tmin_dt_d2t_d3t[0];
+            dt = salida_tmin_dt_d2t_d3t[1];
+            d2t = salida_tmin_dt_d2t_d3t[2];
+            d3t = salida_tmin_dt_d2t_d3t[3];
+
+            tdiff0 = t0 - tmin;
+            tdiff = tin - t0;
+
+            if (tdiff<=0)
+            {
+                x = xm - sqrt(tdiffm/(d2t2 - tdiffm*(d2t2/tdiff0 - 1.0/pow(xm,2))));
             }
             else
             {
-                n = 3;
-
-                if (d2t==0.0)
-                    d2t = 6.0*m*PI;
-
-                x = sqrt(tdiffm/(d2t/2.0 + tdiffm/pow((1.0 - xm),2)));
-                w = xm + x;
-                w = w*4.0/(4.0 + tdiffm) + pow((1.0 - w),2);
-                x = x*(1.0 - (1.0 + m + c41*(thr2 - 0.5))/(1.0 + c3*m)*x*(c1*w + c2*x*sqrt(w))) + xm;
-                d2t2 = d2t/2.0;
-                if (x>=1.0)
-                    n = 1;
-
-                tlamb(m,q,qsqfm1,0.0,0, salida_tmin_dt_d2t_d3t);
-                t0 = salida_tmin_dt_d2t_d3t[0];
-                dt = salida_tmin_dt_d2t_d3t[1];
-                d2t = salida_tmin_dt_d2t_d3t[2];
-                d3t = salida_tmin_dt_d2t_d3t[3];
-
-                tdiff0 = t0 - tmin;
-                tdiff = tin - t0;
-
-                if (tdiff<=0)
-                    x = xm - sqrt(tdiffm/(d2t2 - tdiffm*(d2t2/tdiff0 - 1.0/pow(xm,2))));
-                else
+                x = -tdiff/(tdiff + 4.0);
+                double ij = 200;
+                w = x + c0*sqrt(2.0*(1.0 - thr2));
+                if (w<0.0)
                 {
-                    x = -tdiff/(tdiff + 4.0);
-                    double ij = 200;
-                    w = x + c0*sqrt(2.0*(1.0 - thr2));
-                    if (w<0.0)
-                        x = x - sqrt(d8rt(-w))*(x + sqrt(tdiff/(tdiff+1.5*t0)));
+                 x = x - sqrt(d8rt(-w))*(x + sqrt(tdiff/(tdiff+1.5*t0)));
+                }
 
-                    w = 4.0/(4.0 + tdiff);
-                    x = x*(1.0 + (1.0 + m + c42*(thr2 - 0.5))/(1.0 + c3*m)*x*(c1*w - c2*x*sqrt(w)));
-                    if (x<=-1.0)
+                w = 4.0/(4.0 + tdiff);
+                x = x*(1.0 + (1.0 + m + c42*(thr2 - 0.5))/(1.0 + c3*m)*x*(c1*w - c2*x*sqrt(w)));
+                if (x<=-1.0)
+                {
+                    n = n - 1;
+                    if (fequal(n,1))
                     {
-                        n = n - 1;
-                        if (n==1)
-                            x = xpl;
+                          x = xpl;
                     }
 
                 }
+
             }
         }
     }
@@ -638,14 +672,17 @@ void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_
         d2t = salida_tmin_dt_d2t_d3t[2];
         t = tin - t;
 
-        if (dt!=0.0)
+        if ( !fequal(dt,0.0) )
             x = x + t*dt/(dt*dt + t*d2t/2.0);
     }
 
 
     if (n!=3)
     {
-
+        salida_n_x_xpl[0] = n*1.0;
+        salida_n_x_xpl[1] = x;
+        salida_n_x_xpl[2] = xpl;
+        return;
     }
     else
     {
@@ -672,7 +709,7 @@ void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_
             if ( x <= -1.0)
             {
                 n = n - 1;
-                if ( n == 1)
+                if ( fequal(n, 1) )
                 {
                     x = xpl;
                 }

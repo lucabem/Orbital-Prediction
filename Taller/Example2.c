@@ -236,9 +236,24 @@ void Example2()
 
     double vv2[3], r2[3];
 
-    anglesdr(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
+ /*   anglesdr(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
              Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, vv2);
+*/
 
+    double prueba_r1[3], prueba_r2[3], prueba_r3[3];
+    prueba_r1[0] = -4625314.68025011;
+    prueba_r1[1] = -2963495.20415729;
+    prueba_r1[2] = 3230277.01672135;
+
+    prueba_r2[0] = -4559382.005115;
+    prueba_r2[1] = -3064041.00297889;
+    prueba_r2[2] = 3230203.98499169;
+
+    prueba_r3[0] = -4491265.71743158;
+    prueba_r3[1] = -3163120.47843576;
+    prueba_r3[2] = 3230128.5447305;
+
+    anglesdr(4.88763365085309, 4.90256557092243, 4.91793481814244, -0.54763534533701,  -0.55055398963195, -0.553478917112197, 55565.5422048611, 55565.5456770835, 55565.5491493056, prueba_r1, prueba_r2, prueba_r3, r2, vv2);
 
     printf("\n RESULTADO FINAL EXAMPLE 2 Double-R-Iteration method\n");
     double errorR2[3] = { 1976.69487027542, -37017.1639918971 , -17995.1972585809};
