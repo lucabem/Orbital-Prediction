@@ -134,8 +134,7 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
 
     for (int i=0; i<N_coeff; i++)
     {
-
-         double arg  = ( matrizC[i][0] * l + matrizC[i][1]*lp + matrizC[i][2]*F + matrizC[i][3]*D + matrizC[i][4]*Om)/ARCS;
+        double arg  = ( matrizC[i][0] * l + matrizC[i][1]*lp + matrizC[i][2]*F + matrizC[i][3]*D + matrizC[i][4]*Om)/ARCS;
         dpsi = dpsi + ( matrizC[i][5] + matrizC[i][6]*t ) * sin(arg);
         deps = deps + ( matrizC[i][7] + matrizC[i][8]*t ) * cos(arg);
     }
@@ -146,8 +145,6 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
 
     angulosNutacion[0] = dpsi;
     angulosNutacion[1] = deps;
-
-        printf(" dpsi = %0.15f deps = %0.15f  \n", dpsi, deps);
 
 }
 

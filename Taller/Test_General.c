@@ -11,6 +11,11 @@
 #include "PrecMatrix.h"
 #include "Position.h"
 #include "PoleMatrix.h"
+#include "NutAngles.h"
+#include "NewtonNu.h"
+#include "Mjday.h"
+#include "MeanObliquity.h"
+
 
 void Test_Angl();
 void Test_Unit();
@@ -21,6 +26,11 @@ void Test_Rz();
 void Test_PrecMatrix();
 void Test_Position();
 void Test_PoleMatrix();
+void Test_NutAngles();
+void Test_Newtonnu();
+void Test_Mjday();
+void Test_MeanObliquity();
+void Test_Lambert();
 
 void Test_AngleDr();
 void Test_DoubleR();
@@ -32,11 +42,10 @@ void Test_Gibbs();
 void Test_Gmst();
 void Test_HGibbs();
 void Test_IERS();
-void Test_Lambert();
-void Test_MeanObliquity();
-void Test_Mjday();
-void Test_Newtonnu();
-void Test_NutAngles();
+
+
+
+
 void Test_NutMatrix();
 
 int main()
@@ -50,6 +59,12 @@ int main()
     Test_PrecMatrix();
     Test_Position();
     Test_PoleMatrix();
+    Test_NutAngles();
+    Test_Newtonnu();
+    Test_Mjday();
+    Test_MeanObliquity();
+    Test_Lambert();
+
 }
 
 void Test_Angl()
@@ -237,6 +252,45 @@ void Test_PoleMatrix()
     assert( fequal(pm[2][0], -0.000000075972419978477304907487873460864) == true);
     assert( fequal(pm[2][1], 0.0000025678608802670753997695642090182) == true);
     assert( fequal(pm[2][2], 0.99999999999670019512620910973055) == true);
+}
+
+void Test_NutAngles()
+{
+    double angulos[2];
+    NutAngles(54977.667669664253481, angulos);
+    assert( fequal(angulos[0], 0.000064869338739384949338) == true );
+    assert( fequal(angulos[1], 0.000022305133670726570955) == true );
+
+    NutAngles(54977.68155855324585, angulos);
+    assert( fequal(angulos[0], 0.000064882163989950450574) == true );
+    assert( fequal(angulos[1], 0.000022305027665978605734) == true );
+
+}
+
+void Test_Newtonnu()
+{
+    double newt[2];
+    newtonnu(0.082533106173374254366, 0.1812003110698841013, newt);
+    assert( fequal(newt[0], 0.16688393775668777796) == true);
+    assert( fequal(newt[1], 0.1531743313690979158) == true);
+
+    newtonnu(0.079129107778551310837, 0.19026723747469370673, newt);
+    assert( fequal(newt[0], 0.17584036930451643621) == true);
+    assert( fequal(newt[1], 0.16199787056861986168) == true);
+
+}
+
+void Test_Mjday()
+{
+    assert( fequal(Mjday(2011, 1, 4, 13, 0, 46.5),  55565.54220486106351) == true);
+    assert( fequal(Mjday(2011, 1, 4, 13, 10, 46.5), 55565.549149305559695) == true);
+
+}
+
+void Test_MeanObliquity()
+{
+    assert( fequal(MeanObliquity(55565.542970879585482), 0.40906781750982068591 ) == true);
+    assert( fequal(MeanObliquity(55565.546443102066405), 0.4090678174882443896  ) == true);
 }
 
 void Test_Lambert()
