@@ -54,4 +54,25 @@ int main()
     assert(fequal(vrf[0][0], 0.0) == true);
     assert(fequal(vtf[0][0], 0.0) == true);
 
+    double lg_v1[3];
+    double lg_v2[3];
+
+    double r1[3] = {8794276.5809840224683, 404708.19494348927401, 2543973.8056371584535};
+    double r2[3] = {8330586.9962050709873, 3762923.0821287548169, 572416.99634550604969};
+
+    lambert_gooding(r1, r2, 600.00000447034835815, 398600441800000, false, 1, lg_v1, lg_v2);
+    assert( fabs(lg_v1[0]- 591.41567971816994032) < pow(10, -5));
+    assert( fabs(lg_v1[1]- 5838.8636504518080983)< pow(10, -5));
+    assert( fabs(lg_v1[2]- (-2988.6398832611826037))< pow(10, -5));
+
+    assert( fabs(lg_v2[0] - (-2113.6537704040365497))< pow(10, -4));
+    assert( fabs(lg_v2[1] - 5180.3929960643363302)< pow(10, -4));
+    assert( fabs(lg_v2[2] - (-3480.8307130797988975)) < pow(10, -4));
+
+    Example1();
+    Example2();
+    Example3();
+    Example5();
+    Example6();
+    Example7();
 }

@@ -8,16 +8,17 @@
 #include <stdlib.h>
 void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool long_way, int multi_revs,  double v1[3],  double v2[3])
 {
-
     double r1mag = Norma(r1);
     double r2mag = Norma(r2);
+
+    int sols = 0;
 
     if ( r1mag==0.0 || r2mag==0.0 || mu<=0.0 || tof<=0.0 )
     {
         printf("Error in solve_lambert_gooding: invalid input\n");
+        return ;
     }
 
-// initialize:
     int solution_exists[5] = {20, 20, 20, 20, 20};
     double dr       = r1mag - r2mag;
     double r1r2     = r1mag*r2mag;
@@ -39,23 +40,22 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
     double r1xr2_hat[3];
     unit(r1xr2,r1xr2_hat);
 
-// a trick to make sure argument is between [-1 and 1]:
-    double pa = acos(fmax(-1.0, fmin(1.0,dot(3, r1hat, r2hat))));
+    double pa = acos(fmax(-1.0, fmin(1.0,dot(3,r1hat,r2hat))));
 
     for (int i=0; i<=multi_revs; i++)
     {
-        int num_revs = i; //number of complete revs for this case
+        int num_revs = i;
         double ta, rho[3];
 
-        // transfer angle and Normaal vector:
-        if (long_way)  // greater than pi
+        if (long_way)
         {
             ta    =  num_revs * 2*PI + (2*PI - pa);
             rho[0]   = -r1xr2_hat[0];
             rho[1]   = -r1xr2_hat[1];
             rho[2]   = -r1xr2_hat[2];
+
         }
-        else   // less than pi
+        else
         {
             ta    = num_revs * 2*PI + pa;
             rho[0]   = r1xr2_hat[0];
@@ -67,15 +67,13 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
         cross(rho, r1hat, etai);
         cross(rho, r2hat, etaf);
 
-        // Gooding routine:
         double vri[2][1], vti[2][1], vrf[2][1], vtf[2][1];
-
         int n = vlamb(mu,r1mag,r2mag,ta,tof, vri, vti, vrf, vtf);
 
         double vt1[3][2];
         double vt2[3][2];
 
-        switch (n)  // number of solutions
+        switch(n)
         {
         case 1:
             vt1[0][0] = vri[0][0]*r1hat[0]+ vti[0][0]*etai[0];
@@ -99,16 +97,13 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
             vt1[1][1] = vri[0][0]*r1hat[1]+ vti[0][0]*etai[1];
             vt1[2][1] = vri[0][0]*r1hat[2]+ vti[0][0]*etai[2];
 
-            vt2[0][1] = vrf[0][0]*r2hat[0]+ vtf[0][0]*etaf[0];
-            vt2[1][1] = vrf[0][0]*r2hat[1]+ vtf[0][0]*etaf[1];
-            vt2[2][1] = vrf[0][0]*r2hat[2]+ vtf[0][0]*etaf[2];
+            vt2[0][1] = vrf[0][0]*r2hat[0]+ vtf[1][0]*etaf[0];
+            vt2[1][1] = vrf[0][0]*r2hat[1]+ vtf[1][0]*etaf[1];
+            vt2[2][1] = vrf[0][0]*r2hat[2]+ vtf[1][0]*etaf[2];
         }
 
-
-
-        if (i==0 && n==1)  // there can be only one solution
+        if ( i==0 && n==1)
         {
-
             all_vt1[0][0] = vt1[0][0];
             all_vt1[1][0] = vt1[1][0];
             all_vt1[2][0] = vt1[2][0];
@@ -117,51 +112,75 @@ void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool 
             all_vt2[1][0] = vt2[1][0];
             all_vt2[2][0] = vt2[2][0];
 
+            sols++;
             solution_exists[0] = 1;
         }
         else
         {
 
+            switch(n)
+            {
+            case 1:
+                all_vt1[0][2*i-1] = vt1[0][0];
+                all_vt1[1][2*i-1] = vt1[1][0];
+                all_vt1[2][2*i-1] = vt1[2][0];
+
+                all_vt2[0][2*i-1] = vt2[0][0];
+                all_vt2[1][2*i-1] = vt2[1][0];
+                all_vt2[2][2*i-1] = vt2[2][0];
+
+                sols++;
+                solution_exists[2*i-1] = 1;
+
+            case 2:
+                all_vt1[0][2*i] = vt1[0][0];
+                all_vt1[1][2*i] = vt1[1][0];
+                all_vt1[2][2*i] = vt1[2][0];
+
+                all_vt2[0][2*i] = vt2[0][0];
+                all_vt2[1][2*i] = vt2[1][0];
+                all_vt2[2][2*i] = vt2[2][0];
+
+                sols++;
+                solution_exists[2*i-1] = 1;
+
+                all_vt1[0][2*i] = vt1[0][0];
+                all_vt1[1][2*i] = vt1[1][0];
+                all_vt1[2][2*i] = vt1[2][0];
+
+                all_vt2[0][2*i] = vt2[0][0];
+                all_vt2[1][2*i] = vt2[1][0];
+                all_vt2[2][2*i] = vt2[2][0];
+
+                sols++;
+                solution_exists[2*i] = 1;
+            }
         }
-
-
     }
 
-    int n = 0;
+    int n_solutions = sols;
 
-    for(int i=0; i<NELEMS(solution_exists); i++)
+
+    int k = 0;
+
+    for (int i=0; i<5; i++)
     {
-        if ( solution_exists[i] == 1)
-            n++;
-    }
-
-
-
-    if (n == 1)
-    {
-        v1[0] = 0.0;
-        v1[1] = 0.0;
-        v1[2] = 0.0;
-        v2[0] = 0.0;
-        v2[1] = 0.0;
-        v2[2] = 0.0;
-
-    }
-
-    int k=0;
-    for (int i=0; i<n; i++)
-    {
-        if (solution_exists[i] == 1)
+        if ( fequal(solution_exists[i], 1) )
         {
-            k=k+1;
             v1[0] = all_vt1[0][i];
             v1[1] = all_vt1[1][i];
             v1[2] = all_vt1[2][i];
+
             v2[0] = all_vt2[0][i];
             v2[1] = all_vt2[1][i];
             v2[2] = all_vt2[2][i];
+
+            k = k + 1;
+
         }
     }
+
+
 }
 
 
@@ -444,7 +463,6 @@ void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double sal
             if (l1)
             {
                 dt = dt + tqterm*u1i;
-                printf("\t\t\t 3 - dt=%0.15f \n", dt);
             }
             if (l2)
             {
@@ -645,7 +663,7 @@ void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_
                 w = x + c0*sqrt(2.0*(1.0 - thr2));
                 if (w<0.0)
                 {
-                 x = x - sqrt(d8rt(-w))*(x + sqrt(tdiff/(tdiff+1.5*t0)));
+                    x = x - sqrt(d8rt(-w))*(x + sqrt(tdiff/(tdiff+1.5*t0)));
                 }
 
                 w = 4.0/(4.0 + tdiff);
@@ -655,7 +673,7 @@ void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_
                     n = n - 1;
                     if (fequal(n,1))
                     {
-                          x = xpl;
+                        x = xpl;
                     }
 
                 }
