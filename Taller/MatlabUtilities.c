@@ -205,3 +205,5 @@ bool fequal( double a,  double b)
     return fabs(a-b) < 0.0000000000001;
 }
 
+double modulo(double a, double b){ return (((a/b) - floor(a/b))*b ); }
+

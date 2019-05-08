@@ -238,18 +238,18 @@ void Example5()
     anglesg(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
              Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, vv2);
 
-
+    double errorVV2[3] = { 0.0168797950290867, -2.65408002932654 , 3.7341200461541};
+    double errorR2[3] = {  20486.5115116966, 1079.23234124514 , 1005.45621710952};
+/*
     printf("\n RESULTADO FINAL EXAMPLE 5 GAUSS method\n");
 
-    double errorR2[3] = {  20486.5115116966, 1079.23234124514 , 1005.45621710952};
-    double errorVV2[3] = { 0.0168797950290867, -2.65408002932654 , 3.7341200461541};
     printf("\t%0.5f ------- %0.5f \n ", r2[0]/1000, errorR2[0]);
     printf("\t%0.5f  ------- %0.5f \n ", r2[1]/1000, errorR2[1]);
     printf("\t%0.5f ------- %0.5f \n ", r2[2]/1000, errorR2[2]);
     printf("\t%0.5f    ------- %0.5f \n ", vv2[0]/1000, errorVV2[0]);
     printf("\t%0.5f    ------- %0.5f \n ", vv2[1]/1000, errorVV2[1]);
     printf("\t%0.5f   ------- %0.5f \n ", vv2[2]/1000, errorVV2[2]);
-
+*/
     printf("ERROR APROXIMADO \n");
     printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0]));
     printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1]));

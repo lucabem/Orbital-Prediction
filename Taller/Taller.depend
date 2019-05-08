@@ -402,7 +402,7 @@
 1557324017 source:c:\users\lucabem\documents\github\taller\taller\angl.c
 	"MatlabUtilities.h"
 
-1557324017 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
+1557328776 c:\users\lucabem\documents\github\taller\taller\matlabutilities.h
 	<math.h>
 	<complex.h>
 	<stdbool.h>
@@ -428,7 +428,7 @@
 1557324017 c:\users\lucabem\documents\github\taller\taller\lambert_gooding.h
 	<stdbool.h>
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\anglesg.c
+1557327304 source:c:\users\lucabem\documents\github\taller\taller\anglesg.c
 	"Anglesg.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
@@ -475,7 +475,7 @@
 	<assert.h>
 	"MatlabUtilities.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example1.c
+1557328351 source:c:\users\lucabem\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -522,7 +522,7 @@
 
 1557324017 c:\users\lucabem\documents\github\taller\taller\ghamatrix.h
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example2.c
+1557328398 source:c:\users\lucabem\documents\github\taller\taller\example2.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -547,7 +547,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example3.c
+1557328368 source:c:\users\lucabem\documents\github\taller\taller\example3.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -572,7 +572,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example5.c
+1557328421 source:c:\users\lucabem\documents\github\taller\taller\example5.c
 	"Anglesg.h"
 	"Constantes.h"
 	<stdio.h>
@@ -598,7 +598,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example6.c
+1557328438 source:c:\users\lucabem\documents\github\taller\taller\example6.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -623,7 +623,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\example7.c
+1557328453 source:c:\users\lucabem\documents\github\taller\taller\example7.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -702,7 +702,7 @@
 	"MatlabUtilities.h"
 	"IERS.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
+1557328757 source:c:\users\lucabem\documents\github\taller\taller\matlabutilities.c
 	"MatlabUtilities.h"
 
 1557324017 source:c:\users\lucabem\documents\github\taller\taller\meanobliquity.c
@@ -718,10 +718,11 @@
 	"MatlabUtilities.h"
 	"Constantes.h"
 
-1557324017 source:c:\users\lucabem\documents\github\taller\taller\nutangles.c
+1557328813 source:c:\users\lucabem\documents\github\taller\taller\nutangles.c
 	"NutAngles.h"
 	"Constantes.h"
 	<math.h>
+	"MatlabUtilities.h"
 
 1557324017 source:c:\users\lucabem\documents\github\taller\taller\nutmatrix.c
 	"NutMatrix.h"

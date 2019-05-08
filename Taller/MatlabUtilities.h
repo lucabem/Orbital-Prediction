@@ -8,6 +8,8 @@
 #define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
 #include <stdlib.h>
 
+double modulo(double a, double b);
+
  double Norma( double v[]);
 
  double dot(int dim,  double v1[dim],  double v2[dim]);

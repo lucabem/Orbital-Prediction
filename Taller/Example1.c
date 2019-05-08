@@ -246,6 +246,7 @@ void Example1()
 
 
     double errorR2[3] = { 8794.27658098403, 404.708194943489 , 2543.97380563715};
+/*
     printf("\n RESULTADO FINAL EXAMPLE 1 Double-R-Iteration method\n");
     printf("\t%0.5f ------- %0.5f \n ", r2[0]/1000, 8794.27658098403);
     printf("\t%0.5f  ------- %0.5f \n ", r2[1]/1000, 404.708194943489);
@@ -253,7 +254,7 @@ void Example1()
     printf("\t%0.5f    ------- %0.5f \n ", vv2[0]/1000,  0.591415680079019);
     printf("\t%0.5f    ------- %0.5f \n ", vv2[1]/1000, 5.83886365198696);
     printf("\t%0.5f   ------- %0.5f \n ", vv2[2]/1000, -2.98863988398241);
-
+*/
     printf("ERROR APROXIMADO \n");
     printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0]));
     printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1]));

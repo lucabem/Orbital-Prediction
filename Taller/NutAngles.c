@@ -1,6 +1,7 @@
 #include "NutAngles.h"
 #include "Constantes.h"
 #include <math.h>
+#include "MatlabUtilities.h"
 
 void NutAngles( double Mjd_TT,  double angulosNutacion[2])
 {
@@ -121,11 +122,11 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
     };
 
 
-     double l  =  fmod((  485866.733 + (1325.0*rev +  715922.633)*t + 31.310*t2 + 0.064*t3), rev);
-     double lp =  fmod(( 1287099.804 + (  99.0*rev + 1292581.224)*t -  0.577*t2 - 0.012*t3), rev);
-     double F  =  fmod((  335778.877 + (1342.0*rev +  295263.137)*t - 13.257*t2 + 0.011*t3), rev);
-     double D  =  fmod(( 1072261.307 + (1236.0*rev + 1105601.328)*t -  6.891*t2 + 0.019*t3), rev);
-     double Om =  fmod((  450160.280 - (   5.0*rev +  482890.539)*t +  7.455*t2 + 0.008*t3), rev);
+     double l  =  modulo((  485866.733 + (1325.0*rev +  715922.633)*t + 31.310*t2 + 0.064*t3) + rev, rev);
+     double lp =  modulo(( 1287099.804 + (  99.0*rev + 1292581.224)*t -  0.577*t2 - 0.012*t3) + rev, rev);
+     double F  =  modulo((  335778.877 + (1342.0*rev +  295263.137)*t - 13.257*t2 + 0.011*t3) + rev, rev);
+     double D  =  modulo(( 1072261.307 + (1236.0*rev + 1105601.328)*t -  6.891*t2 + 0.019*t3) + rev, rev);
+     double Om =  modulo((  450160.280 - (   5.0*rev +  482890.539)*t +  7.455*t2 + 0.008*t3) + rev, rev);
 
 
 
@@ -147,3 +148,5 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
     angulosNutacion[0] = dpsi;
     angulosNutacion[1] = deps;
 }
+
+
