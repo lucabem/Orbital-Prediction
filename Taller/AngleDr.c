@@ -165,7 +165,6 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
 
     }
 
-
     doubler(cc1,cc2,magrsite1,
             magrsite2,magr1in,magr2in,los1,los2,los3,rsite1,rsite2,rsite3,t1,t3,direct, r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
 
