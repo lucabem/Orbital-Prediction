@@ -161,14 +161,13 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
         magr1in = magr1in + deltar1;
         magr2in = magr2in + deltar2;
 
-    }
 
+
+    }
 
 
     doubler(cc1,cc2,magrsite1,
             magrsite2,magr1in,magr2in,los1,los2,los3,rsite1,rsite2,rsite3,t1,t3,direct, r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
-
-
 
 
     double f1,f2,q1,magr1,magr2,a,deltae32;
@@ -180,6 +179,7 @@ void anglesdr(double rtasc1, double rtasc2, double rtasc3,
     magr2 = sal_f1_f2_q1_magr1_magr2_a_deltae32[4];
     a = sal_f1_f2_q1_magr1_magr2_a_deltae32[5];
     deltae32 = sal_f1_f2_q1_magr1_magr2_a_deltae32[6];
+
 
     double v3[3];
     lambert_gooding(r2, r3, (Mjd3-Mjd2)*86400,GM_Earth, false, 1, v2, v3);

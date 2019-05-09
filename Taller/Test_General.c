@@ -27,6 +27,8 @@
 #include "Gast.h"
 #include "GHAMatrix.h"
 #include "NutMatrix.h"
+#include "DoubleR.h"
+#include "AngleDr.h"
 
 //Tiene que haber 27 Test_void
 void Test_Angl();
@@ -52,10 +54,9 @@ void Test_IERS();
 void Test_Gast();
 void Test_GHAMatrix();
 void Test_NutMatrix();
-
-
-void Test_AngleDr();
 void Test_DoubleR();
+void Test_AngleDr();
+
 void Test_Anglesg();
 void Test_Rv2coe();
 
@@ -85,6 +86,8 @@ int main()
     Test_Gast();
     Test_GHAMatrix();
     Test_NutMatrix();
+    Test_DoubleR();
+    Test_AngleDr();
 
 
 }
@@ -604,4 +607,52 @@ void Test_NutMatrix()
     assert( fabs(m[2][0] - 3.46970458441061e-05  )< pow(10, -9));
     assert( fabs(m[2][1] + 8.1380151086029e-07 )< pow(10, -9));
     assert( fabs(m[2][2] - 0.999999999397726 )< pow(10, -9));
+}
+
+void Test_DoubleR()
+{
+    double los1[3] = {0.148851929355429, -0.840681876398112, -0.520669843396865};
+    double los3[3] = {0.173629378644301, -0.832793490773584, -0.525649922093347};
+    double los2[3] = {0.161099913661194, -0.836869774686652, -0.523159438445173};
+
+
+    double rsite1[3] = {-4625314.68025011, -2963495.20415729, 3230277.01672135};
+    double rsite2[3] = {-4559382.005115, -3064041.00297889, 3230203.98499169};
+    double rsite3[3] = {-4491265.71743158, -3163120.47843576, 3230128.5447305};
+
+    double r2[3], r3[3], sal_f1_f2_q1_magr1_magr2_a_deltae32[7];
+
+
+    doubler(241923.732943492, 279551.107139144, 6372639.11744252, 6372639.11744252, 12820055.37, 13457869.07, los1, los2, los3, rsite1, rsite2, rsite3, -300.000022351742, 299.999982118607, 'y',r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
+
+    assert( fabs( r2[0]+2672181.15108884) < pow(10, -7));
+    assert( fabs( r2[1]+12867530.76039)< pow(10, -7));
+    assert( fabs( r2[2]+2898333.99239024)< pow(10, -7));
+
+    assert( fabs( r3[0]+2326788.44033551)< pow(10, -7));
+    assert( fabs( r3[1]+13544788.611832)< pow(10, -7));
+    assert( fabs( r3[2]+3322664.0815058)< pow(10, -7));
+
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[0]+192.733796845969)< pow(10, -7));
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[1]-184.377089731178)< pow(10, -7));
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[2]-266.723129226549)< pow(10, -7));
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[3]-12820055.37)< pow(10, -7));
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[4]-13457869.07)< pow(10, -7));
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[5]-370142443.928873)< 0.5);
+    assert( fabs( sal_f1_f2_q1_magr1_magr2_a_deltae32[6]-0.00869694889817696)< pow(10, -7));
+
+}
+
+void Test_AngleDr()
+{
+    double rsite1[3] = {-4625314.68025011, -2963495.20415729, 3230277.01672135};
+    double rsite2[3] = {-4559382.005115, -3064041.00297889, 3230203.98499169};
+    double rsite3[3] = {-4491265.71743158, -3163120.47843576, 3230128.5447305};
+
+    double r2[3] = {0.0, 0.0, 0.0};
+    double v2[3] = {0.0, 0.0, 0.0};
+
+    anglesdr(4.88763365085309, 4.90256557092243, 4.91793481814244, -0.54763534533701,
+             -0.55055398963195, -0.553478917112197, 55565.5422048611, 55565.5456770835, 55565.5491493056, rsite1, rsite2, rsite3, r2, v2 );
+
 }
