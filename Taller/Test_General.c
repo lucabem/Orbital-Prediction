@@ -1,5 +1,8 @@
 
 #include <assert.h>
+#include <stdio.h>
+#include <string.h>
+
 #include "MatlabUtilities.h"
 #include "angl.h"
 #include "lambert_gooding.h"
@@ -15,8 +18,17 @@
 #include "NewtonNu.h"
 #include "Mjday.h"
 #include "MeanObliquity.h"
+#include "Frac.h"
+#include "EqnEquinox.h"
+#include "gmst.h"
+#include "HGibbs.h"
+#include "Gibbs.h"
+#include "IERS.h"
+#include "Gast.h"
+#include "GHAMatrix.h"
+#include "NutMatrix.h"
 
-
+//Tiene que haber 27 Test_void
 void Test_Angl();
 void Test_Unit();
 void Test_TimeDiff();
@@ -31,22 +43,22 @@ void Test_Newtonnu();
 void Test_Mjday();
 void Test_MeanObliquity();
 void Test_Lambert();
+void Test_Frac();
+void Test_EqnEquinox();
+void Test_Gmst();
+void Test_HGibbs();
+void Test_Gibbs();
+void Test_IERS();
+void Test_Gast();
+void Test_GHAMatrix();
+void Test_NutMatrix();
+
 
 void Test_AngleDr();
 void Test_DoubleR();
-void Test_EqnEquinox();
-void Test_Frac();
-void Test_Gast();
-void Test_GHAMatrix();
-void Test_Gibbs();
-void Test_Gmst();
-void Test_HGibbs();
-void Test_IERS();
+void Test_Anglesg();
+void Test_Rv2coe();
 
-
-
-
-void Test_NutMatrix();
 
 int main()
 {
@@ -64,6 +76,16 @@ int main()
     Test_Mjday();
     Test_MeanObliquity();
     Test_Lambert();
+    Test_Frac();
+    Test_EqnEquinox();
+    Test_Gmst();
+    Test_HGibbs();
+    Test_Gibbs();
+    Test_IERS();
+    Test_Gast();
+    Test_GHAMatrix();
+    Test_NutMatrix();
+
 
 }
 
@@ -360,4 +382,226 @@ void Test_Lambert()
     assert( fabs(lg_v2[2] - (-3480.8307130797988975)) < pow(10, -4));
 }
 
+void Test_Frac()
+{
+    assert( fequal(Frac(4.5), 0.5) == true);
+    assert( fequal(Frac(0.4444), 0.4444) == true);
+    assert( fequal(Frac(-4.6666), 0.3334) == true);
 
+
+}
+
+void Test_EqnEquinox()
+{
+    assert( fequal(eqnEquinox(2323232), -7.61848099380581e-05) == true);
+    assert( fequal(eqnEquinox(0), 2.55262176011142e-05) == true);
+    assert( fequal(eqnEquinox(-5555550), -6.97398129880609e-05) == true);
+}
+
+void Test_Gmst()
+{
+    assert( fequal(gmst(5550), 2.20092031214172) == true);
+    assert( fequal(gmst(0), 0.973208148169487) == true);
+    assert( fequal(gmst(-6700), 5.09502762284038) == true);
+
+}
+
+void Test_HGibbs()
+{
+    double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
+    double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
+    double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
+    double vectVel[3], angulos[2];
+    char error[12] = "";
+
+    double copa = hgibbs(r1, r2, r3, 55565.9044073611, 55565.9078795835, 55565.9113518056, vectVel, angulos, error );
+
+    assert (fabs( vectVel[0] - 17.4309174129376) < pow(10,-5));
+    assert (fabs( vectVel[1] + 2657.49386520154) < pow(10,-5));
+    assert (fabs( vectVel[2] - 3738.39266893706) < pow(10,-5));
+
+    assert (fabs( angulos[0] - 0.0672088229314286) < pow(10,-12));
+    assert (fabs( angulos[1] - 0.0670842334897834) < pow(10,-12));
+
+    assert( fequal(copa, -7.87130777224476e-16) == true);
+    assert( strcmp(error, "   angl > 1ø") == 0);
+
+}
+
+void Test_Gibbs()
+{
+    double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
+    double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
+    double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
+    double vectVel[3] = {0.0, 0.0, 0.0};
+    double angulos[2] = {0.0, 0.0};
+    char error[12] = "";
+
+    double copa = gibbs(r1, r2, r3, vectVel, angulos, error);
+
+    assert (fabs( vectVel[0] - 17.4448460090308) < pow(10,-5));
+    assert (fabs( vectVel[1] + 2659.68695020331) < pow(10,-5));
+    assert (fabs( vectVel[2] -  3741.47770465728) < pow(10,-5));
+
+    assert (fabs( angulos[0] - 0.0672088229314286) < pow(10,-12));
+    assert (fabs( angulos[1] - 0.0670842334897834) < pow(10,-12));
+
+    assert( fequal(copa, -7.87130777224476e-16) == true);
+}
+
+void Test_IERS()
+{
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
+
+    FILE* fid = fopen("eop19620101.txt","rt");
+
+    int v1, v2, v3, v4, v13;
+    float v5, v6, v7, v8, v9, v10, v11, v12;
+    if (fid == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    int fila = 0;
+    while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
+    {
+        eop[fila][0] = v1;
+        eop[fila][1] = v2;
+        eop[fila][2] = v3;
+        eop[fila][3] = v4;
+        eop[fila][4] = v5;
+        eop[fila][5] = v6;
+        eop[fila][6] = v7;
+        eop[fila][7] = v8;
+        eop[fila][8] = v9;
+        eop[fila][9] = v10;
+        eop[fila][10] = v11;
+        eop[fila][11] = v12;
+        eop[fila][12] = v13;
+
+        fila++;
+    }
+    fclose(fid);
+
+    double salida[6];
+
+    IERS(eop, 55565.5422048611, 'l', salida);
+
+    assert( fabs(salida[0]+0.141248008109364) < pow(10, -6));
+    assert( fabs(salida[1]-34) < pow(10, -6));
+    assert( fabs(salida[2]- 5.78543831547586e-07) < pow(10, -5));
+    assert( fabs(salida[3]- 9.72285830548474e-07)< pow(10, -5));
+    assert( fabs(salida[4]+3.23115555150206e-07)< pow(10, -5));
+    assert( fabs(salida[5]+3.0657888529631e-08)< pow(10, -5));
+}
+
+void Test_Gast()
+{
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
+
+    FILE* fid = fopen("eop19620101.txt","rt");
+
+    int v1, v2, v3, v4, v13;
+    float v5, v6, v7, v8, v9, v10, v11, v12;
+    if (fid == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    int fila = 0;
+    while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
+    {
+        eop[fila][0] = v1;
+        eop[fila][1] = v2;
+        eop[fila][2] = v3;
+        eop[fila][3] = v4;
+        eop[fila][4] = v5;
+        eop[fila][5] = v6;
+        eop[fila][6] = v7;
+        eop[fila][7] = v8;
+        eop[fila][8] = v9;
+        eop[fila][9] = v10;
+        eop[fila][10] = v11;
+        eop[fila][11] = v12;
+        eop[fila][12] = v13;
+
+        fila++;
+    }
+    fclose(fid);
+
+
+    assert( fabs(gast(55565.5422032263, eop) - 5.21832550097282 ) < pow(10, -9));
+    assert( fabs(gast(55565.5491476707, eop) - 5.26207819997555 ) < pow(10, -9));
+
+}
+
+void Test_GHAMatrix()
+{
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
+
+    FILE* fid = fopen("eop19620101.txt","rt");
+
+    int v1, v2, v3, v4, v13;
+    float v5, v6, v7, v8, v9, v10, v11, v12;
+    if (fid == NULL)
+    {
+        exit(EXIT_FAILURE);
+    }
+
+    int fila = 0;
+    while( fscanf(fid,"%d %d %d %d %f  %f  %f  %f  %f  %f  %f  %f   %d", &v1, &v2, &v3, &v4, &v5, &v6, &v7, &v8, &v9, &v10, &v11, &v12, &v13) != EOF)
+    {
+        eop[fila][0] = v1;
+        eop[fila][1] = v2;
+        eop[fila][2] = v3;
+        eop[fila][3] = v4;
+        eop[fila][4] = v5;
+        eop[fila][5] = v6;
+        eop[fila][6] = v7;
+        eop[fila][7] = v8;
+        eop[fila][8] = v9;
+        eop[fila][9] = v10;
+        eop[fila][10] = v11;
+        eop[fila][11] = v12;
+        eop[fila][12] = v13;
+
+        fila++;
+    }
+    fclose(fid);
+
+    double m[3][3];
+
+    ghaMatrix(55565.5422032263, m, eop);
+
+    assert( fabs(m[0][0] - 0.484626846950978)  < pow(10, -9));
+    assert( fabs(m[0][1] + 0.874720995068915 ) < pow(10, -9));
+    assert( fabs(m[0][2] - 0.0 )< pow(10, -9));
+
+    assert( fabs(m[1][0] - 0.874720995068915 )< pow(10, -9));
+    assert( fabs(m[1][1] - 0.484626846950978 )< pow(10, -9));
+    assert( fabs(m[1][2] - 0.0 )< pow(10, -9));
+
+    assert( fabs(m[2][0] - 0.0 )< pow(10, -9));
+    assert( fabs(m[2][1] - 0.0 )< pow(10, -9));
+    assert( fabs(m[2][2] - 1.0 )< pow(10, -9));
+
+}
+
+void Test_NutMatrix()
+{
+    double m[3][3];
+
+    NutMatrix(55565.5499153241, m);
+
+    assert( fabs(m[0][0] - 0.999999996195242)  < pow(10, -9));
+    assert( fabs(m[0][1] + 8.00351553835159e-05) < pow(10, -9));
+    assert( fabs(m[0][2] +3.46971108657198e-05 )< pow(10, -9));
+
+    assert( fabs(m[1][0] - 8.00351835718741e-05  )< pow(10, -9));
+    assert( fabs(m[1][1] - 0.999999996796856 )< pow(10, -9));
+    assert( fabs(m[1][2] - 8.11024524267579e-07 )< pow(10, -9));
+
+    assert( fabs(m[2][0] - 3.46970458441061e-05  )< pow(10, -9));
+    assert( fabs(m[2][1] + 8.1380151086029e-07 )< pow(10, -9));
+    assert( fabs(m[2][2] - 0.999999999397726 )< pow(10, -9));
+}

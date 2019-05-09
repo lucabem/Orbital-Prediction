@@ -6,7 +6,7 @@
                double r3[3],
                double vectVelocidadSal[3],
                double angulos[2],
-              char error[]
+              char error[12]
              );
 
 #endif // GIBBS_H_INCLUDED

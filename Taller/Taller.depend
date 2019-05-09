@@ -28,7 +28,7 @@
 1557353909 c:\users\luis\documents\github\taller\taller\lambert_gooding.h
 	<stdbool.h>
 
-1557353909 source:c:\users\luis\documents\github\taller\taller\anglesg.c
+1557396615 source:c:\users\luis\documents\github\taller\taller\anglesg.c
 	"Anglesg.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
@@ -42,7 +42,7 @@
 
 1557353909 c:\users\luis\documents\github\taller\taller\anglesg.h
 
-1557353909 c:\users\luis\documents\github\taller\taller\gibbs.h
+1557396386 c:\users\luis\documents\github\taller\taller\gibbs.h
 
 1557353909 c:\users\luis\documents\github\taller\taller\hgibbs.h
 
@@ -58,7 +58,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1557353909 source:c:\users\luis\documents\github\taller\taller\eqnequinox.c
+1557356075 source:c:\users\luis\documents\github\taller\taller\eqnequinox.c
 	"EqnEquinox.h"
 	"NutAngles.h"
 	"MeanObliquity.h"
@@ -243,7 +243,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557353909 source:c:\users\luis\documents\github\taller\taller\frac.c
+1557391420 source:c:\users\luis\documents\github\taller\taller\frac.c
 	<math.h>
 	"Frac.h"
 
@@ -267,13 +267,15 @@
 
 1557353909 c:\users\luis\documents\github\taller\taller\r_z.h
 
-1557353909 source:c:\users\luis\documents\github\taller\taller\gibbs.c
+1557396665 source:c:\users\luis\documents\github\taller\taller\gibbs.c
 	"Gibbs.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
 	"Unit.h"
 	<math.h>
 	"angl.h"
+	<stdio.h>
+	<string.h>
 
 1557353909 c:\users\luis\documents\github\taller\taller\unit.h
 
@@ -283,13 +285,15 @@
 	<math.h>
 	"Constantes.h"
 
-1557353909 source:c:\users\luis\documents\github\taller\taller\hgibbs.c
+1557394874 source:c:\users\luis\documents\github\taller\taller\hgibbs.c
 	"HGibbs.h"
 	"Constantes.h"
 	"MatlabUtilities.h"
 	<math.h>
 	"Unit.h"
 	"angl.h"
+	<stdio.h>
+	<string.h>
 
 1557353909 source:c:\users\luis\documents\github\taller\taller\iers.c
 	"Constantes.h"
@@ -829,8 +833,10 @@
 	"PrecMatrix.h"
 	"Position.h"
 
-1557355810 source:c:\users\luis\documents\github\taller\taller\test_general.c
+1557399782 source:c:\users\luis\documents\github\taller\taller\test_general.c
 	<assert.h>
+	<stdio.h>
+	<string.h>
 	"MatlabUtilities.h"
 	"angl.h"
 	"lambert_gooding.h"
@@ -846,4 +852,13 @@
 	"NewtonNu.h"
 	"Mjday.h"
 	"MeanObliquity.h"
+	"Frac.h"
+	"EqnEquinox.h"
+	"gmst.h"
+	"HGibbs.h"
+	"Gibbs.h"
+	"IERS.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	"NutMatrix.h"
 

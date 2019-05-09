@@ -198,7 +198,7 @@ void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  do
 
 
 
-        char error[] = "ok";
+        char error[12] = "          ok";
         copa = gibbs(vectorR1, vectorR2, vectorR3, vecSalida, angulos, error);
         theta = angulos[0];
         theta1 = angulos[1];
