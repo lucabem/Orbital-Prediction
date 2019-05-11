@@ -32,145 +32,151 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="AngleDr.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="AngleDr.h" />
-		<Unit filename="Anglesg.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Anglesg.h" />
 		<Unit filename="Constantes.h" />
-		<Unit filename="DoubleR.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="DoubleR.h" />
-		<Unit filename="EqnEquinox.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="EqnEquinox.h" />
-		<Unit filename="Example1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Example2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Example3.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Example5.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Example6.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Example7.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Frac.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Frac.h" />
-		<Unit filename="GHAMatrix.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="GHAMatrix.h" />
-		<Unit filename="Gast.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Gast.h" />
-		<Unit filename="Gibbs.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Gibbs.h" />
-		<Unit filename="HGibbs.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="HGibbs.h" />
-		<Unit filename="IERS.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="IERS.h" />
-		<Unit filename="Lambert_gooding.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="MatlabUtilities.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="MatlabUtilities.h" />
-		<Unit filename="MeanObliquity.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="MeanObliquity.h" />
-		<Unit filename="Mjday.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Mjday.h" />
-		<Unit filename="NewtonNu.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="NewtonNu.h" />
-		<Unit filename="NutAngles.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="NutAngles.h" />
-		<Unit filename="NutMatrix.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="NutMatrix.h" />
-		<Unit filename="PoleMatrix.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="PoleMatrix.h" />
-		<Unit filename="Position.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Position.h" />
-		<Unit filename="PrecMatrix.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="PrecMatrix.h" />
-		<Unit filename="R_x.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="R_x.h" />
-		<Unit filename="R_y.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="R_y.h" />
-		<Unit filename="R_z.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="R_z.h" />
-		<Unit filename="TestMatlabUtilities.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Test_General.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Unit.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Unit.h" />
-		<Unit filename="angl.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="angl.h" />
 		<Unit filename="eop19620101.txt" />
-		<Unit filename="gmst.c">
+		<Unit filename="examples/Example1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/Example2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/Example3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/Example5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/Example6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/Example7.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="gmst.h" />
 		<Unit filename="lambert_gooding.h" />
-		<Unit filename="rpoly.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="rpoly.h" />
-		<Unit filename="rv2coe.c">
+		<Unit filename="rv2coe.h" />
+		<Unit filename="sat1.txt" />
+		<Unit filename="sat2.txt" />
+		<Unit filename="sat3.txt" />
+		<Unit filename="sat5.txt" />
+		<Unit filename="sat6.txt" />
+		<Unit filename="sat7.txt" />
+		<Unit filename="src/AngleDr.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="rv2coe.h" />
-		<Unit filename="timeDiff.c">
+		<Unit filename="src/Anglesg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/DoubleR.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/EqnEquinox.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Frac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/GHAMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Gast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Gibbs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/HGibbs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/IERS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/MatlabUtilities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/MeanObliquity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Mjday.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/NewtonNu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/NutAngles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/NutMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/PoleMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Position.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/PrecMatrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/R_x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/R_y.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/R_z.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Unit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/angl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gmst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/lambert_gooding.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/rpoly.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/rv2coe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/timeDiff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test/TestMatlabUtilities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="test/Test_General.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="timeDiff.h" />
