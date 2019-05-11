@@ -17,16 +17,16 @@
         GAST en radianes
 
 */
- long double gast ( long double Mjd_UT1,  long double(*eop)[13])
+ double gast ( double Mjd_UT1,  double(*eop)[13])
 {
-    long double salidaIERS[6], diferenciaTiempos[5];
+    double salidaIERS[6], diferenciaTiempos[5];
 
     IERS(eop, Mjd_UT1, 'l', salidaIERS);
 
     timeDiff(salidaIERS[0], salidaIERS[1], diferenciaTiempos);
 
-     long double Mjd_UTC = Mjd_UT1 - salidaIERS[0]/86400;
-     long double Mjd_TT = Mjd_UTC + diferenciaTiempos[3]/86400;
+     double Mjd_UTC = Mjd_UT1 - salidaIERS[0]/86400;
+     double Mjd_TT = Mjd_UTC + diferenciaTiempos[3]/86400;
 
 
     return fmod(gmst(Mjd_UT1) + eqnEquinox(Mjd_TT), PI2);

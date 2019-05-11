@@ -1,6 +1,6 @@
 #ifndef UNIT_H_INCLUDED
 #define UNIT_H_INCLUDED
 
-void unit ( long double vect[],  long double vectNormalizado[]);
+void unit ( double vect[],  double vectNormalizado[]);
 
 #endif // UNIT_H_INCLUDED

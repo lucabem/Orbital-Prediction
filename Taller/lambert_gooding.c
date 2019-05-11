@@ -6,10 +6,10 @@
 #include "Unit.h"
 #include <stdio.h>
 #include <stdlib.h>
-void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  long double mu, bool long_way, int multi_revs,  long double v1[3],  long double v2[3])
+void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool long_way, int multi_revs,  double v1[3],  double v2[3])
 {
-    long double r1mag = Norma(r1);
-    long double r2mag = Norma(r2);
+    double r1mag = Norma(r1);
+    double r2mag = Norma(r2);
 
     int sols = 0;
 
@@ -20,13 +20,13 @@ void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  l
     }
 
     int solution_exists[5] = {20, 20, 20, 20, 20};
-    long double dr       = r1mag - r2mag;
-    long double r1r2     = r1mag*r2mag;
-    long double r1hat[3] = {r1[0]/r1mag, r1[1]/r1mag, r1[2]/r1mag};
-    long double r2hat[3] = {r2[0]/r2mag, r2[1]/r2mag, r2[2]/r2mag};
-    long double r1xr2[3];
-    long double all_vt1[3][2];
-    long double all_vt2[3][2];
+    double dr       = r1mag - r2mag;
+    double r1r2     = r1mag*r2mag;
+    double r1hat[3] = {r1[0]/r1mag, r1[1]/r1mag, r1[2]/r1mag};
+    double r2hat[3] = {r2[0]/r2mag, r2[1]/r2mag, r2[2]/r2mag};
+    double r1xr2[3];
+    double all_vt1[3][2];
+    double all_vt2[3][2];
 
     cross(r1,r2, r1xr2);
 
@@ -37,15 +37,15 @@ void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  l
         r1xr2[2] = 1.0;
     }
 
-    long double r1xr2_hat[3];
+    double r1xr2_hat[3];
     unit(r1xr2,r1xr2_hat);
 
-    long double pa = acos(fmax(-1.0, fmin(1.0,dot(3,r1hat,r2hat))));
+    double pa = acos(fmax(-1.0, fmin(1.0,dot(3,r1hat,r2hat))));
 
     for (int i=0; i<=multi_revs; i++)
     {
         int num_revs = i;
-        long double ta, rho[3];
+        double ta, rho[3];
 
         if (long_way)
         {
@@ -63,15 +63,15 @@ void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  l
             rho[2]   = r1xr2_hat[2];
         }
 
-        long double etai[3], etaf[3];
+        double etai[3], etaf[3];
         cross(rho, r1hat, etai);
         cross(rho, r2hat, etaf);
 
-        long double vri[2][1], vti[2][1], vrf[2][1], vtf[2][1];
+        double vri[2][1], vti[2][1], vrf[2][1], vtf[2][1];
         int n = vlamb(mu,r1mag,r2mag,ta,tof, vri, vti, vrf, vtf);
 
-        long double vt1[3][2];
-        long double vt2[3][2];
+        double vt1[3][2];
+        double vt2[3][2];
 
         switch(n)
         {
@@ -184,14 +184,14 @@ void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  l
 }
 
 
-int vlamb( long double gm, long double r1,  long double r2,  long double th,  long double tdelt, long double vri[2][1], long double vti[2][1], long double vrf[2][1], long double vtf[2][1] )
+int vlamb( double gm, double r1,  double r2,  double th,  double tdelt, double vri[2][1], double vti[2][1], double vrf[2][1], double vtf[2][1] )
 {
     zeros(2, 1, vri);
     zeros(2, 1, vti);
     zeros(2, 1, vrf);
     zeros(2, 1, vtf);
 
-    long double thr2 = th;
+    double thr2 = th;
 
     int m = 0;
 
@@ -205,19 +205,19 @@ int vlamb( long double gm, long double r1,  long double r2,  long double th,  lo
 
     thr2 = thr2/2;
 
-    long double r1mag = r1;
-    long double r2mag = r2;
-    long double dr = r1mag-r2mag;
-    long double r1r2 = r1mag*r2mag;
-    long double r1r2th = 4.0*r1r2*sin(thr2)*sin(thr2);
-    long double csq    = dr*dr + r1r2th;
-    long double c      = sqrt(csq);
-    long double s      = (r1 + r2 + c)/2.0;
-    long double gms    = sqrt(gm*s/2.0);
-    long double qsqfm1 = c/s;
-    long double q      = sqrt(r1r2)*cos(thr2)/s;
+    double r1mag = r1;
+    double r2mag = r2;
+    double dr = r1mag-r2mag;
+    double r1r2 = r1mag*r2mag;
+    double r1r2th = 4.0*r1r2*sin(thr2)*sin(thr2);
+    double csq    = dr*dr + r1r2th;
+    double c      = sqrt(csq);
+    double s      = (r1 + r2 + c)/2.0;
+    double gms    = sqrt(gm*s/2.0);
+    double qsqfm1 = c/s;
+    double q      = sqrt(r1r2)*cos(thr2)/s;
 
-    long double rho, sig;
+    double rho, sig;
     if ( !(fequal(c,0.0)) )
     {
         rho = dr/c;
@@ -231,19 +231,19 @@ int vlamb( long double gm, long double r1,  long double r2,  long double th,  lo
     }
 
 
-    long double t = 4.0*gms*tdelt/(s*s);
+    double t = 4.0*gms*tdelt/(s*s);
 
-    long double salida[3];
+    double salida[3];
 
 
     xlamb(m,q,qsqfm1,t, salida);
 
-    long double n  = salida[0];
-    long double x1 = salida[1];
-    long double x2 = salida[2];
+    double n  = salida[0];
+    double x1 = salida[1];
+    double x2 = salida[2];
 
 
-    long double x;
+    double x;
 
     for (int i=1; i<=n; i++)
     {
@@ -258,17 +258,17 @@ int vlamb( long double gm, long double r1,  long double r2,  long double th,  lo
         }
 
 
-        long double sal[4];
+        double sal[4];
 
         tlamb(m, q, qsqfm1, x, -1, sal);
-        long double qzminx = sal[1];
-        long double qzplx  = sal[2];
-        long double zplqx  = sal[3];
+        double qzminx = sal[1];
+        double qzplx  = sal[2];
+        double zplqx  = sal[3];
 
-        long double vt2 = gms*zplqx*sqrt(sig);
-        long double vr1 = gms*(qzminx - qzplx*rho)/r1;
-        long double vt1 = vt2/r1;
-        long double vr2 = -gms*(qzminx + qzplx*rho)/r2;
+        double vt2 = gms*zplqx*sqrt(sig);
+        double vr1 = gms*(qzminx - qzplx*rho)/r1;
+        double vt1 = vt2/r1;
+        double vr2 = -gms*(qzminx + qzplx*rho)/r2;
         vt2 = vt2/r2;
 
 
@@ -282,21 +282,21 @@ int vlamb( long double gm, long double r1,  long double r2,  long double th,  lo
     return n;
 }
 
-void tlamb( long double m, long double q, long double qsqfm1,  long double x,  long double n,  long double salida_t_dt_d2t_d3t[4])
+void tlamb( double m, double q, double qsqfm1,  double x,  double n,  double salida_t_dt_d2t_d3t[4])
 {
     //printf("Entrada \n");
     //printf("\t m=%.15f q=%.15f qsqfm1=%.15f x=%.15f n=%.15f \n", m, q, qsqfm1, x, n);
-    long double dt, d2t, d3t;
-    long double sw = 0.4;
-    long double t = 0;
+    double dt, d2t, d3t;
+    double sw = 0.4;
+    double t = 0;
 
     bool lm1 = (n==-1);
     bool l1 = (n>=1);
     bool l2 = (n>=2);
     bool l3 = (n==3);
-    long double qsq = q*q;
-    long double xsq = x*x;
-    long double u = (1.0 - x)*(1.0 + x);
+    double qsq = q*q;
+    double xsq = x*x;
+    double u = (1.0 - x)*(1.0 + x);
 
     if (!lm1)
     {
@@ -309,12 +309,12 @@ void tlamb( long double m, long double q, long double qsqfm1,  long double x,  l
     if (lm1 || m>0 || x<0.0 || fabs(u)>sw)
     {
         // direct computation (not series)
-        long double y = sqrt(fabs(u));
-        long double z = sqrt(qsqfm1 + qsq*xsq);
-        long double qx = q*x;
+        double y = sqrt(fabs(u));
+        double z = sqrt(qsqfm1 + qsq*xsq);
+        double qx = q*x;
 
-        long double a, b, aa, bb, g, f, fg1sq;
-        long double fg1,term, twoi1, told, qz, qz2;
+        double a, b, aa, bb, g, f, fg1sq;
+        double fg1,term, twoi1, told, qz, qz2;
         if (qx<=0.0)
         {
             a = z - qx;
@@ -402,8 +402,8 @@ void tlamb( long double m, long double q, long double qsqfm1,  long double x,  l
     else
     {
         // compute by series
-        long double u0i = 1.0;
-        long double u1i, u2i, u3i;
+        double u0i = 1.0;
+        double u1i, u2i, u3i;
         if (l1)
         {
             u1i = 1.0;
@@ -416,11 +416,11 @@ void tlamb( long double m, long double q, long double qsqfm1,  long double x,  l
         {
             u3i = 1.0;
         }
-        long double term = 4.0;
-        long double tq = q*qsqfm1;
+        double term = 4.0;
+        double tq = q*qsqfm1;
         int i = 0;
 
-        long double tqsum, ttmold;
+        double tqsum, ttmold;
 
         if (q<0.5)
         {
@@ -454,9 +454,9 @@ void tlamb( long double m, long double q, long double qsqfm1,  long double x,  l
             term = term*(p - 0.5)/p;
             tq = tq*qsq;
             tqsum = tqsum + tq;
-            long double told = t;
-            long double tterm = term/(2.0*p + 3.0);
-            long double tqterm = tterm*tqsum;
+            double told = t;
+            double tterm = term/(2.0*p + 3.0);
+            double tqterm = tterm*tqsum;
             t = t - u0i*((1.5*p + 0.25)*tqterm/(p*p - 0.25)-ttmold*tq);
             ttmold = tterm;
             tqterm = tqterm*p;
@@ -505,31 +505,31 @@ void tlamb( long double m, long double q, long double qsqfm1,  long double x,  l
 
 
 
-long double d8rt( long double x)
+double d8rt( double x)
 {
     return pow(x, 0.125);
 }
 
-void xlamb ( long double m,  long double q,  long double qsqfm1,  long double tin,  long double salida_n_x_xpl[3])
+void xlamb ( double m,  double q,  double qsqfm1,  double tin,  double salida_n_x_xpl[3])
 {
 
-    long double tol = 3e-7;
-    long double c0  = 1.7;
-    long double c1  = 0.5;
-    long double c2  = 0.03;
-    long double c3  = 0.15;
-    long double c41 = 1.0;
-    long double c42 = 0.24;
+    double tol = 3e-7;
+    double c0  = 1.7;
+    double c1  = 0.5;
+    double c2  = 0.03;
+    double c3  = 0.15;
+    double c41 = 1.0;
+    double c42 = 0.24;
 
-    long double thr2 = atan2(qsqfm1, 2.0*q)/PI;
+    double thr2 = atan2(qsqfm1, 2.0*q)/PI;
 
-    long double xpl = 0;
-    long double x = 0;
+    double xpl = 0;
+    double x = 0;
     int n = 0;
 
-    long double salida_tmin_dt_d2t_d3t[4];
+    double salida_tmin_dt_d2t_d3t[4];
 
-    long double t, t0, dt, d2t, d3t, tdiff, w, xm, tmin, tdiffm, d2t2, tdiff0;
+    double t, t0, dt, d2t, d3t, tdiff, w, xm, tmin, tdiffm, d2t2, tdiff0;
 
     if ( m == 0)
     {
@@ -585,9 +585,9 @@ void xlamb ( long double m,  long double q,  long double qsqfm1,  long double ti
                 break;
             }
 
-            long double xmold = xm;
+            double xmold = xm;
             xm = xm - dt*d2t/(d2t*d2t - dt*d3t/2.0);
-            long double xtest = fabs(xmold/xm - 1.0);
+            double xtest = fabs(xmold/xm - 1.0);
             if (xtest<=tol)
                 break;
         }
@@ -659,7 +659,7 @@ void xlamb ( long double m,  long double q,  long double qsqfm1,  long double ti
             else
             {
                 x = -tdiff/(tdiff + 4.0);
-                long double ij = 200;
+                double ij = 200;
                 w = x + c0*sqrt(2.0*(1.0 - thr2));
                 if (w<0.0)
                 {
@@ -708,7 +708,7 @@ void xlamb ( long double m,  long double q,  long double qsqfm1,  long double ti
         xpl = x;
         tlamb(m,q,qsqfm1,0.0,0, salida_tmin_dt_d2t_d3t);
 
-        long double tdiff0 = salida_tmin_dt_d2t_d3t[0] - tmin;
+        double tdiff0 = salida_tmin_dt_d2t_d3t[0] - tmin;
         tdiff = tin - salida_tmin_dt_d2t_d3t[0];
 
         if (tdiff<=0)
@@ -716,7 +716,7 @@ void xlamb ( long double m,  long double q,  long double qsqfm1,  long double ti
         else
         {
             x = -tdiff/(tdiff + 4.0);
-            long double ij = 200;
+            double ij = 200;
             w = x + c0*sqrt(2.0*(1.0 - thr2));
             if (w<0.0)
                 x = x - sqrt(d8rt(-w))*(x + sqrt(tdiff/(tdiff+1.5*t0)));

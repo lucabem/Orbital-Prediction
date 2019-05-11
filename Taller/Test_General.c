@@ -102,14 +102,14 @@ int main()
 
 void Test_Angl()
 {
-    long double r1[3] = {20387627.071752905846, 1865163.696333978558, -109943.68855587858707};
-    long double r2[3] = {20435422.352154411376, 1070699.4467182455119, 1012905.4914336511865};
-    long double theta = angl(r1, r2);
+    double r1[3] = {20387627.071752905846, 1865163.696333978558, -109943.68855587858707};
+    double r2[3] = {20435422.352154411376, 1070699.4467182455119, 1012905.4914336511865};
+    double theta = angl(r1, r2);
 
     assert(fequal(theta, 0.067208822931428643943) == true);
 
-    long double r3[3] = {20435422.352154411376, 1070699.4467182455119, 1012905.4914336511865};
-    long double r4[3] = {20398157.066625602543, 271778.61586978775449, 2131538.3954207645729};
+    double r3[3] = {20435422.352154411376, 1070699.4467182455119, 1012905.4914336511865};
+    double r4[3] = {20398157.066625602543, 271778.61586978775449, 2131538.3954207645729};
     theta = angl(r3, r4);
 
     assert(fequal(theta, 0.067084233489783415272) == true);
@@ -117,8 +117,8 @@ void Test_Angl()
 
 void Test_Unit()
 {
-    long double r1[3] = {-9341115904217.03125, 16158801718408.738281, 29720729511155.265625};
-    long double unit_r1[3];
+    double r1[3] = {-9341115904217.03125, 16158801718408.738281, 29720729511155.265625};
+    double unit_r1[3];
 
     unit(r1, unit_r1);
 
@@ -130,7 +130,7 @@ void Test_Unit()
 
 void Test_TimeDiff()
 {
-    long double diferencia[5];
+    double diferencia[5];
     timeDiff(0.25802269087559637217, 34.0, diferencia);
 
     assert( fequal(diferencia[0], -33.741977309124401074) == true);
@@ -139,7 +139,7 @@ void Test_TimeDiff()
     assert( fequal(diferencia[3], 66.184) == true);
     assert( fequal(diferencia[4], 15.0) == true);
 
-    long double diferencia2[5];
+    double diferencia2[5];
     timeDiff(0.25801238588253655459, 34.0, diferencia2);
 
     assert( fequal(diferencia2[0], -33.741987614117462613) == true);
@@ -151,7 +151,7 @@ void Test_TimeDiff()
 
 void Test_Rx()
 {
-    long double m[3][3];
+    double m[3][3];
     R_x(-0.0000025678608802699049133, m);
     assert( fequal(m[0][0], 1.0) == true);
     assert( fequal(m[0][1], 0.0) == true);
@@ -180,7 +180,7 @@ void Test_Rx()
 
 void Test_Ry()
 {
-    long double m[3][3];
+    double m[3][3];
     R_y(-0.000000075789200806792994845, m);
     assert( fequal(m[0][0], 1.0) == true);
     assert( fequal(m[0][1], 0.0) == true);
@@ -209,7 +209,7 @@ void Test_Ry()
 
 void Test_Rz()
 {
-    long double m[3][3];
+    double m[3][3];
     R_z(2.2594339459743442156, m);
 
     assert( fequal(m[0][0], -0.63548586103589599361) == true);
@@ -227,7 +227,7 @@ void Test_Rz()
 
 void Test_PrecMatrix()
 {
-    long double pm[3][3];
+    double pm[3][3];
 
     PrecMatrix(51544.5, 54977.68155855324585, pm);
 
@@ -246,7 +246,7 @@ void Test_PrecMatrix()
 
 void Test_Position()
 {
-    long double pos[3];
+    double pos[3];
 
     Position(-1.5047233973021472142, 0.53358904023671438477, 0.0, pos);
     assert(fabs(pos[0] - 362889.51475075335475) <  pow(10, -9));
@@ -256,7 +256,7 @@ void Test_Position()
 
 void Test_PoleMatrix()
 {
-    long double pm[3][3];
+    double pm[3][3];
     PoleMatrix(0.000000075789200806792994845021316663997, 0.0000025677719304258054046645378537539, pm);
 
     assert( fequal(pm[0][0], 1.0) == true);
@@ -289,7 +289,7 @@ void Test_PoleMatrix()
 
 void Test_NutAngles()
 {
-    long double angulos[2];
+    double angulos[2];
     NutAngles(54977.667669664253481, angulos);
     assert( fequal(angulos[0], 0.000064869338739384949338) == true );
     assert( fequal(angulos[1], 0.000022305133670726570955) == true );
@@ -302,7 +302,7 @@ void Test_NutAngles()
 
 void Test_Newtonnu()
 {
-    long double newt[2];
+    double newt[2];
     newtonnu(0.082533106173374254366, 0.1812003110698841013, newt);
     assert( fequal(newt[0], 0.16688393775668777796) == true);
     assert( fequal(newt[1], 0.1531743313690979158) == true);
@@ -328,7 +328,7 @@ void Test_MeanObliquity()
 
 void Test_Lambert()
 {
-    long double salida_tlamb[4];
+    double salida_tlamb[4];
     tlamb(0.0, 0.804611564466231, 0.352600230327204, 0.0, 0.0, salida_tlamb);
     assert(fequal(salida_tlamb[0], 2.227109718426920) == true );
     assert(fequal(salida_tlamb[1], 0.000000000000000) == true );
@@ -338,7 +338,7 @@ void Test_Lambert()
     assert(fequal(d8rt(0.00554491061386597),0.522380333950713) == true);
     assert(fequal(d8rt(0.137320935252477),0.780220027563195) == true);
 
-    long double salida_xlamb[3];
+    double salida_xlamb[3];
     xlamb(0.0, 0.804611564466231, 0.352600230327204, 0.913438160983312, salida_xlamb);
     assert(fequal(salida_xlamb[0], 1.0) == true);
     assert(fequal(salida_xlamb[1], 0.62563831524107) == true);
@@ -350,7 +350,7 @@ void Test_Lambert()
     assert(fequal(salida_xlamb[2], 0.0) == true);
 
 
-    long double vri[2][1], vti[2][1], vrf[2][1], vtf[2][1];
+    double vri[2][1], vti[2][1], vrf[2][1], vtf[2][1];
     int n;
 
     n = vlamb(398600441800000, 41206854.7330225, 40716998.0363724, 0.012666404089535, 299.999982118607, vri, vti, vrf, vtf);
@@ -377,11 +377,11 @@ void Test_Lambert()
     assert(fequal(vrf[0][0], 0.0) == true);
     assert(fequal(vtf[0][0], 0.0) == true);
 
-    long double lg_v1[3];
-    long double lg_v2[3];
+    double lg_v1[3];
+    double lg_v2[3];
 
-    long double r1[3] = {8794276.5809840224683, 404708.19494348927401, 2543973.8056371584535};
-    long double r2[3] = {8330586.9962050709873, 3762923.0821287548169, 572416.99634550604969};
+    double r1[3] = {8794276.5809840224683, 404708.19494348927401, 2543973.8056371584535};
+    double r2[3] = {8330586.9962050709873, 3762923.0821287548169, 572416.99634550604969};
 
     lambert_gooding(r1, r2, 600.00000447034835815, 398600441800000, false, 1, lg_v1, lg_v2);
     assert( fabs(lg_v1[0]- 591.41567971816994032) < pow(10, -5));
@@ -419,13 +419,13 @@ void Test_Gmst()
 
 void Test_HGibbs()
 {
-    long double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
-    long double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
-    long double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
-    long double vectVel[3], angulos[2];
+    double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
+    double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
+    double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
+    double vectVel[3], angulos[2];
     char error[12] = "";
 
-    long double copa = hgibbs(r1, r2, r3, 55565.9044073611, 55565.9078795835, 55565.9113518056, vectVel, angulos, error );
+    double copa = hgibbs(r1, r2, r3, 55565.9044073611, 55565.9078795835, 55565.9113518056, vectVel, angulos, error );
 
     assert (fabs( vectVel[0] - 17.4309174129376) < pow(10,-5));
     assert (fabs( vectVel[1] + 2657.49386520154) < pow(10,-5));
@@ -441,14 +441,14 @@ void Test_HGibbs()
 
 void Test_Gibbs()
 {
-    long double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
-    long double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
-    long double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
-    long double vectVel[3] = {0.0, 0.0, 0.0};
-    long double angulos[2] = {0.0, 0.0};
+    double r1[3] = {20387627.0717529, 1865163.69633398, -109943.688555879};
+    double r2[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
+    double r3[3] = {20398157.0666256, 271778.615869788, 2131538.39542076};
+    double vectVel[3] = {0.0, 0.0, 0.0};
+    double angulos[2] = {0.0, 0.0};
     char error[12] = "";
 
-    long double copa = gibbs(r1, r2, r3, vectVel, angulos, error);
+    double copa = gibbs(r1, r2, r3, vectVel, angulos, error);
 
     assert (fabs( vectVel[0] - 17.4448460090308) < pow(10,-5));
     assert (fabs( vectVel[1] + 2659.68695020331) < pow(10,-5));
@@ -462,7 +462,7 @@ void Test_Gibbs()
 
 void Test_IERS()
 {
-    long double (*eop)[13] = malloc(sizeof( long double[20026][13]));
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
 
     FILE* fid = fopen("eop19620101.txt","rt");
 
@@ -494,7 +494,7 @@ void Test_IERS()
     }
     fclose(fid);
 
-    long double salida[6];
+    double salida[6];
 
     IERS(eop, 55565.5422048611, 'l', salida);
 
@@ -508,7 +508,7 @@ void Test_IERS()
 
 void Test_Gast()
 {
-    long double (*eop)[13] = malloc(sizeof( long double[20026][13]));
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
 
     FILE* fid = fopen("eop19620101.txt","rt");
 
@@ -548,7 +548,7 @@ void Test_Gast()
 
 void Test_GHAMatrix()
 {
-    long double (*eop)[13] = malloc(sizeof( long double[20026][13]));
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
 
     FILE* fid = fopen("eop19620101.txt","rt");
 
@@ -580,7 +580,7 @@ void Test_GHAMatrix()
     }
     fclose(fid);
 
-    long double m[3][3];
+    double m[3][3];
 
     ghaMatrix(55565.5422032263, m, eop);
 
@@ -600,7 +600,7 @@ void Test_GHAMatrix()
 
 void Test_NutMatrix()
 {
-    long double m[3][3];
+    double m[3][3];
 
     NutMatrix(55565.5499153241, m);
 
@@ -619,16 +619,16 @@ void Test_NutMatrix()
 
 void Test_DoubleR()
 {
-    long double los1[3] = {0.148851929355429, -0.840681876398112, -0.520669843396865};
-    long double los3[3] = {0.173629378644301, -0.832793490773584, -0.525649922093347};
-    long double los2[3] = {0.161099913661194, -0.836869774686652, -0.523159438445173};
+    double los1[3] = {0.148851929355429, -0.840681876398112, -0.520669843396865};
+    double los3[3] = {0.173629378644301, -0.832793490773584, -0.525649922093347};
+    double los2[3] = {0.161099913661194, -0.836869774686652, -0.523159438445173};
 
 
-    long double rsite1[3] = {-4625314.68025011, -2963495.20415729, 3230277.01672135};
-    long double rsite2[3] = {-4559382.005115, -3064041.00297889, 3230203.98499169};
-    long double rsite3[3] = {-4491265.71743158, -3163120.47843576, 3230128.5447305};
+    double rsite1[3] = {-4625314.68025011, -2963495.20415729, 3230277.01672135};
+    double rsite2[3] = {-4559382.005115, -3064041.00297889, 3230203.98499169};
+    double rsite3[3] = {-4491265.71743158, -3163120.47843576, 3230128.5447305};
 
-    long double r2[3], r3[3], sal_f1_f2_q1_magr1_magr2_a_deltae32[7];
+    double r2[3], r3[3], sal_f1_f2_q1_magr1_magr2_a_deltae32[7];
 
 
     doubler(241923.732943492, 279551.107139144, 6372639.11744252, 6372639.11744252, 12820055.37, 13457869.07, los1, los2, los3, rsite1, rsite2, rsite3, -300.000022351742, 299.999982118607, 'y',r2, r3, sal_f1_f2_q1_magr1_magr2_a_deltae32);
@@ -653,12 +653,12 @@ void Test_DoubleR()
 
 void Test_AngleDr()
 {
-    long double rsite1[3] = {4950990.3382646, 256563.116260381, 3999465.34658133};
-    long double rsite2[3] = {4935037.85913036, 472703.320202615, 3999475.70573182};
-    long double rsite3[3] = {4909646.95198536, 687938.936915757, 3999494.94894739};
+    double rsite1[3] = {4950990.3382646, 256563.116260381, 3999465.34658133};
+    double rsite2[3] = {4935037.85913036, 472703.320202615, 3999475.70573182};
+    double rsite3[3] = {4909646.95198536, 687938.936915757, 3999494.94894739};
 
-    long double r2[3] = {0.0, 0.0, 0.0};
-    long double v2[3] = {0.0, 0.0, 0.0};
+    double r2[3] = {0.0, 0.0, 0.0};
+    double v2[3] = {0.0, 0.0, 0.0};
 
     anglesdr(5.39901096780381, 6.26556833768239, 0.732191050658823, 0.0115360853036144,
              -0.360600766331881, -0.640322905313176, 54977.6669036457, 54977.6738480902, 54977.6807925347, rsite1, rsite2, rsite3, r2, v2 );

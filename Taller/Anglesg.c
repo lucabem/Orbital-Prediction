@@ -33,26 +33,26 @@
         V2          - ijk velocity vector at t2   [m/s]
 
 */
-void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  long double Delta1,  long double Delta2,  long double Delta3,
-              long double JD1,  long double JD2,  long double JD3,
-              long double RS1[3],  long double RS2[3],  long double RS3[3], long double vectorR2[3], long double V2[3])
+void anglesg( double Alpha1,  double Alpha2,  double Alpha3,  double Delta1,  double Delta2,  double Delta3,
+              double JD1,  double JD2,  double JD3,
+              double RS1[3],  double RS2[3],  double RS3[3], double vectorR2[3], double V2[3])
 {
-    long double Mu = 398600.4418e9;
-    long double Rad = 180/PI;
+    double Mu = 398600.4418e9;
+    double Rad = 180/PI;
 
-    long double RhoMat[3][1], CMat[3][1];
+    double RhoMat[3][1], CMat[3][1];
 
-    long double R1[3][1], R2[3][1], R3[3][1];
+    double R1[3][1], R2[3][1], R3[3][1];
     zeros(3, 1, R1);
     zeros(3, 1, R2);
     zeros(3, 1, R3);
 
-    long double Tau1 = (JD1-JD2)*86400;
-    long double Tau3 = (JD3-JD2)*86400;
+    double Tau1 = (JD1-JD2)*86400;
+    double Tau3 = (JD3-JD2)*86400;
 
-    long double f1, g1, f3, g3;
+    double f1, g1, f3, g3;
 
-    long double L1[3], L2[3], L3[3];
+    double L1[3], L2[3], L3[3];
 
     L1[0] = cos(Delta1)*cos(Alpha1);
     L1[1] = cos(Delta1)*sin(Alpha1);
@@ -66,7 +66,7 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
     L3[1] = cos(Delta3)*sin(Alpha3);
     L3[2] = sin(Delta3);
 
-    long double LMatIi[3][3], RSMat[3][3];
+    double LMatIi[3][3], RSMat[3][3];
     for (int i=0; i<3; i++)
     {
         LMatIi[i][0] = L1[i];
@@ -78,9 +78,9 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
     }
 
 
-    long double D = det(3, LMatIi);
+    double D = det(3, LMatIi);
 
-    long double LMatI[3][3];
+    double LMatI[3][3];
 
     LMatI[0][0] = ( L2[1]*L3[2]-L2[2]*L3[1])/D;
     LMatI[1][0] = (-L1[1]*L3[2]+L1[2]*L3[1])/D;
@@ -92,23 +92,23 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
     LMatI[1][2] = (-L1[0]*L3[1]+L1[1]*L3[0])/D;
     LMatI[2][2] = ( L1[0]*L2[1]-L1[1]*L2[0])/D;
 
-    long double LIR[3][3];
+    double LIR[3][3];
 
     multiplicacion(3, 3, 3, 3, LMatI, RSMat, LIR);
 
-    long double a1  = Tau3/(Tau3 - Tau1);
-    long double a1u = (Tau3*((Tau3-Tau1)*(Tau3-Tau1) - Tau3*Tau3 ))/(6.0*(Tau3 - Tau1));
-    long double a3  = -Tau1 / (Tau3 - Tau1);
-    long double a3u = -(Tau1*((Tau3-Tau1)*(Tau3-Tau1) - Tau1*Tau1 ))/(6.0*(Tau3 - Tau1));
+    double a1  = Tau3/(Tau3 - Tau1);
+    double a1u = (Tau3*((Tau3-Tau1)*(Tau3-Tau1) - Tau3*Tau3 ))/(6.0*(Tau3 - Tau1));
+    double a3  = -Tau1 / (Tau3 - Tau1);
+    double a3u = -(Tau1*((Tau3-Tau1)*(Tau3-Tau1) - Tau1*Tau1 ))/(6.0*(Tau3 - Tau1));
 
-    long double D1 = LIR[1][0]*a1 - LIR[1][1] + LIR[1][2]*a3;
-    long double D2 = LIR[1][0]*a1u + LIR[1][2]*a3u;
+    double D1 = LIR[1][0]*a1 - LIR[1][1] + LIR[1][2]*a3;
+    double D2 = LIR[1][0]*a1u + LIR[1][2]*a3u;
 
-    long double L2DotRS = dot(3, L2, RS2);
-    long double magRS2 = Norma(RS2);
+    double L2DotRS = dot(3, L2, RS2);
+    double magRS2 = Norma(RS2);
 
 
-    long double Poly[16];
+    double Poly[16];
     Poly [ 0]=  1.0;  // r2^8th variable!!!!!!!!!!!!!!
     Poly [ 1]=  0.0;
     Poly [ 2]=  - (D1*D1 + 2.0*D1*L2DotRS + magRS2*magRS2);
@@ -127,9 +127,9 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
     Poly [15]=  0.0;
 
 
-    long double zeror[15], zeroi[15];
+    double zeror[15], zeroi[15];
 
-    long double resultado[15];
+    double resultado[15];
 
     for (int i=0; i<15; i++)
     {
@@ -140,7 +140,7 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
     int pos = raicesPolinomiales(15, Poly, zeror, zeroi, resultado);
 
 
-    long double BigR2 = 0.0;
+    double BigR2 = 0.0;
 
     for (int i=0; i<15; i++)
     {
@@ -152,33 +152,33 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
 
 
 
-    long double u = Mu/(BigR2*BigR2*BigR2);
+    double u = Mu/(BigR2*BigR2*BigR2);
 
-    long double c1 = a1+a1u*u;
-    long double c3 = a3+a3u*u;
+    double c1 = a1+a1u*u;
+    double c3 = a3+a3u*u;
     CMat[0][0] = -c1;
     CMat[1][0] = 1.0;
     CMat[2][0] = -c3;
 
     multiplicacion(3, 3, 3, 1, LIR, CMat, RhoMat);
 
-    long double Rhoold2 = - RhoMat[1][0];
+    double Rhoold2 = - RhoMat[1][0];
 
-    long double Rho2 = 999999e3;
-    long double ll = 0;
+    double Rho2 = 999999e3;
+    double ll = 0;
 
 
     //variables while
 
-    long double angulos[2], vecSalida[3], V1[3];
-    long double salidaRv2coe[11];
-    long double copa, theta, theta1;
-    long double p, a, ecc, incl, omega, argp, Nu, m, l, ArgPer;
-    long double magR2;
+    double angulos[2], vecSalida[3], V1[3];
+    double salidaRv2coe[11];
+    double copa, theta, theta1;
+    double p, a, ecc, incl, omega, argp, Nu, m, l, ArgPer;
+    double magR2;
 
-    long double vectorR1[3] = {R1[0][0], R1[1][0], R1[2][0]};
+    double vectorR1[3] = {R1[0][0], R1[1][0], R1[2][0]};
 
-    long double vectorR3[3] = {R3[0][0], R3[1][0], R3[2][0]};
+    double vectorR3[3] = {R3[0][0], R3[1][0], R3[2][0]};
 
 
     while ( (fabs(Rhoold2-Rho2)>1e-12) && (ll<=2) )
@@ -233,11 +233,11 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
         {
             //--- Now get an improved estimate of the f and g series --
             //       .or. can the analytic functions be found now??
-            long double U = Mu/(pow(magR2,3));
-            long double RDot = dot(3, vectorR2, V2)/magR2;
-            long double UDot = (-3.0*Mu*RDot)/(pow(magR2,4));
+            double U = Mu/(pow(magR2,3));
+            double RDot = dot(3, vectorR2, V2)/magR2;
+            double UDot = (-3.0*Mu*RDot)/(pow(magR2,4));
 
-            long double TauSqr= Tau1*Tau1;
+            double TauSqr= Tau1*Tau1;
             f1 =  1.0 - 0.5*U*TauSqr -(1.0/6.0)*UDot*TauSqr*Tau1
                   + (1.0/24.0) * U*U*TauSqr*TauSqr
                   + (1.0/30.0)*U*UDot*TauSqr*TauSqr*Tau1;
@@ -254,11 +254,11 @@ void anglesg( long double Alpha1,  long double Alpha2,  long double Alpha3,  lon
         else
         {
             //-------- Now use exact method to find f and g -----------
-            long double Theta = angl(vectorR1, vectorR2);
-            long double Theta1 = angl(vectorR2, vectorR3);
+            double Theta = angl(vectorR1, vectorR2);
+            double Theta1 = angl(vectorR2, vectorR3);
 
-            long double magR1 = Norma(vectorR1);
-            long double magR3 = Norma(vectorR3);
+            double magR1 = Norma(vectorR1);
+            double magR3 = Norma(vectorR3);
 
             f1 = 1.0 - ( (magR1*(1.0 - cos(Theta))/p ) );
             g1 = ( magR1*magR2*sin(-theta) ) / sqrt(p);  // - ANGLE because backwards!!

@@ -1,9 +1,9 @@
 #ifndef ANGLEDR_H_INCLUDED
 #define ANGLEDR_H_INCLUDED
 
-void anglesdr(long double rtasc1, long double rtasc2, long double rtasc3,
-              long double decl1, long double decl2, long double decl3,
-              long double Mjd1, long double Mjd2, long double Mjd3,
-              long double rsite1[3], long double rsite2[3], long double rsite3[3],long double r[3], long double v[3]);
+void anglesdr(double rtasc1, double rtasc2, double rtasc3,
+              double decl1, double decl2, double decl3,
+              double Mjd1, double Mjd2, double Mjd3,
+              double rsite1[3], double rsite2[3], double rsite3[3],double r[3], double v[3]);
 
 #endif // ANGLEDR_H_INCLUDED

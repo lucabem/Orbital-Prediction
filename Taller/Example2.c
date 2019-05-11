@@ -30,7 +30,7 @@ void Example2();
 void Example2()
 {
 
-    long double (*eop)[13] = malloc(sizeof( long double[20026][13]));
+    double (*eop)[13] = malloc(sizeof( double[20026][13]));
 
     FILE* fid = fopen("eop19620101.txt","rt");
 
@@ -67,7 +67,7 @@ void Example2()
     int Y, M, D, h, m;
     float s, rtasc, decl;
 
-    long double obs[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+    double obs[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
     while(1)
     {
         if (feof(fid))
@@ -86,22 +86,22 @@ void Example2()
 
     fclose(fid);
 
-    long double lat = RAD*30.5724;     // [rad]
-    long double lon = RAD*(-86.2143); // [rad]
-    long double alt = 0.0;     // [m]
+    double lat = RAD*30.5724;     // [rad]
+    double lon = RAD*(-86.2143); // [rad]
+    double alt = 0.0;     // [m]
 
 
-    long double Rs[3];
+    double Rs[3];
     Position(lon, lat, alt, Rs); // vector [a b c] -> matrix 1x3
 
-    long double Mjd1 = obs[0][0];
-    long double Mjd2 = obs[1][0];
-    long double Mjd3 = obs[2][0];
+    double Mjd1 = obs[0][0];
+    double Mjd2 = obs[1][0];
+    double Mjd3 = obs[2][0];
 
-    long double Mjd_UTC = Mjd1;
+    double Mjd_UTC = Mjd1;
 
-    long double salida[6];
-    long double UT1_UTC, TAI_UTC, x_pole, y_pole, ddpsi, ddeps;
+    double salida[6];
+    double UT1_UTC, TAI_UTC, x_pole, y_pole, ddpsi, ddeps;
     IERS(eop, Mjd_UTC, 'l', salida);
     UT1_UTC = salida[0];
     TAI_UTC = salida[1];
@@ -110,20 +110,20 @@ void Example2()
     ddpsi   = salida[4];
     ddeps   = salida[5];
 
-    long double diferenciaTiempos[5];
+    double diferenciaTiempos[5];
 
     timeDiff(UT1_UTC, TAI_UTC, diferenciaTiempos);
 
-    long double UT1_TAI = diferenciaTiempos[0];
-    long double UTC_GPS = diferenciaTiempos[1];
-    long double UT1_GPS = diferenciaTiempos[2];
-    long double TT_UTC  = diferenciaTiempos[3];
-    long double GPS_UTC = diferenciaTiempos[4];
+    double UT1_TAI = diferenciaTiempos[0];
+    double UTC_GPS = diferenciaTiempos[1];
+    double UT1_GPS = diferenciaTiempos[2];
+    double TT_UTC  = diferenciaTiempos[3];
+    double GPS_UTC = diferenciaTiempos[4];
 
-    long double Mjd_TT = Mjd_UTC + TT_UTC/86400;
-    long double Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400;
+    double Mjd_TT = Mjd_UTC + TT_UTC/86400;
+    double Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400;
 
-    long double P[3][3], N[3][3], PoleM[3][3], GHA[3][3];
+    double P[3][3], N[3][3], PoleM[3][3], GHA[3][3];
 
     PrecMatrix(MJD_J2000, Mjd_TT, P);
 
@@ -133,7 +133,7 @@ void Example2()
 
     ghaMatrix(Mjd_UT1, GHA, eop);
 
-    long double resultadoPG[3][3], resultadoPGN[3][3], E[3][3], Et[3][3];
+    double resultadoPG[3][3], resultadoPGN[3][3], E[3][3], Et[3][3];
 
     multiplicacion(3, 3, 3, 3, PoleM, GHA, resultadoPG);
     multiplicacion(3, 3, 3, 3, resultadoPG, N, resultadoPGN);
@@ -141,11 +141,11 @@ void Example2()
 
     transpuesta(3, 3, E, Et);
 
-    long double RsMatriz[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
-    long double rsite1Matriz[3][1];
+    double RsMatriz[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite1Matriz[3][1];
     multiplicacion(3, 3, 3, 1, Et, RsMatriz, rsite1Matriz);
 
-    long double rsite1[3] = {rsite1Matriz[0][0], rsite1Matriz[1][0], rsite1Matriz[2][0]};
+    double rsite1[3] = {rsite1Matriz[0][0], rsite1Matriz[1][0], rsite1Matriz[2][0]};
 
     Mjd_UTC = Mjd2;
 
@@ -184,11 +184,11 @@ void Example2()
 
     transpuesta(3, 3, E, Et);
 
-    long double RsMatriz2[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
-    long double rsite2Matriz[3][1];
+    double RsMatriz2[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite2Matriz[3][1];
     multiplicacion(3, 3, 3, 1, Et, RsMatriz2, rsite2Matriz);
 
-    long double rsite2[3] = {rsite2Matriz[0][0], rsite2Matriz[1][0], rsite2Matriz[2][0]};
+    double rsite2[3] = {rsite2Matriz[0][0], rsite2Matriz[1][0], rsite2Matriz[2][0]};
 
 
     Mjd_UTC = Mjd3;
@@ -228,20 +228,20 @@ void Example2()
 
     transpuesta(3, 3, E, Et);
 
-    long double RsMatriz3[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
-    long double rsite3Matriz[3][1];
+    double RsMatriz3[3][1] = {{Rs[0]}, {Rs[1]}, {Rs[2]}};
+    double rsite3Matriz[3][1];
     multiplicacion(3, 3, 3, 1, Et, RsMatriz3, rsite3Matriz);
 
-    long double rsite3[3] = {rsite3Matriz[0][0], rsite3Matriz[1][0], rsite3Matriz[2][0]};
+    double rsite3[3] = {rsite3Matriz[0][0], rsite3Matriz[1][0], rsite3Matriz[2][0]};
 
-    long double vv2[3], r2[3];
+    double vv2[3], r2[3];
 
 
    anglesdr(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
              Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, vv2);
 
-    long double errorVV2[3] = { 1.62672722188686, 1.61196148541906 , 0.545496576238719};
-    long double errorR2[3] = { 1976.69487027542, -37017.1639918971 , -17995.1972585809};
+    double errorVV2[3] = { 1.62672722188686, 1.61196148541906 , 0.545496576238719};
+    double errorR2[3] = { 1976.69487027542, -37017.1639918971 , -17995.1972585809};
 
 /*
     printf("\n RESULTADO FINAL EXAMPLE 2 Double-R-Iteration method\n");
