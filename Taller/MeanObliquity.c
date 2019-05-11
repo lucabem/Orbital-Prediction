@@ -1,6 +1,6 @@
 
-#include "..\MeanObliquity.h"
-#include "..\Constantes.h"
+#include "MeanObliquity.h"
+#include "Constantes.h"
 
  long double MeanObliquity( long double Mjd_TT)
 {

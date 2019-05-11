@@ -1,12 +1,12 @@
 
-#include "..\Anglesg.h"
-#include "..\Constantes.h"
-#include "..\MatlabUtilities.h"
-#include "..\Gibbs.h"
-#include "..\HGibbs.h"
-#include "..\lambert_gooding.h"
-#include "..\rv2coe.h"
-#include "..\angl.h"
+#include "Anglesg.h"
+#include "Constantes.h"
+#include "MatlabUtilities.h"
+#include "Gibbs.h"
+#include "HGibbs.h"
+#include "lambert_gooding.h"
+#include "rv2coe.h"
+#include "angl.h"
 #include <stdio.h>
 #include <string.h>
 

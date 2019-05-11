@@ -1,9 +1,9 @@
 
-#include "..\lambert_gooding.h"
-#include "..\MatlabUtilities.h"
+#include "lambert_gooding.h"
+#include "MatlabUtilities.h"
 #include <math.h>
-#include "..\Constantes.h"
-#include "..\Unit.h"
+#include "Constantes.h"
+#include "Unit.h"
 #include <stdio.h>
 #include <stdlib.h>
 void lambert_gooding( long double r1[3], long double r2[3],  long double tof,  long double mu, bool long_way, int multi_revs,  long double v1[3],  long double v2[3])

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "..\MatlabUtilities.h"
+#include "MatlabUtilities.h"
 
 void Test_Norma();
 void Test_Sign();

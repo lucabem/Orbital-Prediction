@@ -1,9 +1,9 @@
-#include "..\PrecMatrix.h"
-#include "..\R_x.h"
-#include "..\R_y.h"
-#include "..\R_z.h"
-#include "..\Constantes.h"
-#include "..\MatlabUtilities.h"
+#include "PrecMatrix.h"
+#include "R_x.h"
+#include "R_y.h"
+#include "R_z.h"
+#include "Constantes.h"
+#include "MatlabUtilities.h"
 #include <stdio.h>
 
 void PrecMatrix( long double Mjd_1,  long double Mjd_2,  long double matrizTransformada[3][3])

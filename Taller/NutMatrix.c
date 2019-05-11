@@ -1,11 +1,11 @@
 
 
-#include "..\NutMatrix.h"
-#include "..\MeanObliquity.h"
-#include "..\NutAngles.h"
-#include "..\R_x.h"
-#include "..\R_z.h"
-#include "..\MatlabUtilities.h"
+#include "NutMatrix.h"
+#include "MeanObliquity.h"
+#include "NutAngles.h"
+#include "R_x.h"
+#include "R_z.h"
+#include "MatlabUtilities.h"
 
 void NutMatrix( long double Mjd_TT,  long double matrizNutacion[3][3])
 {

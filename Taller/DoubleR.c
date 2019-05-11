@@ -1,7 +1,7 @@
-#include "..\DoubleR.h"
+#include "DoubleR.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
-#include "..\Constantes.h"
+#include "MatlabUtilities.h"
+#include "Constantes.h"
 #include <stdio.h>
 #include <stdlib.h>
 

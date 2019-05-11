@@ -1,8 +1,8 @@
 
-#include "..\PoleMatrix.h"
-#include "..\R_x.h"
-#include "..\R_y.h"
-#include "..\MatlabUtilities.h"
+#include "PoleMatrix.h"
+#include "R_x.h"
+#include "R_y.h"
+#include "MatlabUtilities.h"
 
 void  PoleMatrix ( long double xp,  long double yp,  long double matrizTransformada[3][3])
 {

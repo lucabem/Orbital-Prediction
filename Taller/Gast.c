@@ -1,10 +1,10 @@
-#include "..\Gast.h"
-#include "..\timeDiff.h"
-#include "..\gmst.h"
-#include "..\EqnEquinox.h"
+#include "Gast.h"
+#include "timeDiff.h"
+#include "gmst.h"
+#include "EqnEquinox.h"
 #include <math.h>
-#include "..\IERS.h"
-#include "..\Constantes.h"
+#include "IERS.h"
+#include "Constantes.h"
 
 /**
     Funcion que a partir de la fecha juliana modificada calcula

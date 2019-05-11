@@ -1,5 +1,5 @@
 
-#include "..\Mjday.h"
+#include "Mjday.h"
 
 long double Mjday(int year, int month,int day, int hour, int min, long double sec)
 {

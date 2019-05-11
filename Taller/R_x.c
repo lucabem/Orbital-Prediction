@@ -1,7 +1,7 @@
 
-#include "..\R_x.h"
+#include "R_x.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
+#include "MatlabUtilities.h"
 
 void R_x( long double angle,  long double matrizRotada[3][3])
 {

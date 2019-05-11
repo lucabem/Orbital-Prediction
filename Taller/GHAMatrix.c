@@ -1,6 +1,6 @@
-#include "..\GHAMatrix.h"
-#include "..\R_z.h"
-#include "..\Gast.h"
+#include "GHAMatrix.h"
+#include "R_z.h"
+#include "Gast.h"
 
 /**
     Accion que transforma desde el verdadero equador y equinoccio al

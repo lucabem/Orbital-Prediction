@@ -1,7 +1,7 @@
-#include "..\NutAngles.h"
-#include "..\Constantes.h"
+#include "NutAngles.h"
+#include "Constantes.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
+#include "MatlabUtilities.h"
 
 void NutAngles( long double Mjd_TT,  long double angulosNutacion[2])
 {

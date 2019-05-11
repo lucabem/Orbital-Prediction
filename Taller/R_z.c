@@ -1,6 +1,6 @@
 
-#include "..\R_z.h"
-#include "..\MatlabUtilities.h"
+#include "R_z.h"
+#include "MatlabUtilities.h"
 
 void R_z( long double angle,  long double matrizRotada[3][3])
 {

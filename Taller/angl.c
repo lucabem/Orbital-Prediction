@@ -1,4 +1,4 @@
-#include "..\MatlabUtilities.h"
+#include "MatlabUtilities.h"
 
 /**
     Funcion que dado dos vectores de dimension 3, devuelve el angulo

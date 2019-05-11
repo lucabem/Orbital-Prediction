@@ -1,7 +1,7 @@
-#include "..\NewtonNu.h"
+#include "NewtonNu.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
-#include "..\Constantes.h"
+#include "MatlabUtilities.h"
+#include "Constantes.h"
 
 void newtonnu( long double ecc,  long double nu,  long double salida[2])
 {

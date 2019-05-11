@@ -1,9 +1,9 @@
-#include "..\Gibbs.h"
-#include "..\Constantes.h"
-#include "..\MatlabUtilities.h"
-#include "..\Unit.h"
+#include "Gibbs.h"
+#include "Constantes.h"
+#include "MatlabUtilities.h"
+#include "Unit.h"
 #include <math.h>
-#include "..\angl.h"
+#include "angl.h"
 #include <stdio.h>
 #include <string.h>
 /**

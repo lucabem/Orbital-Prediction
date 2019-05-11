@@ -1,6 +1,6 @@
 
 #include <math.h>
-#include "..\Frac.h"
+#include "Frac.h"
 
 /**
     Funcion que dado un x devuelve su parte fracionaria.

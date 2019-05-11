@@ -1,6 +1,6 @@
 
-#include "..\MatlabUtilities.h"
-#include "..\Unit.h"
+#include "MatlabUtilities.h"
+#include "Unit.h"
 
 void unit ( long double vect[3],  long double vectNormalizado[3])
 {

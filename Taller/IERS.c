@@ -1,8 +1,8 @@
 
-#include "..\Constantes.h"
+#include "Constantes.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
-#include "..\IERS.h"
+#include "MatlabUtilities.h"
+#include "IERS.h"
 
 void IERS( long double(*eop)[13],  long double Mjd_UTC, char interp,  long double salida[6])
 {

@@ -1,12 +1,12 @@
 
 
-#include "..\rv2coe.h"
-#include "..\MatlabUtilities.h"
-#include "..\Constantes.h"
+#include "rv2coe.h"
+#include "MatlabUtilities.h"
+#include "Constantes.h"
 #include <math.h>
-#include "..\angl.h"
+#include "angl.h"
 #include <string.h>
-#include "..\NewtonNu.h"
+#include "NewtonNu.h"
 
 void rv2coe ( long double vectorPosicion[3],  long double vectorVelocidad[3],  long double vectorResultado[11])
 {

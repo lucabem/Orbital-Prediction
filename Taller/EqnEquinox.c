@@ -1,6 +1,6 @@
-#include "..\EqnEquinox.h"
-#include "..\NutAngles.h"
-#include "..\MeanObliquity.h"
+#include "EqnEquinox.h"
+#include "NutAngles.h"
+#include "MeanObliquity.h"
 #include <math.h>
 
 /**

@@ -1,9 +1,9 @@
-#include "..\AngleDr.h"
-#include "..\Constantes.h"
+#include "AngleDr.h"
+#include "Constantes.h"
 #include <math.h>
-#include "..\MatlabUtilities.h"
-#include "..\DoubleR.h"
-#include "..\lambert_gooding.h"
+#include "MatlabUtilities.h"
+#include "DoubleR.h"
+#include "lambert_gooding.h"
 
 /**
     Accion que resuelve el problema de la determinacion de orbita usando tres

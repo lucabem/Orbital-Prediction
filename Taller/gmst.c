@@ -1,8 +1,8 @@
 
-#include "..\gmst.h"
-#include "..\Frac.h"
+#include "gmst.h"
+#include "Frac.h"
 #include <math.h>
-#include "..\Constantes.h"
+#include "Constantes.h"
 
 /**
     Funcion que calcula el tiempo Greenwich sideral medio.
