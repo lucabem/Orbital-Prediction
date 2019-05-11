@@ -2,6 +2,6 @@
 #define EQNEQUINOX_H_INCLUDED
 
 
- double eqnEquinox ( double fechaJulianaModificada );
+ long double eqnEquinox ( long double fechaJulianaModificada );
 
 #endif // EQNEQUINOX_H_INCLUDED

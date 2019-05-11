@@ -4,7 +4,7 @@
 /**
     Funcion que calcular la norma de un vector de dimension 3.
 */
- double Norma( double v[])
+ long double Norma( long double v[])
 {
     return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 }
@@ -13,9 +13,9 @@
 /**
     Funcion que calcula el producto escalar entre dos vectores de la misma dimension.
 */
- double dot(int dim,  double v1[dim],  double v2[dim])
+ long double dot(int dim,  long double v1[dim],  long double v2[dim])
 {
-     double suma = 0;
+     long double suma = 0;
     for(int i=0; i<dim; i++)
     {
         suma = suma + v1[i]*v2[i];
@@ -29,7 +29,7 @@
         -1 si x < 0
          0 si x = 0
 */
-int Sing( double x)
+int Sing( long double x)
 {
     if ( x<0 )
     {
@@ -49,7 +49,7 @@ int Sing( double x)
 /**
     Accion que calcula el vector cr3, resultado del producto vectorial entre dos vectores de la misma dimension.
 */
-void cross( double v1[],  double v2[],  double cr[3])
+void cross( long double v1[],  long double v2[],  long double cr[3])
 {
     cr[0] = v1[1]*v2[2]-v1[2]*v2[1];
     cr[1] = v1[2]*v2[0]-v1[0]*v2[2];
@@ -64,9 +64,9 @@ void cross( double v1[],  double v2[],  double cr[3])
 
 */
 
- double det(int dimension,  double matrix[dimension][dimension])
+ long double det(int dimension,  long double matrix[dimension][dimension])
 {
-     double det = 0;
+     long double det = 0;
     if(dimension == 3)
     {
         for(int i=0; i<3; i++)
@@ -86,7 +86,7 @@ void cross( double v1[],  double v2[],  double cr[3])
     Acción que multiplica la matriz A de dimension r1 x c1 y la matriz B de dimension r2 x c2.
     Guarda el resultado en la matriz C de dimension r1 x c2.
 */
-void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b[r2][c2],  double c[r1][c2])
+void multiplicacion(int r1, int c1, int r2, int c2,  long double a[r1][c1],  long double b[r2][c2],  long double c[r1][c2])
 {
     int i,j,k;
     for(int x=0; x<r1; x++)
@@ -111,7 +111,7 @@ void multiplicacion(int r1, int c1, int r2, int c2,  double a[r1][c1],  double b
     Accion que dado el numero de filas, columnas y la matriz ha transponer, genera la matriz transpuesta
     y la guarda en el parametro transpuesta.
 */
-void transpuesta(int filas, int columnas,  double a[filas][columnas],  double transpuesta[columnas][filas])
+void transpuesta(int filas, int columnas,  long double a[filas][columnas],  long double transpuesta[columnas][filas])
 {
     for(int i=0; i<filas; i++)
     {
@@ -126,7 +126,7 @@ void transpuesta(int filas, int columnas,  double a[filas][columnas],  double tr
     Funcion que comprueba si un número es real o imaginario.
     @return True si parteImaginaria es distinto de 0. False si parteImaginaria es igual a 0.
 */
-bool isReal( double parteImaginaria)
+bool isReal( long double parteImaginaria)
 {
     return (parteImaginaria) == 0;
 }
@@ -135,7 +135,7 @@ bool isReal( double parteImaginaria)
     inicializa todos sus componentes a cero.
 */
 
-void zeros(int m, int n,  double matriz[m][n])
+void zeros(int m, int n,  long double matriz[m][n])
 {
     for (int i=0; i<m; i++)
         for (int j=0; j<n; j++)
@@ -155,7 +155,7 @@ void zeros(int m, int n,  double matriz[m][n])
 
 
 */
-int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],  double zeroi[degree+1], double resultado[20])
+int raicesPolinomiales(int degree,  long double op[degree+1], long double zeror[degree+1],  long double zeroi[degree+1], long double resultado[20])
 {
 
     int info[15] = {1,2,3,4,5,6,7, 8, 9, 10, 11, 12, 13, 14, 15};
@@ -178,11 +178,11 @@ int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],
 
 
 /**
-    Funcion que dado un double x:
+    Funcion que dado un long double x:
         Si x > 0, devuelve la parte entera de x.
         Si x < 0, devuelve la parte entera de x + 1
 */
- double fix( double x)
+ long double fix( long double x)
 {
     if (x >= 0)
     {
@@ -200,10 +200,10 @@ int raicesPolinomiales(int degree,  double op[degree+1], double zeror[degree+1],
     Funcion para comparar dos reales con una precision de 10^(-12).
     @return True si  abs(a-b) es menor que 10^(-12), y False en caso contrario.
 */
-bool fequal( double a,  double b)
+bool fequal( long double a,  long double b)
 {
     return fabs(a-b) < 0.0000000000001;
 }
 
-double modulo(double a, double b){ return (((a/b) - floor(a/b))*b ); }
+long double modulo(long double a, long double b){ return (((a/b) - floor(a/b))*b ); }
 

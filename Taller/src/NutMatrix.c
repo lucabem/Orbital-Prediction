@@ -7,16 +7,16 @@
 #include "..\R_z.h"
 #include "..\MatlabUtilities.h"
 
-void NutMatrix( double Mjd_TT,  double matrizNutacion[3][3])
+void NutMatrix( long double Mjd_TT,  long double matrizNutacion[3][3])
 {
-     double ep = MeanObliquity(Mjd_TT);
+     long double ep = MeanObliquity(Mjd_TT);
 
     // Nutation in itude and obliquity
-     double angulosNut[2] = {0.0, 0.0};
+     long double angulosNut[2] = {0.0, 0.0};
     NutAngles(Mjd_TT, angulosNut);
 
     // Transformation from mean to true equator and equinox
-     double A[3][3], B[3][3], C[3][3];
+     long double A[3][3], B[3][3], C[3][3];
 
     for (int i=0; i<3; i++)
     {
@@ -33,7 +33,7 @@ void NutMatrix( double Mjd_TT,  double matrizNutacion[3][3])
     R_z(-angulosNut[0], B);
     R_x(ep, C);
 
-     double productoAB[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
+     long double productoAB[3][3] = {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}};
 
 
     multiplicacion(3, 3, 3, 3, A, B, productoAB );

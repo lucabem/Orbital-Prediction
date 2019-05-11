@@ -4,9 +4,9 @@
 #include "..\R_y.h"
 #include "..\MatlabUtilities.h"
 
-void  PoleMatrix ( double xp,  double yp,  double matrizTransformada[3][3])
+void  PoleMatrix ( long double xp,  long double yp,  long double matrizTransformada[3][3])
 {
-     double matrizTY[3][3], matrizTX[3][3];
+     long double matrizTY[3][3], matrizTX[3][3];
 
     for (int i=0; i<3; i++)
     {

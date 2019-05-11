@@ -3,10 +3,10 @@
 #include <math.h>
 #include "..\MatlabUtilities.h"
 
-void R_x( double angle,  double matrizRotada[3][3])
+void R_x( long double angle,  long double matrizRotada[3][3])
 {
-     double c = cos(angle);
-     double s = sin(angle);
+     long double c = cos(angle);
+     long double s = sin(angle);
 
     zeros(3,3, matrizRotada);
 

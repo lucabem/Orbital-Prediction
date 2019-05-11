@@ -3,11 +3,11 @@
 #include "..\MatlabUtilities.h"
 #include "..\Constantes.h"
 
-void newtonnu( double ecc,  double nu,  double salida[2])
+void newtonnu( long double ecc,  long double nu,  long double salida[2])
 {
-    double e0= 999999.9;
-    double m = 999999.9;
-    double small = 0.00000001;
+    long double e0= 999999.9;
+    long double m = 999999.9;
+    long double small = 0.00000001;
 
 // --------------------------- circular ------------------------
     if ( fabs( ecc ) < small  )
@@ -20,8 +20,8 @@ void newtonnu( double ecc,  double nu,  double salida[2])
         // ---------------------- elliptical -----------------------
         if ( ecc < 1.0-small  )
         {
-            double sine= ( sqrt( 1.0 -ecc*ecc ) * sin(nu) ) / ( 1.0 +ecc*cos(nu) );
-            double cose= ( ecc + cos(nu) ) / ( 1.0  + ecc*cos(nu) );
+            long double sine= ( sqrt( 1.0 -ecc*ecc ) * sin(nu) ) / ( 1.0 +ecc*cos(nu) );
+            long double cose= ( ecc + cos(nu) ) / ( 1.0  + ecc*cos(nu) );
             e0  = atan2( sine,cose );
             m   = e0 - ecc*sin(e0);
         }
@@ -32,7 +32,7 @@ void newtonnu( double ecc,  double nu,  double salida[2])
             {
                 if ((ecc > 1.0 ) && (fabs(nu)+0.00001 < PI-acos(1.0 /ecc)))
                 {
-                    double sine= ( sqrt( ecc*ecc-1.0  ) * sin(nu) ) / ( 1.0  + ecc*cos(nu) );
+                    long double sine= ( sqrt( ecc*ecc-1.0  ) * sin(nu) ) / ( 1.0  + ecc*cos(nu) );
                     e0  = asinh( sine );
                     m   = ecc*sinh(e0) - e0;
                 }

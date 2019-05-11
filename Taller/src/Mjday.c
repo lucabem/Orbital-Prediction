@@ -1,14 +1,13 @@
 
 #include "..\Mjday.h"
 
- double Mjday(int year, int month,int day, int hour, int min,  double sec)
+long double Mjday(int year, int month,int day, int hour, int min, long double sec)
 {
-
     int y = year;
     int m = month;
-     double b = 0.0;
-     double c = 0.0;
-     double a = 0.0;
+    long double b = 0.0;
+    long double c = 0.0;
+    long double a = 0.0;
     if (m <=2)
     {
         y = y-1;
@@ -54,13 +53,13 @@
     }
 
 
-     double jd = fix(365.25*y+c) + fix(30.6001 * (m + 1));
+    long double jd = fix(365.25*y+c) + fix(30.6001 * (m + 1));
 
     jd = jd + day + b + 1720994.5;
 
     jd = jd + (hour*1.0+min*1.0/60+sec/3600)/24;
 
-     double Mjd = jd - 2400000.5;
+    long double Mjd = jd - 2400000.5;
 
     return Mjd;
 }

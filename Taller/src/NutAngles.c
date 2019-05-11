@@ -3,12 +3,12 @@
 #include <math.h>
 #include "..\MatlabUtilities.h"
 
-void NutAngles( double Mjd_TT,  double angulosNutacion[2])
+void NutAngles( long double Mjd_TT,  long double angulosNutacion[2])
 {
-     double t  = (Mjd_TT-MJD_J2000)/36525;
-     double t2 = t*t;
-     double t3 = t2*t;
-     double rev = 360*3600;
+     long double t  = (Mjd_TT-MJD_J2000)/36525;
+     long double t2 = t*t;
+     long double t3 = t2*t;
+     long double rev = 360*3600;
     // arcsec/revolution
     int N_coeff = 106;
     int matrizC [106][9] =
@@ -122,19 +122,19 @@ void NutAngles( double Mjd_TT,  double angulosNutacion[2])
     };
 
 
-     double l  =  modulo((  485866.733 + (1325.0*rev +  715922.633)*t + 31.310*t2 + 0.064*t3) + rev, rev);
-     double lp =  modulo(( 1287099.804 + (  99.0*rev + 1292581.224)*t -  0.577*t2 - 0.012*t3) + rev, rev);
-     double F  =  modulo((  335778.877 + (1342.0*rev +  295263.137)*t - 13.257*t2 + 0.011*t3) + rev, rev);
-     double D  =  modulo(( 1072261.307 + (1236.0*rev + 1105601.328)*t -  6.891*t2 + 0.019*t3) + rev, rev);
-     double Om =  modulo((  450160.280 - (   5.0*rev +  482890.539)*t +  7.455*t2 + 0.008*t3) + rev, rev);
+     long double l  =  modulo((  485866.733 + (1325.0*rev +  715922.633)*t + 31.310*t2 + 0.064*t3) + rev, rev);
+     long double lp =  modulo(( 1287099.804 + (  99.0*rev + 1292581.224)*t -  0.577*t2 - 0.012*t3) + rev, rev);
+     long double F  =  modulo((  335778.877 + (1342.0*rev +  295263.137)*t - 13.257*t2 + 0.011*t3) + rev, rev);
+     long double D  =  modulo(( 1072261.307 + (1236.0*rev + 1105601.328)*t -  6.891*t2 + 0.019*t3) + rev, rev);
+     long double Om =  modulo((  450160.280 - (   5.0*rev +  482890.539)*t +  7.455*t2 + 0.008*t3) + rev, rev);
 
 
-     double dpsi = 0;
-     double deps = 0;
+     long double dpsi = 0;
+     long double deps = 0;
 
     for (int i=0; i<N_coeff; i++)
     {
-        double arg  = ( matrizC[i][0] * l + matrizC[i][1]*lp + matrizC[i][2]*F + matrizC[i][3]*D + matrizC[i][4]*Om)/ARCS;
+        long double arg  = ( matrizC[i][0] * l + matrizC[i][1]*lp + matrizC[i][2]*F + matrizC[i][3]*D + matrizC[i][4]*Om)/ARCS;
         dpsi = dpsi + ( matrizC[i][5] + matrizC[i][6]*t ) * sin(arg);
         deps = deps + ( matrizC[i][7] + matrizC[i][8]*t ) * cos(arg);
     }

@@ -12,49 +12,49 @@
     determina la velocidad en el punto medio de 3 vectores dados.
 
     Entrada:
-        double r1[3]:                ijk vector posicion
-        double r2[3]:                ijk vector posicion
-        double r3[3]:                ijk vector posicion
+        long double r1[3]:                ijk vector posicion
+        long double r2[3]:                ijk vector posicion
+        long double r3[3]:                ijk vector posicion
 
 
     Salida:
-        double copa:
+        long double copa:
         char* error:                 flag de comprobacion
-        double vectVelocidadSal[3]:  ijk vector velocidad para r2
-        double angulos[2]         :  [theta (angulo entre vectores) , theta1]
+        long double vectVelocidadSal[3]:  ijk vector velocidad para r2
+        long double angulos[2]         :  [theta (angulo entre vectores) , theta1]
 
 */
-double gibbs ( double r1[3],
-               double r2[3],
-               double r3[3],
-               double vectVelocidadSal[3],
-               double angulos[2],
+long double gibbs ( long double r1[3],
+               long double r2[3],
+               long double r3[3],
+               long double vectVelocidadSal[3],
+               long double angulos[2],
                char error[12]
              )
 {
     strcpy(error, "          ok");
 
-    double small = 0.00000001;
+    long double small = 0.00000001;
     angulos[0] = 0;
     angulos[1]= 0;
 
-    double v2[3][1];
+    long double v2[3][1];
     zeros(3, 1, v2);
 
-    double normavect1 = Norma(r1);
-    double normavect2 = Norma(r2);
-    double normavect3 = Norma(r3);
+    long double normavect1 = Norma(r1);
+    long double normavect2 = Norma(r2);
+    long double normavect3 = Norma(r3);
 
-    double p[3], q[3], w[3];
+    long double p[3], q[3], w[3];
     cross(r2, r3, p);
     cross(r3, r1, q);
     cross(r1, r2, w);
 
-    double pn[3], r1n[3];
+    long double pn[3], r1n[3];
 
     unit(p, pn);
     unit(r1, r1n);
-    double copa = asin(dot(3, pn, r1n));
+    long double copa = asin(dot(3, pn, r1n));
 
     if(fabs(dot(3, r1n, pn)) > 0.017452406 )
     {
@@ -62,16 +62,16 @@ double gibbs ( double r1[3],
     }
 
 
-    double vectorSuma[3] = {p[0]+q[0]+w[0], p[1]+q[1]+w[1], p[2]+q[2]+w[2] };
-    double normaSuma = Norma(vectorSuma);
+    long double vectorSuma[3] = {p[0]+q[0]+w[0], p[1]+q[1]+w[1], p[2]+q[2]+w[2] };
+    long double normaSuma = Norma(vectorSuma);
 
-    double n[3] = {normavect1*p[0]+normavect2*q[0]+normavect3*w[0],
+    long double n[3] = {normavect1*p[0]+normavect2*q[0]+normavect3*w[0],
                    normavect1*p[1]+normavect2*q[1]+normavect3*w[1],
                    normavect1*p[2]+normavect2*q[2]+normavect3*w[2]
                   };
 
-    double normaN = Norma(n);
-    double nn[3], dn[3];
+    long double normaN = Norma(n);
+    long double nn[3], dn[3];
 
     unit(n, nn);
     unit(vectorSuma, dn);
@@ -90,19 +90,19 @@ double gibbs ( double r1[3],
 
 
 //      ----------- perform gibbs method to find v2 -----------
-        double r1mr2 = normavect1 - normavect2;
-        double r3mr1 = normavect3 - normavect1;
-        double r2mr3 = normavect2 - normavect3;
+        long double r1mr2 = normavect1 - normavect2;
+        long double r3mr1 = normavect3 - normavect1;
+        long double r2mr3 = normavect2 - normavect3;
 
-        double s[3]  = {r1mr2*r3[0] + r3mr1*r2[0] + r2mr3*r1[0], r1mr2*r3[1] + r3mr1*r2[1] + r2mr3*r1[1], r1mr2*r3[2] + r3mr1*r2[2] + r2mr3*r1[2]};
+        long double s[3]  = {r1mr2*r3[0] + r3mr1*r2[0] + r2mr3*r1[0], r1mr2*r3[1] + r3mr1*r2[1] + r2mr3*r1[1], r1mr2*r3[2] + r3mr1*r2[2] + r2mr3*r1[2]};
 
-        double b[3];
+        long double b[3];
         cross(vectorSuma,r2, b);
 
-        double l  = sqrt(GM_Earth/(normaSuma*normaN));
-        double tover2 = l/normavect2;
+        long double l  = sqrt(GM_Earth/(normaSuma*normaN));
+        long double tover2 = l/normavect2;
 
-        double v2[3] = {tover2 * b[0] + l * s[0], tover2 * b[1] + l * s[1], tover2 * b[2] + l * s[2]};
+        long double v2[3] = {tover2 * b[0] + l * s[0], tover2 * b[1] + l * s[1], tover2 * b[2] + l * s[2]};
 
         vectVelocidadSal[0] = v2[0];
         vectVelocidadSal[1] = v2[1];

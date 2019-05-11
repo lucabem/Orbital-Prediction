@@ -4,7 +4,7 @@
 #include <math.h>
 #include "MatlabUtilities.h"
 
- double Mjday(int year, int month,int day, int hour, int m,  double sec);
+ long double Mjday(int year, int month,int day, int hour, int m,  long double sec);
 
 
 #endif // MJDAY_H_INCLUDED

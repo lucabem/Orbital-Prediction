@@ -14,9 +14,9 @@
         Ecuacion de equinoccios
 
 */
- double eqnEquinox ( double fechaJulianaModificada )
+ long double eqnEquinox ( long double fechaJulianaModificada )
 {
-    double vectAngulos[2] = {0.0, 0.0};
+    long double vectAngulos[2] = {0.0, 0.0};
     NutAngles(fechaJulianaModificada, vectAngulos);
     return vectAngulos[0] * cos(MeanObliquity(fechaJulianaModificada));
 }

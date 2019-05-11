@@ -6,12 +6,12 @@
     Funcion que dado un x devuelve su parte fracionaria.
 
     Entrada:
-        x - double
+        x - long double
     Salida
         Parte fraccionaria
 
 */
- double Frac(  double x)
+ long double Frac(  long double x)
 {
     return x-floor(x);
 }
