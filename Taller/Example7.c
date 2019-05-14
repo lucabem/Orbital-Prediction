@@ -252,12 +252,12 @@ void Example7()
     printf("\t%0.5f   ------- %0.5f \n ", vv2[2]/1000, errorVV2[2]);
 */
     printf("ERROR APROXIMADO \n");
-    printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0]));
-    printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1]));
-    printf("\t%0.5f \n ", fabs(r2[2]/1000 - errorR2[2]));
-    printf("\t%0.5f \n ", fabs(vv2[0]/1000 - errorVV2[0]));
-    printf("\t%0.5f \n ", fabs(vv2[1]/1000 - errorVV2[1]));
-    printf("\t%0.5f \n ", fabs(vv2[2]/1000 - errorVV2[2]));
+    printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0])*1000);
+    printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1])*1000);
+    printf("\t%0.5f \n ", fabs(r2[2]/1000 - errorR2[2])*1000);
+    printf("\t%0.5f \n ", fabs(vv2[0]/1000 - errorVV2[0])*1000);
+    printf("\t%0.5f \n ", fabs(vv2[1]/1000 - errorVV2[1])*1000);
+    printf("\t%0.5f \n ", fabs(vv2[2]/1000 - errorVV2[2])*1000);
 
 
     free(eop);

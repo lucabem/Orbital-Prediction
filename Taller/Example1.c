@@ -256,11 +256,11 @@ void Example1()
     printf("\t%0.5f   ------- %0.5f \n ", vv2[2]/1000, -2.98863988398241);
 */
     printf("ERROR APROXIMADO \n");
-    printf("\t%0.5f \n ", fabs(r2[0]/1000 - errorR2[0]));
-    printf("\t%0.5f \n ", fabs(r2[1]/1000 - errorR2[1]));
-    printf("\t%0.5f \n ", fabs(r2[2]/1000 - errorR2[2]));
-    printf("\t%0.5f \n ", fabs(vv2[0]/1000 - 0.591415680079019));
-    printf("\t%0.5f \n ", fabs(vv2[1]/1000 - 5.83886365198696));
-    printf("\t%0.5f \n ", fabs(vv2[2]/1000 - -2.98863988398241));
+    printf("\t%0.5f \n ", fabs(r2[0] - errorR2[0]*1000));
+    printf("\t%0.5f \n ", fabs(r2[1] - errorR2[1]*1000));
+    printf("\t%0.5f \n ", fabs(r2[2] - errorR2[2]*1000));
+    printf("\t%0.5f \n ", fabs(vv2[0] - 0.591415680079019*1000));
+    printf("\t%0.5f \n ", fabs(vv2[1] - 5.83886365198696*1000));
+    printf("\t%0.5f \n ", fabs(vv2[2] - -2.98863988398241*1000));
     free(eop);
 }
