@@ -60,8 +60,9 @@ void Test_AngleDr();
 void Test_Anglesg();
 void Test_Rv2coe();
 
+void Test_Funciones();
 
-int main()
+void Test_Funciones()
 {
 
     Test_Angl();
@@ -90,14 +91,6 @@ int main()
     Test_DoubleR();
     Test_AngleDr();
 
-
-    Example1();
-    Example2();
-    Example3();
-    Example5();
-    Example6();
-    Example7();
-    printf("......\n");
 }
 
 void Test_Angl()

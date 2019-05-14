@@ -60,7 +60,7 @@
 
 1557598946 c:\users\luis\documents\github\taller\taller\meanobliquity.h
 
-1557689721 source:c:\users\luis\documents\github\taller\taller\example1.c
+1557871111 source:c:\users\luis\documents\github\taller\taller\example1.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -109,7 +109,7 @@
 
 1557598945 c:\users\luis\documents\github\taller\taller\angledr.h
 
-1557598944 source:c:\users\luis\documents\github\taller\taller\example2.c
+1557871007 source:c:\users\luis\documents\github\taller\taller\example2.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -134,7 +134,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557598945 source:c:\users\luis\documents\github\taller\taller\example3.c
+1557871020 source:c:\users\luis\documents\github\taller\taller\example3.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -159,7 +159,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557598944 source:c:\users\luis\documents\github\taller\taller\example5.c
+1557870958 source:c:\users\luis\documents\github\taller\taller\example5.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -186,7 +186,7 @@
 	"lambert_gooding.h"
 	"Anglesg.h"
 
-1557598945 source:c:\users\luis\documents\github\taller\taller\example6.c
+1557870934 source:c:\users\luis\documents\github\taller\taller\example6.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -211,7 +211,7 @@
 	"lambert_gooding.h"
 	"AngleDr.h"
 
-1557598945 source:c:\users\luis\documents\github\taller\taller\example7.c
+1557870980 source:c:\users\luis\documents\github\taller\taller\example7.c
 	"Constantes.h"
 	<stdio.h>
 	<stdlib.h>
@@ -385,7 +385,7 @@
 	<string.h>
 	"NewtonNu.h"
 
-1557689659 source:c:\users\luis\documents\github\taller\taller\test_general.c
+1557869896 source:c:\users\luis\documents\github\taller\taller\test_general.c
 	<assert.h>
 	<stdio.h>
 	<string.h>
@@ -416,7 +416,7 @@
 	"DoubleR.h"
 	"AngleDr.h"
 
-1557598944 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
+1557870606 source:c:\users\luis\documents\github\taller\taller\testmatlabutilities.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
@@ -804,4 +804,8 @@
 	<stdlib.h>
 	<assert.h>
 	"..\MatlabUtilities.h"
+
+1557871678 source:c:\users\luis\documents\github\taller\taller\principal.c
+	<stdio.h>
+	<stdlib.h>
 

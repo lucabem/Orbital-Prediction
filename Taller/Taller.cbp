@@ -127,6 +127,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="PrecMatrix.h" />
+		<Unit filename="Principal.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="R_x.c">
 			<Option compilerVar="CC" />
 		</Unit>

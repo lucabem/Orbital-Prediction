@@ -16,10 +16,26 @@ void Test_Length();
 void Test_Zeros();
 void Test_Fix();
 void Test_RaicesPolinomiales();
-
+void Test_Matlab();
 
 const  double epsilon = 0.0000000000001;
 
+
+void Test_Matlab()
+{
+     Test_Norma();
+     Test_Sign();
+     Test_Cross();
+     Test_Dot();
+     Test_Det();
+     Test_Multiplicacion();
+     Test_Transpuesta();
+     Test_isReal();
+     Test_Length();
+     Test_Zeros();
+     Test_Fix();
+     Test_RaicesPolinomiales();
+}
 void Test_Norma()
 {
      double v1[3] = {0.0, 0.0, 0.0};

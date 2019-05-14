@@ -2,6 +2,10 @@
 #include "MatlabUtilities.h"
 #include "Unit.h"
 
+/**
+    Accion que dado dos vectores del mismo tamaño,
+    calcula el vector normalizado  del primero y lo guarda en el segundo vector.
+*/
 void unit ( double vect[3],  double vectNormalizado[3])
 {
      double normaVect = Norma(vect);
