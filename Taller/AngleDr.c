@@ -27,6 +27,7 @@
         r2        - ijk position vector at t2   [m]
         v2        - ijk velocity vector at t2   [m/s]
 
+    Last modified:   2015/08/12   M. Mahooti
 
 */
 void anglesdr(double rtasc1, double rtasc2, double rtasc3,

@@ -2,6 +2,18 @@
 #include "MeanObliquity.h"
 #include "Constantes.h"
 
+/**
+
+    Calcula la oblicuidad media de la eclíptica.
+
+    Entrada:
+        Mjd_TT: Fecha juliana modificada (tiempo terrestre)
+
+    Salida: oblicuidad media de la eclíptica.
+
+    Last modified:   2015/08/12   M. Mahooti
+
+*/
  double MeanObliquity( double Mjd_TT)
 {
 

@@ -16,6 +16,8 @@
     Salida:
         GAST en radianes
 
+    Last modified:   2015/08/12   M. Mahooti
+
 */
  double gast ( double Mjd_UT1,  double(*eop)[13])
 {

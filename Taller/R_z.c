@@ -2,6 +2,14 @@
 #include "R_z.h"
 #include "MatlabUtilities.h"
 
+/**
+     De entrada:
+        ángulo de rotación [rad]
+
+     De salida:
+        Matriz de rotación rotmat
+*/
+
 void R_z( double angle,  double matrizRotada[3][3])
 {
      double c = cos(angle);

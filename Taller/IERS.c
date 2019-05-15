@@ -4,6 +4,13 @@
 #include "MatlabUtilities.h"
 #include "IERS.h"
 
+/**
+    Gestión de tiempo IERS y datos de movimiento polar. Guarda los resultados
+    en el vector de entrada/salida -> salida[6]
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
+
 void IERS( double(*eop)[13],  double Mjd_UTC, char interp,  double salida[6])
 {
      double Arcs = 3600*18/PI;

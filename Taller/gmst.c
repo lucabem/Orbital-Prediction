@@ -13,6 +13,7 @@
     Salida:
         double gmstime:  GMST en [rad]
 
+    Last modified:   2015/08/12   M. Mahooti
 */
  double gmst( double Mjd_UT1)
 {

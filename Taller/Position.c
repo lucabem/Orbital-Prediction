@@ -2,6 +2,13 @@
 #include "Constantes.h"
 #include <math.h>
 
+/**
+
+    Posición: vector de posición (r [m]) de coordenadas geodésicas
+             (Longitud [rad], latitud [rad], altitud [m])
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
 
 void Position ( double lon,  double lat,  double h,  double pos[3])
 {

@@ -7,6 +7,19 @@
 #include "R_z.h"
 #include "MatlabUtilities.h"
 
+
+/**
+
+    NutMatrix: Transformación de media a verdadero ecuador y equinoccio
+
+     De entrada:
+        Mjd_TT Fecha juliana modificada (hora terrestre)
+
+     De salida:
+        NutMat Nutation matrix
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
 void NutMatrix( double Mjd_TT,  double matrizNutacion[3][3])
 {
      double ep = MeanObliquity(Mjd_TT);

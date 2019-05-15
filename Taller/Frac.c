@@ -10,6 +10,8 @@
     Salida
         Parte fraccionaria
 
+    Last modified:   2015/08/12   M. Mahooti
+
 */
  double Frac(  double x)
 {

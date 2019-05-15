@@ -6,6 +6,18 @@
 #include "MatlabUtilities.h"
 #include <stdio.h>
 
+/**
+     PrecMatrix: Precesión transformación de coordenadas ecuatoriales
+
+     De entradas:
+         Mjd_1 Época dada (fecha juliana modificada TT)
+         MjD_2 Época para precesar a (Fecha juliana modificada TT)
+
+     De salida:
+         PrecMat Precession Matriz de transformación
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
 void PrecMatrix( double Mjd_1,  double Mjd_2,  double matrizTransformada[3][3])
 {
      double T  = (Mjd_1-MJD_J2000)/36525;

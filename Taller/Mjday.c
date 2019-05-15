@@ -1,6 +1,18 @@
 
 #include "Mjday.h"
+/**
 
+    Mjday: Fecha juliana modificada de fecha y hora calendario.
+
+    Entrada:
+        year, month, day, hour, min, sec
+
+    Salida:
+        Mjd: fecha juliana modificada
+
+    Last modified:   2015/08/12   M. Mahooti
+
+*/
 double Mjday(int year, int month,int day, int hour, int min, double sec)
 {
     int y = year;

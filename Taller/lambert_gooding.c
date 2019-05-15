@@ -6,6 +6,32 @@
 #include "Unit.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+   Problema de Lambert usando el metodo de Gooding
+
+   r1            primera posicion cartesiana [km]
+   r2            segunda posicion cartesiana [km]
+   tof           tiempo de vuelo [sec]
+   mu            parametro de gravedad [km^3/s^2]
+   long_way      cuando es cierto,  hacer "long way" (>pi)
+   multi_revs    maximo numero de soluciones multi-rev a calcular
+   v1            vector 3d con las componentes cartesianas
+                 de las velocidades en r1
+   v1            vector 3d con las componentes cartesianas
+                 de las velocidades en r2
+
+   References:
+   1. R. H, Gooding. "[A procedure for the solution of Lambert's orbital
+      boundary-value problem](http://adsabs.harvard.edu/abs/1990CeMDA..48..145G)"
+      Celestial Mechanics and Dynamical Astronomy,
+      vol. 48, no. 2, 1990, p. 145-165.
+   2. A. Klumpp, "Performance Comparision of Lambert and Kepler Algorithms",
+      JPL Interoffice Memorandum, 314.1-0426-ARK, Jan 2, 1991.
+      [Zip](http://derastrodynamics.com/docs/lambert_papers_v1.zip)
+
+*/
+
 void lambert_gooding( double r1[3], double r2[3],  double tof,  double mu, bool long_way, int multi_revs,  double v1[3],  double v2[3])
 {
     double r1mag = Norma(r1);

@@ -8,6 +8,29 @@
 #include <string.h>
 #include "NewtonNu.h"
 
+/**
+
+     rv2coe: encuentra los elementos orbitales clásicos dado el geocéntrico
+     de posición ecuatorial y vectores de velocidad.
+
+     Entradas:
+         r - vector de posición ijk m
+         v - ijk velocidad vector m / s
+
+     De salidas:
+         p - semilato recto m
+         a - eje semimayor m
+         ecc - excentricidad
+         incl - inclinación 0.0 a pi rad
+         omega - longitud del nodo ascendente 0.0 a 2pi rad
+         argp - argumento del perigeo de 0.0 a 2pi rad
+         nu - verdadera anomalía 0.0 a 2pi rad
+         m - anomalía media de 0.0 a 2pi rad
+         arglat - argumento de latitud (ci) 0.0 a 2pi rad
+         truelon - longitud verdadera (ce) 0.0 a 2pi rad
+         lonper - longitud de la periapsis (ee) 0.0 a 2pi rad
+
+*/
 void rv2coe ( double vectorPosicion[3],  double vectorVelocidad[3],  double vectorResultado[11])
 {
      double p, a, ecc, incl, omega, argp, nu, m, arglat, truelon, lonper;

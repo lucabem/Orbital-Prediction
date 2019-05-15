@@ -1,11 +1,15 @@
 
+/**
+    Diferencia de tiempos
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
 
 void timeDiff( double UT1_UTC,  double TAI_UTC,  double diferenciaTiempos[5])
 {
      double TT_TAI  = +32.184;
      double GPS_TAI = -19.0;
-//     double TT_GPS  =  TT_TAI-GPS_TAI;
-//     double TAI_GPS = -GPS_TAI;
+
      double UT1_TAI = UT1_UTC-TAI_UTC;
      double UTC_TAI = -TAI_UTC;
      double UTC_GPS = UTC_TAI-GPS_TAI;

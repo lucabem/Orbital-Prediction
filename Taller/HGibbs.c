@@ -8,6 +8,29 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+
+    Implementa la aproximación de herrick-gibbs para
+    determinación de orbita, y encuentra
+    el vector de velocidad media para los 3 vectores de posición dados.
+
+    Entrada:
+        r1: vector posicion ijk
+        r2: vector posicion ijk
+        r3: vector posicion ijk
+        MJD1: fecha juliana del primer avistamiento
+        MJD2: fecha juliana del primer avistamiento
+        MJD3: fecha juliana del primer avistamiento
+
+    Entrada/Salida:
+        vectVel:  vector velocidad ijk del r2
+        angulos: angulos entre los vectores
+        error
+
+    Salida:
+        copa
+
+*/
 double hgibbs( double r1[3],  double r2[3],  double r3[3],
                double MJD1, double MJD2, double MJD3,
                double vectVel[3],  double angulos[2], char error[12])

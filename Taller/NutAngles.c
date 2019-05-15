@@ -3,6 +3,20 @@
 #include <math.h>
 #include "MatlabUtilities.h"
 
+
+/**
+
+
+    NutAngles: Nutación en longitud y oblicuidad
+
+     De entrada:
+         Mjd_TT Fecha juliana modificada (hora terrestre)
+
+     De salida:
+         dpsi, Deps Nutation Angles
+
+    Last modified:   2015/08/12   M. Mahooti
+*/
 void NutAngles( double Mjd_TT,  double angulosNutacion[2])
 {
      double t  = (Mjd_TT-MJD_J2000)/36525;

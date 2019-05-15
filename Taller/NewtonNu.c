@@ -3,6 +3,23 @@
 #include "MatlabUtilities.h"
 #include "Constantes.h"
 
+
+/**
+
+     newtonnu: resuelve la ecuación de keplers cuando se conoce la verdadera anomalía.
+     de la anomalía media y excéntrica, parabólica o hiperbólica también se encuentra.
+     del límite parabólico en 168 es arbitrario. La anomalía hiperbólica también es
+     limitado. El seno hiperbólico se usa porque no tiene doble valor.
+
+     Entradas:   descripción           rango / unidades
+     ecc       - excentricidad           0.0 a
+     nu        - verdadera anomalía     -2pi a 2pi rad
+
+    Salidas:
+     e0         - anomalía excéntrica    0.0 a 2pi rad 153.02 grados
+     m          - anomalía media         0.0 a 2pi rad 151.7425 grados
+
+*/
 void newtonnu( double ecc,  double nu,  double salida[2])
 {
     double e0= 999999.9;

@@ -4,6 +4,20 @@
 #include "R_y.h"
 #include "MatlabUtilities.h"
 
+/**
+
+     PoleMatrix: Transformación de pseudo-Tierra-fija a Tierra-fija
+     de coordenadas para una fecha dada
+
+     De entrada:
+        Coordinador polar (xp, yp)
+
+     De salida:
+        PoleMat matriz de polo
+
+    Last modified:   2015/08/12   M. Mahooti
+
+*/
 void  PoleMatrix ( double xp,  double yp,  double matrizTransformada[3][3])
 {
      double matrizTY[3][3], matrizTX[3][3];

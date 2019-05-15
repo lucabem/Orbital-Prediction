@@ -13,6 +13,8 @@
     Salida:
         Ecuacion de equinoccios
 
+    Last modified:   2015/08/12   M. Mahooti
+
 */
  double eqnEquinox ( double fechaJulianaModificada )
 {
