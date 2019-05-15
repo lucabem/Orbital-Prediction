@@ -29,6 +29,7 @@
 #include "NutMatrix.h"
 #include "DoubleR.h"
 #include "AngleDr.h"
+#include "Anglesg.h"
 
 //Tiene que haber 27 Test_void
 void Test_Angl();
@@ -56,10 +57,8 @@ void Test_GHAMatrix();
 void Test_NutMatrix();
 void Test_DoubleR();
 void Test_AngleDr();
-
 void Test_Anglesg();
 void Test_Rv2coe();
-
 void Test_Funciones();
 
 void Test_Funciones()
@@ -90,6 +89,7 @@ void Test_Funciones()
     Test_NutMatrix();
     Test_DoubleR();
     Test_AngleDr();
+    Test_Anglesg();
 
 }
 
@@ -656,13 +656,31 @@ void Test_AngleDr()
     anglesdr(5.39901096780381, 6.26556833768239, 0.732191050658823, 0.0115360853036144,
              -0.360600766331881, -0.640322905313176, 54977.6669036457, 54977.6738480902, 54977.6807925347, rsite1, rsite2, rsite3, r2, v2 );
 
-
-    assert( fabs(  1000*(r2[0] - 8794276.58098403)< 10));
-    assert( fabs(  1000*(r2[1] - 404.708194943489*1000))< 10);
-    assert( fabs(  1000*(r2[2] - 2543.97380563715*1000))< 10);
+    assert( fabs((r2[0] - 8794276.58098403))< 0.01);
+    assert( fabs(r2[1] - 404.708194943489*1000)< 0.01);
+    assert( fabs(r2[2] - 2543.97380563715*1000) < 0.01);
 
     assert( fabs(  1000*(v2[0] - 0.591415680079019*1000)< 10));
     assert( fabs(  1000*(v2[1] - 5.83886365198696*1000))< 10);
     assert( fabs(  1000*(v2[2] + 2.98863988398241*1000)) < 10);
+
+}
+
+void Test_Anglesg()
+{
+    double rs1[3] = {5270137.35006701, -1572248.25164427, 3219350.41084204};
+    double rs2[3] = {5303269.31336066, -1456667.74823777, 3219314.05463487};
+    double rs3[3] = {5333865.06903306, -1340390.16746883, 3219280.50120838};
+    double r2[3], v2[3];
+
+    anglesg(0.223578422509726, 0.165492119674102, 0.106613437358074, -0.211533905341713, -0.142837745983216, -0.0716736910623991, 55565.9044073611, 55565.9078795835, 55565.9113518056, rs1, rs2, rs3, r2, v2);
+
+    assert( fabs( r2[0]/1000 - 20486.511511687) < pow(10,-2));
+    assert( fabs( r2[1]/1000 - 1079.23234124354) < pow(10,-2));
+    assert( fabs( r2[2]/1000 - 1005.45621711092) < pow(10,-2));
+
+    assert( fabs( v2[0]/1000 - 0.0168797950290674) < pow(10,-2));
+    assert( fabs( v2[1]/1000 + 2.65408002932635) < pow(10,-2));
+    assert( fabs( v2[2]/1000 - 3.73412004615382) < pow(10,-2));
 
 }
