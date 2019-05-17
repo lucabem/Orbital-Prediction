@@ -30,6 +30,7 @@
 #include "DoubleR.h"
 #include "AngleDr.h"
 #include "Anglesg.h"
+#include "rv2coe.h"
 
 //Tiene que haber 27 Test_void
 void Test_Angl();
@@ -90,6 +91,7 @@ void Test_Funciones()
     Test_DoubleR();
     Test_AngleDr();
     Test_Anglesg();
+    Test_Rv2coe();
 
 }
 
@@ -683,4 +685,26 @@ void Test_Anglesg()
     assert( fabs( v2[1]/1000 + 2.65408002932635) < pow(10,-2));
     assert( fabs( v2[2]/1000 - 3.73412004615382) < pow(10,-2));
 
+}
+
+
+void Test_Rv2coe()
+{
+    double r[3] = {20435422.3521544, 1070699.44671825, 1012905.49143365};
+    double v[3] = {17.1964697862374, -2657.51027611478, 3738.38685080781};
+    double resultado[11];
+
+    rv2coe(r, v, resultado);
+
+    assert( fabs(resultado[0] -  22151801.0359645) < pow(10, -7));
+    assert( fabs(resultado[1] -  22303727.6411949) < pow(10, -7));
+    assert( fabs(resultado[2] -  0.0825331061733743) < pow(10, -7));
+    assert( fabs(resultado[3] -  2.18724254265764) < pow(10, -7));
+    assert( fabs(resultado[4] -  0.0874259916432499) < pow(10, -7));
+    assert( fabs(resultado[5] -  6.16261219028659) < pow(10, -7));
+    assert( fabs(resultado[6] -  0.181200311069884) < pow(10, -7));
+    assert( fabs(resultado[7] -  0.153174331369098) < pow(10, -7));
+    assert( fabs(resultado[8] - 999999.1) < pow(10, -7));
+    assert( fabs(resultado[9] - 999999.1) < pow(10, -7));
+    assert( fabs(resultado[10] - 999999.1) < pow(10, -7));
 }

@@ -179,16 +179,24 @@ void rv2coe ( double vectorPosicion[3],  double vectorVelocidad[3],  double vect
             lonper= undefined;
 
         //------ find true itude - circular equatorial ------
-        if  (( normaVectPosicion>small ) && ( typeorbit[0] == 'c' && typeorbit[1] == 'e') == 0 )
+        if  (( normaVectPosicion>small ) && ( typeorbit[0] == 'c' && typeorbit[1] == 'e'))
         {
             temp= vectorPosicion[0]/normaVectPosicion;
             if ( fabs(temp) > 1.0  )
-                temp = Sing(temp);
+            {
+               temp = Sing(temp);
+            }
+
             truelon = acos( temp );
             if ( vectorPosicion[1] < 0.0  )
+            {
                 truelon= 2*PI - truelon;
+            }
+
             if ( incl > PI/2 )
+            {
                 truelon= 2*PI - truelon;
+            }
             m = truelon;
         }
         else
