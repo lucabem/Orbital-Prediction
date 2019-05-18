@@ -1252,3 +1252,446 @@
 	"MatlabUtilities.h"
 	<stdio.h>
 
+1558029580 source:c:\users\luis\desktop\taller\angl.c
+	"MatlabUtilities.h"
+
+1558029580 c:\users\luis\desktop\taller\matlabutilities.h
+	<math.h>
+	<complex.h>
+	<stdbool.h>
+	"rpoly.h"
+	<stdlib.h>
+
+1558029580 c:\users\luis\desktop\taller\rpoly.h
+
+1558029580 source:c:\users\luis\desktop\taller\angledr.c
+	"AngleDr.h"
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"DoubleR.h"
+	"lambert_gooding.h"
+
+1558029580 c:\users\luis\desktop\taller\angledr.h
+
+1558029580 c:\users\luis\desktop\taller\constantes.h
+
+1558029580 c:\users\luis\desktop\taller\doubler.h
+
+1558029580 c:\users\luis\desktop\taller\lambert_gooding.h
+	<stdbool.h>
+
+1558029580 source:c:\users\luis\desktop\taller\anglesg.c
+	"Anglesg.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	"Gibbs.h"
+	"HGibbs.h"
+	"lambert_gooding.h"
+	"rv2coe.h"
+	"angl.h"
+	<stdio.h>
+	<string.h>
+
+1558029580 c:\users\luis\desktop\taller\anglesg.h
+
+1558029580 c:\users\luis\desktop\taller\gibbs.h
+
+1558029580 c:\users\luis\desktop\taller\hgibbs.h
+
+1558029580 c:\users\luis\desktop\taller\rv2coe.h
+
+1558029580 c:\users\luis\desktop\taller\angl.h
+
+1558029580 source:c:\users\luis\desktop\taller\doubler.c
+	"DoubleR.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+
+1558029580 source:c:\users\luis\desktop\taller\eqnequinox.c
+	"EqnEquinox.h"
+	"NutAngles.h"
+	"MeanObliquity.h"
+	<math.h>
+
+1558029580 c:\users\luis\desktop\taller\eqnequinox.h
+
+1558029580 c:\users\luis\desktop\taller\nutangles.h
+
+1558029580 c:\users\luis\desktop\taller\meanobliquity.h
+
+1558029580 source:c:\users\luis\desktop\taller\example1.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1558029580 c:\users\luis\desktop\taller\mjday.h
+	<math.h>
+	"MatlabUtilities.h"
+
+1558029580 c:\users\luis\desktop\taller\precmatrix.h
+
+1558029580 c:\users\luis\desktop\taller\position.h
+
+1558029580 c:\users\luis\desktop\taller\nutmatrix.h
+
+1558029580 c:\users\luis\desktop\taller\newtonnu.h
+
+1558029580 c:\users\luis\desktop\taller\iers.h
+
+1558029580 c:\users\luis\desktop\taller\timediff.h
+
+1558029580 c:\users\luis\desktop\taller\polematrix.h
+
+1558029580 c:\users\luis\desktop\taller\gast.h
+
+1558029580 c:\users\luis\desktop\taller\ghamatrix.h
+
+1558029580 source:c:\users\luis\desktop\taller\example2.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1558029580 source:c:\users\luis\desktop\taller\example3.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1558029580 source:c:\users\luis\desktop\taller\example5.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+	"lambert_gooding.h"
+	"Anglesg.h"
+
+1558029580 source:c:\users\luis\desktop\taller\example6.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1558029580 source:c:\users\luis\desktop\taller\example7.c
+	"Constantes.h"
+	<stdio.h>
+	<stdlib.h>
+	"MatlabUtilities.h"
+	"Mjday.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"rv2coe.h"
+	"NutAngles.h"
+	"NutMatrix.h"
+	"EqnEquinox.h"
+	"Gibbs.h"
+	"NewtonNu.h"
+	"HGibbs.h"
+	"DoubleR.h"
+	"IERS.h"
+	"timeDiff.h"
+	"PoleMatrix.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	<assert.h>
+	"lambert_gooding.h"
+	"AngleDr.h"
+
+1558029580 source:c:\users\luis\desktop\taller\frac.c
+	<math.h>
+	"Frac.h"
+
+1558029580 c:\users\luis\desktop\taller\frac.h
+
+1558029580 source:c:\users\luis\desktop\taller\gast.c
+	"Gast.h"
+	"timeDiff.h"
+	"gmst.h"
+	"EqnEquinox.h"
+	<math.h>
+	"IERS.h"
+	"Constantes.h"
+
+1558029580 c:\users\luis\desktop\taller\gmst.h
+
+1558029580 source:c:\users\luis\desktop\taller\ghamatrix.c
+	"GHAMatrix.h"
+	"R_z.h"
+	"Gast.h"
+
+1558029580 c:\users\luis\desktop\taller\r_z.h
+
+1558029580 source:c:\users\luis\desktop\taller\gibbs.c
+	"Gibbs.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	"Unit.h"
+	<math.h>
+	"angl.h"
+	<stdio.h>
+	<string.h>
+
+1558029580 c:\users\luis\desktop\taller\unit.h
+
+1558029580 source:c:\users\luis\desktop\taller\gmst.c
+	"gmst.h"
+	"Frac.h"
+	<math.h>
+	"Constantes.h"
+
+1558029580 source:c:\users\luis\desktop\taller\hgibbs.c
+	"HGibbs.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	<math.h>
+	"Unit.h"
+	"angl.h"
+	<stdio.h>
+	<string.h>
+
+1558029580 source:c:\users\luis\desktop\taller\iers.c
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"IERS.h"
+
+1558029580 source:c:\users\luis\desktop\taller\lambert_gooding.c
+	"lambert_gooding.h"
+	"MatlabUtilities.h"
+	<math.h>
+	"Constantes.h"
+	"Unit.h"
+	<stdio.h>
+	<stdlib.h>
+
+1558029580 source:c:\users\luis\desktop\taller\matlabutilities.c
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\meanobliquity.c
+	"MeanObliquity.h"
+	"Constantes.h"
+
+1558029580 source:c:\users\luis\desktop\taller\mjday.c
+	"Mjday.h"
+
+1558029580 source:c:\users\luis\desktop\taller\newtonnu.c
+	"NewtonNu.h"
+	<math.h>
+	"MatlabUtilities.h"
+	"Constantes.h"
+
+1558029580 source:c:\users\luis\desktop\taller\nutangles.c
+	"NutAngles.h"
+	"Constantes.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\nutmatrix.c
+	"NutMatrix.h"
+	"MeanObliquity.h"
+	"NutAngles.h"
+	"R_x.h"
+	"R_z.h"
+	"MatlabUtilities.h"
+
+1558029580 c:\users\luis\desktop\taller\r_x.h
+
+1558029580 source:c:\users\luis\desktop\taller\polematrix.c
+	"PoleMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"MatlabUtilities.h"
+
+1558029580 c:\users\luis\desktop\taller\r_y.h
+
+1558029580 source:c:\users\luis\desktop\taller\position.c
+	"Constantes.h"
+	<math.h>
+
+1558029580 source:c:\users\luis\desktop\taller\precmatrix.c
+	"PrecMatrix.h"
+	"R_x.h"
+	"R_y.h"
+	"R_z.h"
+	"Constantes.h"
+	"MatlabUtilities.h"
+	<stdio.h>
+
+1558029580 source:c:\users\luis\desktop\taller\principal.c
+	<stdio.h>
+	<stdlib.h>
+
+1558029580 source:c:\users\luis\desktop\taller\r_x.c
+	"R_x.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\r_y.c
+	"R_y.h"
+	<math.h>
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\r_z.c
+	"R_z.h"
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\rpoly.c
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<stdlib.h>
+
+1558109274 source:c:\users\luis\desktop\taller\rv2coe.c
+	"rv2coe.h"
+	"MatlabUtilities.h"
+	"Constantes.h"
+	<math.h>
+	"angl.h"
+	<string.h>
+	"NewtonNu.h"
+
+1558029580 source:c:\users\luis\desktop\taller\testmatlabutilities.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"MatlabUtilities.h"
+
+1558029580 source:c:\users\luis\desktop\taller\timediff.c
+
+1558029580 source:c:\users\luis\desktop\taller\unit.c
+	"MatlabUtilities.h"
+	"Unit.h"
+
+1558109308 source:c:\users\luis\desktop\taller\test_general.c
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	"MatlabUtilities.h"
+	"angl.h"
+	"lambert_gooding.h"
+	"Unit.h"
+	"timeDiff.h"
+	"R_x.h"
+	"R_y.h"
+	"R_z.h"
+	"PrecMatrix.h"
+	"Position.h"
+	"PoleMatrix.h"
+	"NutAngles.h"
+	"NewtonNu.h"
+	"Mjday.h"
+	"MeanObliquity.h"
+	"Frac.h"
+	"EqnEquinox.h"
+	"gmst.h"
+	"HGibbs.h"
+	"Gibbs.h"
+	"IERS.h"
+	"Gast.h"
+	"GHAMatrix.h"
+	"NutMatrix.h"
+	"DoubleR.h"
+	"AngleDr.h"
+	"Anglesg.h"
+	"rv2coe.h"
+
